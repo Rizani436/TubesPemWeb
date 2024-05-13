@@ -1,5 +1,6 @@
 <?php
-
+    include "PHP/cekSession.php";
+    $username = $_SESSION['username']; 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,11 +47,13 @@
                     <img src="icon/arrow-up.png" alt="Panah" class="panah">
                     <div class="akun">
                         <img src="icon/profil.png" alt="profil">
-                        <p>rizalkurniawan._</p>
+                        <?php
+                            echo "<p>$username</p>";
+                        ?>
                     </div>
                     <div class="setting-akun">
                         <a href="#">Edit Profil</a>
-                        <a href="#">Log Out</a>
+                        <a href="PHP/logoutSubmit.php">Log Out</a>
                     </div>
                 </div>
             </div>

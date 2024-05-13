@@ -22,7 +22,7 @@
                 <a href="beranda.php"><img src="../PHP/icon/left-arrow.png" alt="Left"></a>
                 <p>Sign Up</p>
             </div>
-            <form action="beranda.php" method="post">
+            <form action="PHP/addAkun.php" method="post">
                 <div class="input-data">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" class="username">
