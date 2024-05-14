@@ -30,37 +30,45 @@
                 </div>
             </div>
             <div class="isi-content">
-                <div class="item">
-                    <a href="#">
-                        <img src="../PHP/icon/bags.png" alt="Accessoris">
-                        <p>Accessoris</p>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="../PHP/icon/car.png" alt="Car">
-                        <p>Kendaraan</p>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="../PHP/icon/responsive.png" alt="Accessoris">
-                        <p>Elektronik</p>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="../PHP/icon/document.png" alt="Accessoris">
-                        <p>Document</p>
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="#">
-                        <img src="../PHP/icon/menu-bar.png" alt="Accessoris">
-                        <p>Dan Lain-lain</p>
-                    </a>
+                <div class="kategori">
+                    <h1>Kategori</h1>
+                    <div class="isi-kategori">
+                        <div class="item">
+                            <a href="#">
+                            <img src="../PHP/icon/bags.png" alt="Accessoris">
+                            <p>Accessoris</p>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="../PHP/icon/car.png" alt="Car">
+                                <p>Kendaraan</p>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="../PHP/icon/responsive.png" alt="Accessoris">
+                                <p>Elektronik</p>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="../PHP/icon/document.png" alt="Accessoris">
+                                <p>Document</p>
+                            </a>
+                        </div>
+                        <div class="item">
+                            <a href="#">
+                                <img src="../PHP/icon/menu-bar.png" alt="Accessoris">
+                                <p>Dan Lain-lain</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="footer">
+            <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
         </div>
     </div>
 </body>
