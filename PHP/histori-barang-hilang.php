@@ -1,13 +1,10 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barang Hilang</title>
-    <link rel="stylesheet" href="../CSS/daftar-laporan-barang-hilang.css">
+    <title>Histori Barang Hilang</title>
+    <link rel="stylesheet" href="../CSS/histori-barang-hilang.css">
 </head>
 <body>
     <div class="container">
@@ -37,7 +34,7 @@
                         <li><a href="daftar-barang-temuan.php">Penemuan Barang</a></li>
                     </ul>
                     </li>
-                </ul>     
+                </ul>  
             </div>
             <div class="akun-login">
                 <img src="icon/notifikasi.png" alt="notifikasi" class="notifikasi">
@@ -88,17 +85,13 @@
                 </div>
             </div>
             <div class="sidebar-right">
-                <p class="judul">Barang Hilang</p>
+                <p class="judul">Histori Barang Hilang</p>
                 <p class="resultText"></p>
                 <!-- <div class="data-kosong">
                     <p>No Result</p>
                 </div> -->
                 <div class="isi-sidebar-right">
                     <div class="item-barang">
-                        <div class="user">
-                            <img src="icon/profil.png" alt="">
-                            <p class="username">skyway_</p>
-                        </div>
                         <img src="image/background.jpg" alt="">
                         <table>
                             <tr>
@@ -131,92 +124,16 @@
                             </tr>
                         </table>
                         <div class="reaction">
-                            <img src="icon/love-white.png" alt="">
-                            <p class="love">0 likes</p>
+                            <div class="like">
+                                <p class="love">0 likes</p>
+                            </div>
+                            <div class="klaim">
+                                <p><a href="#">Hapus</a></p>
+                                <p><a href="#">Ubah</a></p>
+                            </div>
                         </div>
                     </div>
-                    <div class="item-barang">
-                        <div class="user">
-                            <img src="icon/profil.png" alt="">
-                            <p class="username">skyway_</p>
-                        </div>
-                        <img src="image/background.jpg" alt="">
-                        <table>
-                            <tr>
-                                <th>Nama Barang</th>
-                                <td>Dompet</td>
-                            </tr>
-                            <tr>
-                                <th>Kategori Barang</th>
-                                <td>Accessoris</td>
-                            </tr>
-                            <tr>
-                                <th>Tanggal Kehilangan</th>
-                                <td>22-01-2020</td>
-                            </tr>
-                            <tr>
-                                <th>Tempat Kehilangan</th>
-                                <td>Parkir</td>
-                            </tr>
-                            <tr>
-                                <th>Kota/Kabupaten</th>
-                                <td>Lombok Barat</td>
-                            </tr>
-                            <tr>
-                                <th>Informasi Detail</th>
-                                <td>Terkadang dalam sunyi malam, langit menjadi saksi kesendirian seseorang yang tengah menapaki lorong-lorong kehidupan, mencari arti dan makna yang tersembunyi di balik kerumitan dunia. "Langit malam memberi saksi pada perjalanan kesendirian seseorang, yang</td>
-                            </tr>
-                            <tr>
-                                <th>Nomor Handphone</th>
-                                <td>092039903294</td>
-                            </tr>
-                        </table>
-                        <div class="reaction">
-                            <img src="icon/love-white.png" alt="">
-                            <p class="love">0 likes</p>
-                        </div>
-                    </div>
-                    <div class="item-barang">
-                        <div class="user">
-                            <img src="icon/profil.png" alt="">
-                            <p class="username">skyway_</p>
-                        </div>
-                        <img src="image/background.jpg" alt="">
-                        <table>
-                            <tr>
-                                <th>Nama Barang</th>
-                                <td>Dompet</td>
-                            </tr>
-                            <tr>
-                                <th>Kategori Barang</th>
-                                <td>Accessoris</td>
-                            </tr>
-                            <tr>
-                                <th>Tanggal Kehilangan</th>
-                                <td>22-01-2020</td>
-                            </tr>
-                            <tr>
-                                <th>Tempat Kehilangan</th>
-                                <td>Parkir</td>
-                            </tr>
-                            <tr>
-                                <th>Kota/Kabupaten</th>
-                                <td>Lombok Barat</td>
-                            </tr>
-                            <tr>
-                                <th>Informasi Detail</th>
-                                <td>Terkadang dalam sunyi malam, langit menjadi saksi kesendirian seseorang yang tengah menapaki lorong-lorong kehidupan, mencari arti dan makna yang tersembunyi di balik kerumitan dunia. "Langit malam memberi saksi pada perjalanan kesendirian seseorang, yang</td>
-                            </tr>
-                            <tr>
-                                <th>Nomor Handphone</th>
-                                <td>092039903294</td>
-                            </tr>
-                        </table>
-                        <div class="reaction">
-                            <img src="icon/love-white.png" alt="">
-                            <p class="love">0 likes</p>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -225,6 +142,6 @@
         </div>      
     </div>
     <!-- <script src="../JS/home.js"></script> -->
-    <script src="../JS/daftar-laporan-barang-hilang.js"></script>
+    <script src="../JS/histori-barang-hilang.js"></script>
 </body>
 </html>

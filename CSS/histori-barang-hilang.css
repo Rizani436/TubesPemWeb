@@ -89,10 +89,6 @@
     margin-top: -20px;
 }
 
-.header .logo .teks-logo p{
-    margin-top: -2  0px;
-}
-
 .header .menu-header ul{
     list-style: none;
     /* background-color: green; */
@@ -168,6 +164,7 @@
     box-shadow: 0px 0px 3px rgba(200, 190, 140, 1);
 }
 
+
 .header .menu-header ul li a:hover {
     background-color: rgba(200, 190, 140, 1);
     color: white;
@@ -190,7 +187,7 @@
     box-sizing: border-box;
     box-shadow: inset -3px -3px 9px rgba(94, 104, 121, 0.3),
                 inset 3px 3px 9px rgba(94, 104, 121, 0.3);
-} 
+}
 
 /* .header .menu-header ul li:hover ul.dropdown{
     display: block;
@@ -241,7 +238,6 @@
     flex-direction: row;
     /* background-color: #f33ff2; */
 }
-
 
 .header .akun-login img{
     height: 30px;
@@ -501,7 +497,6 @@
     text-align: left;
     background-color: rgba(200, 190, 140, .75);
     height: 30px;
-    cursor: pointer;
     /* line-height: 10px; */
     padding: 0px 0px 0px 10px;
 }
@@ -515,6 +510,7 @@
     /* background-color: white; */
     /* margin-top: 5px; */
     width: 250px;
+    cursor: pointer;
     /* padding: 5px 0 0 0; */
     /* display: inline-block; */
     background-color: white;
@@ -576,13 +572,13 @@
     display: flex;
     gap: 10px;
     margin: 0 auto;
-    margin-top: 20px;
+    margin-top: 20px;   
     /* margin-left: 120px; */
     border-radius: 10px;
     margin-bottom: 30px;
     box-shadow: 3px 3px 7px rgba(0, 0, 0, .3),
                 -3px -3px 7px rgba(0, 0, 0, 0.3);
-    padding: 15px 50px;
+    padding: 30px 30px;
     flex-direction: column;
 }
 
@@ -616,7 +612,7 @@
 }
 
 th, td {
-    border: 2px solid rgb(200, 190, 140);
+    border: 1px solid rgb(200, 190, 140);
     padding: 5px 0;
     text-align: left;
 }
@@ -643,17 +639,75 @@ th, td {
 .content .sidebar-right .isi-sidebar-right .item-barang .reaction {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
     margin-top: 5px;
+    /* background-color: aqua; */
+    /* border-top: 1px solid black; */
+}
+
+.content .sidebar-right .isi-sidebar-right .item-barang .reaction .like {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
     /* background-color: aqua; */
     /* border-top: 1px solid black; */
 }
+.content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
 
-.content .sidebar-right .isi-sidebar-right .item-barang .reaction img{
-    height: 30px;
-    width: 30px;
+.content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p:first-child{
+    background-color: red;
+}
+
+.content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p:first-child a:hover{
+    background-color: rgb(236, 148, 148);
+}
+
+    .content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p{
+    background-color: rgb(74, 224, 74);
+    /* padding: 5px 20px; */
+    border-radius: 5px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p a{
+    text-shadow: 1px 1px 1px black;
+    text-decoration: none;
+    padding: 5px 65px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+/* .content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p:hover{
+    background-color: white;
+    border: 1px solid rgb(74, 224, 74);    
+} */
+
+.content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p a:hover{
+    color: black;    
+    text-shadow: 1px 1px 3px white;
+    /* border: 1px solid rgb(74, 224, 74); */
+    background-color: rgb(127, 240, 127);
+}
+
+.content .sidebar-right .isi-sidebar-right .item-barang .reaction .like{
+    background-color: rgb(91, 91, 255);
+    padding: 5px 20px;
+    border-radius: 5px;
+    height: 15px;
+    color: white;
+    text-shadow: 1px 1px 3px black;
 }
 
 .content .sidebar-right .data-kosong{
