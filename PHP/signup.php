@@ -1,3 +1,42 @@
+
+<?php
+    session_start();
+    if (isset($_SESSION['username'])) {
+        header("Location: home.php");
+        exit();
+    }
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include 'PHP/config.php';
+    if(!$conn){
+        die("Koneksi Gagal".mysql_error());
+    }else{
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $confPassword = $_POST['confPassword'];
+        $namaLengkap = $_POST['namaLengkap'];
+        $jenisKelamin = $_POST['jenisKelamin'];
+        $alamat = $_POST['alamat'];
+        $noHP = $_POST['noHP'];
+        $queryUsername = "SELECT * FROM akun WHERE username = '$username'";
+        $namaAkun = mysqli_query($conn, $queryUsername);
+        if(mysqli_num_rows($namaAkun) > 0){
+            echo "Username sudah digunakan";
+        }else{
+        if($password == $confPassword && $password != "" && $confPassword != ""){
+            $query = "INSERT INTO akun (username, password, namaLengkap, jenisKelamin, alamat, noHP) VALUES ('$username', '$password', '$namaLengkap', '$jenisKelamin', '$alamat', '$noHP')";
+            $result = mysqli_query($conn, $query);
+            if($result){
+                header("Location: login.php");
+            }else{
+                echo "Akun gagal dibuat";
+            }
+        }else{
+            echo "Password dan konfirmasi password tidak sama";
+        }
+        }
+    }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +61,7 @@
                 <a href="beranda.php"><img src="../PHP/icon/left-arrow.png" alt="Left"></a>
                 <p>Sign Up</p>
             </div>
-            <form action="PHP/addAkun.php" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="input-data">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" class="username">

@@ -1,5 +1,32 @@
 <?php
+include "PHP/cekSession.php";
+// require_once 'header.php';
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include 'PHP/config.php';
+
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $namaBarang = mysqli_real_escape_string($conn, $_POST['namaBarang']);
+    $kategoriBarang = mysqli_real_escape_string($conn, $_POST['kategoriBarang']);
+    $tglPenemuan = mysqli_real_escape_string($conn, $_POST['tglPenemuan']);
+    $tmptPenemuan = mysqli_real_escape_string($conn, $_POST['tmptPenemuan']);
+    $informasiDetail = mysqli_real_escape_string($conn, $_POST['informasiDetail']);
+    $noHP = mysqli_real_escape_string($conn, $_POST['noHP']);
+    $kotaKabupaten = mysqli_real_escape_string($conn, $_POST['kotaKabupaten']);
+    $datagambar = addslashes(file_get_contents($_FILES['gambarBarang']['tmp_name']));
+    $propertiesgambar = getimageSize($_FILES['gambarBarang']['tmp_name']);
+    $query = "INSERT INTO barangtemuan (namaBarang, kategoriBarang, tanggalPenemuan, tempatPenemuan, kotaKabupaten, pertanyaan, noHP,tipeImage, gambarBarang) VALUES ('$namaBarang', '$kategoriBarang', '$tglPenemuan', '$tmptPenemuan', '$kotaKabupaten', '$informasiDetail', '$noHP', '" . $propertiesgambar['mime'] . "', '" . $datagambar . "')";
+    $result = mysqli_query($conn, $query);
+        if ($result) {
+            echo "<script>alert('Barang berhasil diupload');</script>";
+        } else {
+            echo "<script>alert('Barang gagal diupload');</script>";
+        }
+    mysqli_close($conn);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,56 +38,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>LoFo</h1>
-            <div class="menu-header">
-                <ul>
-                    <li><a href="home.php">Home</a></li>
-                    <li class="menu-dropdown"><a href="#">Daftar Laporan</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Kehilangan Barang</a></li>
-                            <li><a href="#">Penemuan Barang</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-dropdown"><a href="#">Histori Laporan</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Kehilangan Barang</a></li>
-                        <li><a href="#">Penemuan Barang</a></li>
-                    </ul>
-                    </li>
-                    <li class="menu-dropdown"><a href="#">Lapor</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Kehilangan Barang</a></li>
-                        <li><a href="#">Penemuan Barang</a></li>
-                    </ul>
-                    </li>
-                </ul>    
-            </div>
-            <div class="akun-login">
-                <img src="icon/notifikasi.png" alt="notifikasi" class="notifikasi">
-                <div class="jumlah-notifikasi">
-                    <p>1</p>
-                </div>
-                <img src="icon/profil.png" alt="Profil" class="profil">
-                <div class="akun-profil">
-                    <img src="icon/arrow-up.png" alt="Panah" class="panah">
-                    <div class="akun">
-                        <img src="icon/profil.png" alt="profil">
-                        <p>rizalkurniawan._</p>
-                    </div>
-                    <div class="setting-akun">
-                        <a href="#">Edit Profil</a>
-                        <a href="#">Log Out</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="content">
         <div class="judul-content">
                 <a href="home.php"><img src="../PHP/icon/left-arrow.png" alt="Left"></a>
                 <p>Form Barang Temuan</p>
             </div>
-            <form action="beranda.php" method="post">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                 <div class="input-data">
                     <label for="namaBarang">Nama Barang</label>
                     <input type="text" name="namaBarang" id="namaBarang" class="namaBarang">

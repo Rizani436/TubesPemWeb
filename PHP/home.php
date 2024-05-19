@@ -1,5 +1,6 @@
 <?php
     include "PHP/cekSession.php";
+    require_once 'header.php';
     $username = $_SESSION['username']; 
 ?>
 <!DOCTYPE html>
@@ -12,52 +13,6 @@
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>LoFo</h1>
-            <div class="menu-header">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li class="menu-dropdown"><a href="#">Daftar Laporan</a>
-                        <ul class="dropdown">
-                            <li><a href="#">Kehilangan Barang</a></li>
-                            <li><a href="#">Penemuan Barang</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-dropdown"><a href="#">Histori Laporan</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Kehilangan Barang</a></li>
-                        <li><a href="#">Penemuan Barang</a></li>
-                    </ul>
-                    </li>
-                    <li class="menu-dropdown"><a href="#">Lapor</a>
-                    <ul class="dropdown">
-                        <li><a href="#">Kehilangan Barang</a></li>
-                        <li><a href="#">Penemuan Barang</a></li>
-                    </ul>
-                    </li>
-                </ul>    
-            </div>
-            <div class="akun-login">
-                <img src="icon/notifikasi.png" alt="notifikasi" class="notifikasi">
-                <div class="jumlah-notifikasi">
-                    <p>1</p>
-                </div>
-                <img src="icon/profil.png" alt="Profil" class="profil">
-                <div class="akun-profil">
-                    <img src="icon/arrow-up.png" alt="Panah" class="panah">
-                    <div class="akun">
-                        <img src="icon/profil.png" alt="profil">
-                        <?php
-                            echo "<p>$username</p>";
-                        ?>
-                    </div>
-                    <div class="setting-akun">
-                        <a href="#">Edit Profil</a>
-                        <a href="PHP/logoutSubmit.php">Log Out</a>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="content">
             <div class="background-content">
                 <div class="text-content">
