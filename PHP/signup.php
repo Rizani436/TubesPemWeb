@@ -48,7 +48,10 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>LoFo</h1>
+            <div class="logo">
+                <img src="image/lofo.png" alt="logo">
+                <h1>Lost & Found Lombok</h1>
+            </div>
             <div class="menu-header">
                 <ul>
                     <li><p>Do You Have Account?</p></li>
@@ -68,7 +71,7 @@
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" class="password">
                     <label for="confPassword">Konfrimasi Password</label>
-                    <input type="text" name="confPassword" id="confPassword" class="confPassword">
+                    <input type="password" name="confPassword" id="confPassword" class="confPassword">
                     <label for="namaLengkap">Nama Lengkap</label>
                     <input type="text" name="namaLengkap" id="namaLengkap" class="namaLengkap">
                     <label for="jenisKelamin">Jenis Kelamin</label>
@@ -85,6 +88,9 @@
                 </div>
                 <script src="../JS/signup.js"></script>
             </form>
+        </div>
+        <div class="footer">
+            <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
         </div>
     </div>
 </body>

@@ -7,18 +7,42 @@
 
 .header {
     /* background-color: #6CBEEB; */
-    overflow: hidden;
     height: 50px;
     padding: 10px;
     line-height: 50px;
+
+    background-color: white;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(200, 190, 140, 1);
 }
 
-.header h1{
-    float: left;
-    margin-left: 150px;
-    font-size: 48px;
+.header .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    margin-left: 200px;
+    /* margin-top: 20px; */
+}
+
+.header .logo img{
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
+}
+
+.header .logo h1{
+    /* margin-left: 150px;  */
+    font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: 5px;
+    letter-spacing: 0px;
+    /* margin-left: 10px; */
+    margin-top: -20px;
 }
 
 .menu-header {
@@ -54,7 +78,7 @@
 /* Bagian background content */
 
 .content .background-content{
-    background-image: url('../HTML/image/background.jpg');
+    background-image: url('../PHP/image/background.jpg');
     height: 500px;
     background-position: 10px -100px;
     background-size: 100% auto;

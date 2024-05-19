@@ -34,7 +34,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="container">
         <div class="header">
-            <h1>LoFo</h1>
+            <div class="logo">
+                <img src="image/lofo.png" alt="logo">
+                <h1>Lost & Found Lombok</h1>
+            </div>
             <div class="menu-header">
                 <ul>
                     <li><p>Create Account?</p></li>
@@ -57,6 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="submit" value="Submit">
             </form>
         </div>
+        <div class="footer">
+            <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
+        </div>  
     </div>
 
     <?php if (isset($message)) { ?>
