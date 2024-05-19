@@ -12,29 +12,32 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>LoFo</h1>
+            <div class="logo">
+                <img src="image/lofo.png" alt="logo">
+                <h1>Lost & Found Lombok</h1>
+            </div>
             <div class="menu-header">
                 <ul>
                     <li><a href="home.php">Home</a></li>
                     <li class="menu-dropdown"><a href="#">Daftar Laporan</a>
                         <ul class="dropdown">
-                            <li><a href="#">Kehilangan Barang</a></li>
-                            <li><a href="#">Penemuan Barang</a></li>
+                            <li><a href="daftar-laporan-barang-hilang.php">Kehilangan Barang</a></li>
+                            <li><a href="daftar-laporan-barang-temuan.php">Penemuan Barang</a></li>
                         </ul>
                     </li>
                     <li class="menu-dropdown"><a href="#">Histori Laporan</a>
                     <ul class="dropdown">
-                        <li><a href="#">Kehilangan Barang</a></li>
-                        <li><a href="#">Penemuan Barang</a></li>
+                        <li><a href="histori-barang-hilang.php">Kehilangan Barang</a></li>
+                        <li><a href="histori-barang-temuan.php">Penemuan Barang</a></li>
                     </ul>
                     </li>
                     <li class="menu-dropdown"><a href="#">Lapor</a>
                     <ul class="dropdown">
-                        <li><a href="#">Kehilangan Barang</a></li>
-                        <li><a href="#">Penemuan Barang</a></li>
+                        <li><a href="daftar-barang-hilang.php">Kehilangan Barang</a></li>
+                        <li><a href="daftar-barang-temuan.php">Penemuan Barang</a></li>
                     </ul>
                     </li>
-                </ul>    
+                </ul>   
             </div>
             <div class="akun-login">
                 <img src="icon/notifikasi.png" alt="notifikasi" class="notifikasi">

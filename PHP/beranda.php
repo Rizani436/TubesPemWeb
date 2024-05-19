@@ -9,7 +9,10 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>LoFo</h1>
+            <div class="logo">
+                <img src="image/lofo.png" alt="logo">
+                <h1>Lost & Found Lombok</h1>
+            </div>
             <div class="menu-header">
                 <ul>
                     <li><a href="login.php">Login</a></li>
