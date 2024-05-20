@@ -17,8 +17,8 @@
                     <li><a href="home.php">Home</a></li>
                     <li class="menu-dropdown"><a href="#">Daftar Laporan</a>
                         <ul class="dropdown">
-                            <li><a href="daftar-barang-hilang.php">Kehilangan Barang</a></li>
-                            <li><a href="daftar-barang-temuan.php">Penemuan Barang</a></li>
+                            <li><a href="daftar-laporan-barang-hilang.php">Kehilangan Barang</a></li>
+                            <li><a href="daftar-laporan-barang-temuan.php">Penemuan Barang</a></li>
                         </ul>
                     </li>
                     <li class="menu-dropdown"><a href="#">Histori Laporan</a>
@@ -29,8 +29,8 @@
                     </li>
                     <li class="menu-dropdown"><a href="#">Lapor</a>
                     <ul class="dropdown">
-                        <li><a href="daftar-laporan-barang-hilang.php">Kehilangan Barang</a></li>
-                        <li><a href="daftar-laporan-barang-temuan.php">Penemuan Barang</a></li>
+                        <li><a href="daftar-barang-hilang.php">Kehilangan Barang</a></li>
+                        <li><a href="daftar-barang-temuan.php">Penemuan Barang</a></li>
                     </ul>
                     </li>
                 </ul>    
@@ -56,5 +56,6 @@
                 </div>
             </div>
         </div>
+        <script src="../JS/home.js"></script>
 </body>
 </html>

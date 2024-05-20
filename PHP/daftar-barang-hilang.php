@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-
+    $uploader = $_SESSION['username'];
     $namaBarang = mysqli_real_escape_string($conn, $_POST['namaBarang']);
     $kategoriBarang = mysqli_real_escape_string($conn, $_POST['kategoriBarang']);
     $tglKehilangan = mysqli_real_escape_string($conn, $_POST['tglKehilangan']);
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kotaKabupaten = mysqli_real_escape_string($conn, $_POST['kotaKabupaten']);
     $datagambar = addslashes(file_get_contents($_FILES['gambarBarang']['tmp_name']));
     $propertiesgambar = getimageSize($_FILES['gambarBarang']['tmp_name']);
-    $query = "INSERT INTO baranghilang (namaBarang, kategoriBarang, tanggalKehilangan, tempatKehilangan, kotaKabupaten, informasiDetail, noHP,tipeImage, gambarBarang) VALUES ('$namaBarang', '$kategoriBarang', '$tglKehilangan', '$tmptKehilangan', '$kotaKabupaten', '$informasiDetail', '$noHP', '" . $propertiesgambar['mime'] . "', '" . $datagambar . "')";
+    $query = "INSERT INTO baranghilang (uploader,namaBarang, kategoriBarang, tanggalKehilangan, tempatKehilangan, kotaKabupaten, informasiDetail, noHP,tipeImage, gambarBarang) VALUES ('$uploader','$namaBarang', '$kategoriBarang', '$tglKehilangan', '$tmptKehilangan', '$kotaKabupaten', '$informasiDetail', '$noHP', '" . $propertiesgambar['mime'] . "', '" . $datagambar . "')";
     $result = mysqli_query($conn, $query);
         if ($result) {
             echo "<script>alert('Barang berhasil diupload');</script>";
@@ -39,56 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="container">
-<<<<<<< HEAD
-=======
-        <div class="header">
-            <div class="logo">
-                <img src="image/lofo.png" alt="logo">
-                <h1>Lost & Found Lombok</h1>
-            </div>
-            <div class="menu-header">
-                <ul>
-                    <li><a href="home.php">Home</a></li>
-                    <li class="menu-dropdown"><a href="#">Daftar Laporan</a>
-                        <ul class="dropdown">
-                            <li><a href="daftar-laporan-barang-hilang.php">Kehilangan Barang</a></li>
-                            <li><a href="daftar-laporan-barang-temuan.php">Penemuan Barang</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-dropdown"><a href="#">Histori Laporan</a>
-                    <ul class="dropdown">
-                        <li><a href="histori-barang-hilang.php">Kehilangan Barang</a></li>
-                        <li><a href="histori-barang-temuan.php">Penemuan Barang</a></li>
-                    </ul>
-                    </li>
-                    <li class="menu-dropdown"><a href="#">Lapor</a>
-                    <ul class="dropdown">
-                        <li><a href="daftar-barang-hilang.php">Kehilangan Barang</a></li>
-                        <li><a href="daftar-barang-temuan.php">Penemuan Barang</a></li>
-                    </ul>
-                    </li>
-                </ul>   
-            </div>
-            <div class="akun-login">
-                <img src="icon/notifikasi.png" alt="notifikasi" class="notifikasi">
-                <div class="jumlah-notifikasi">
-                    <p>1</p>
-                </div>
-                <img src="icon/profil.png" alt="Profil" class="profil">
-                <div class="akun-profil">
-                    <img src="icon/arrow-up.png" alt="Panah" class="panah">
-                    <div class="akun">
-                        <img src="icon/profil.png" alt="profil">
-                        <p>rizalkurniawan._</p>
-                    </div>
-                    <div class="setting-akun">
-                        <a href="#">Edit Profil</a>
-                        <a href="#">Log Out</a>
-                    </div>
-                </div>
-            </div>
-        </div>
->>>>>>> c8e7f2d3c6f3be2f808bb271c409f686c4915416
         <div class="content">
             <div class="judul-content">
                 <a href="home.php"><img src="../PHP/icon/left-arrow.png" alt="Left"></a>
@@ -102,11 +52,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="kategoriBarang">Kategori Barang</label>
                     <select name="kategoriBarang" id="kategoriBarang" class="kategoriBarang">
                         <option value="0"></option>
-                        <option value="A">Accessoris</option>
-                        <option value="K">Kendaraan</option>
-                        <option value="E">Elektronik</option>
-                        <option value="D">Document</option>
-                        <option value="DLL">Dan Lain-lain</option>
+                        <option value="Accessoris">Accessoris</option>
+                        <option value="Kendaraan">Kendaraan</option>
+                        <option value="Elektronik">Elektronik</option>
+                        <option value="Document">Document</option>
+                        <option value="Dan Lain-lain">Dan Lain-lain</option>
                     </select>
                     <p class="p-kategoriBarang"></p>
                     <label for="tglKehilangan">Tanggal Kehilangan</label>
@@ -118,11 +68,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="kotaKabupaten">Kota/Kabupaten</label>
                     <select name="kotaKabupaten" id="kotaKabupaten" class="kotaKabupaten">
                         <option value="0"></option>
-                        <option value="KM">Kota Mataram</option>
-                        <option value="LB">Lombok Barat</option>
-                        <option value="LTG">Lombok Tengah</option>
-                        <option value="LTM">Lombok Timur</option>
-                        <option value="LU">Lombok Utara</option>
+                        <option value="Kota Mataram">Kota Mataram</option>
+                        <option value="Lombok Barat">Lombok Barat</option>
+                        <option value="Lombok Timur">Lombok Tengah</option>
+                        <option value="Lombok Timur">Lombok Timur</option>
+                        <option value="Lombok Utara">Lombok Utara</option>
                     </select>
                     <p class="p-kotaKabupaten"></p>
                     <label for="informasiDetail">Informasi Detail</label>

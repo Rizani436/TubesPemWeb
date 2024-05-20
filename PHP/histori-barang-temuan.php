@@ -1,7 +1,20 @@
 <?php
-    include "PHP/cekSession.php";
-    require_once 'header.php';
-    $username = $_SESSION['username']; 
+include "PHP/cekSession.php";
+require_once 'header.php';
+$akun = $_SESSION['username']; 
+include 'PHP/config.php';
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Fetch data to display
+$query_select = "SELECT * FROM barangtemuan WHERE uploader = '$akun'";
+$result_select = mysqli_query($conn, $query_select);
+
+if (!$result_select) {
+    die("Error: " . mysqli_error($conn));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,32 +58,35 @@
             <div class="sidebar-right">
                 <p class="judul">Histori Barang Temuan</p>
                 <p class="resultText"></p>
-                <!-- <div class="data-kosong">
+                <?php if (mysqli_num_rows($result_select) == 0): ?>
+                <div class="data-kosong">
                     <p>No Result</p>
-                </div> -->
+                </div>
+                <?php else: ?>
                 <div class="isi-sidebar-right">
+                    <?php while($row = mysqli_fetch_assoc($result_select)): ?>
                     <div class="item-barang">
-                        <img src="image/background.jpg" alt="">
+                        <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Hilang">
                         <table>
                             <tr>
                                 <th>Nama Barang</th>
-                                <td>Dompet</td>
+                                <td><?= htmlspecialchars($row['namaBarang']) ?></td>
                             </tr>
                             <tr>
                                 <th>Kategori Barang</th>
-                                <td>Accessoris</td>
+                                <td><?= htmlspecialchars($row['kategoriBarang']) ?></td>
                             </tr>
                             <tr>
                                 <th>Tanggal Penemuan</th>
-                                <td>22-01-2020</td>
+                                <td><?= htmlspecialchars($row['tanggalPenemuan']) ?></td>
                             </tr>
                             <tr>
                                 <th>Tempat Penemuan</th>
-                                <td>Parkir</td>
+                                <td><?= htmlspecialchars($row['tempatPenemuan']) ?></td>
                             </tr>
                             <tr>
                                 <th>Kota/Kabupaten</th>
-                                <td>Lombok Barat</td>
+                                <td><?= htmlspecialchars($row['kotaKabupaten']) ?></td>
                             </tr>
                         </table>
                         <div class="reaction">
@@ -84,42 +100,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="item-barang">
-                        <img src="image/background.jpg" alt="">
-                        <table>
-                            <tr>
-                                <th>Nama Barang</th>
-                                <td>Dompet</td>
-                            </tr>
-                            <tr>
-                                <th>Kategori Barang</th>
-                                <td>Accessoris</td>
-                            </tr>
-                            <tr>
-                                <th>Tanggal Penemuan</th>
-                                <td>22-01-2020</td>
-                            </tr>
-                            <tr>
-                                <th>Tempat Penemuan</th>
-                                <td>Parkir</td>
-                            </tr>
-                            <tr>
-                                <th>Kota/Kabupaten</th>
-                                <td>Lombok Barat</td>
-                            </tr>
-                        </table>
-                        <div class="reaction">
-                            <div class="like">
-                                <p class="love">0 likes</p>
-                            </div>
-                            <div class="klaim">
-                                <p><a href="#">Hapus</a></p>
-                                <p><a href="#">Ubah</a></p>
-                                <p><a href="#">Laporan</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <?php endwhile; ?>
+                <?php endif; ?>
                 </div>
             </div>
         </div>

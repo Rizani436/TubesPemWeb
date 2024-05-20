@@ -1,7 +1,20 @@
 <?php
-    include "PHP/cekSession.php";
-    require_once 'header.php';
-    $username = $_SESSION['username']; 
+include "PHP/cekSession.php";
+require_once 'header.php';
+$akun = $_SESSION['username']; 
+include 'PHP/config.php';
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Fetch data to display
+$query_select = "SELECT * FROM baranghilang WHERE uploader = '$akun'";
+$result_select = mysqli_query($conn, $query_select);
+
+if (!$result_select) {
+    die("Error: " . mysqli_error($conn));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +25,7 @@
     <link rel="stylesheet" href="../CSS/histori-barang-hilang.css">
 </head>
 <body>
+
     <div class="container">
         <div class="content">
             <div class="sidebar-left">
@@ -45,40 +59,43 @@
             <div class="sidebar-right">
                 <p class="judul">Histori Barang Hilang</p>
                 <p class="resultText"></p>
-                <!-- <div class="data-kosong">
+                <?php if (mysqli_num_rows($result_select) == 0): ?>
+                <div class="data-kosong">
                     <p>No Result</p>
-                </div> -->
+                </div>
+                <?php else: ?>
                 <div class="isi-sidebar-right">
+                    <?php while($row = mysqli_fetch_assoc($result_select)): ?>
                     <div class="item-barang">
-                        <img src="image/background.jpg" alt="">
+                        <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Hilang">
                         <table>
                             <tr>
                                 <th>Nama Barang</th>
-                                <td>Dompet</td>
+                                <td><?= htmlspecialchars($row['namaBarang']) ?></td>
                             </tr>
                             <tr>
                                 <th>Kategori Barang</th>
-                                <td>Accessoris</td>
+                                <td><?= htmlspecialchars($row['kategoriBarang']) ?></td>
                             </tr>
                             <tr>
                                 <th>Tanggal Kehilangan</th>
-                                <td>22-01-2020</td>
+                                <td><?= htmlspecialchars($row['tanggalKehilangan']) ?></td>
                             </tr>
                             <tr>
                                 <th>Tempat Kehilangan</th>
-                                <td>Parkir</td>
+                                <td><?= htmlspecialchars($row['tempatKehilangan']) ?></td>
                             </tr>
                             <tr>
                                 <th>Kota/Kabupaten</th>
-                                <td>Lombok Barat</td>
+                                <td><?= htmlspecialchars($row['kotaKabupaten']) ?></td>
                             </tr>
                             <tr>
                                 <th>Informasi Detail</th>
-                                <td>Terkadang dalam sunyi malam, langit menjadi saksi kesendirian seseorang yang tengah menapaki lorong-lorong kehidupan, mencari arti dan makna yang tersembunyi di balik kerumitan dunia. "Langit malam memberi saksi pada perjalanan kesendirian seseorang, yang</td>
+                                <td><?= htmlspecialchars($row['informasiDetail']) ?></td>
                             </tr>
                             <tr>
                                 <th>Nomor Handphone</th>
-                                <td>092039903294</td>
+                                <td><?= htmlspecialchars($row['noHP']) ?></td>
                             </tr>
                         </table>
                         <div class="reaction">
@@ -91,7 +108,8 @@
                             </div>
                         </div>
                     </div>
-                    
+                    <?php endwhile; ?>
+                <?php endif; ?>
                 </div>
             </div>
         </div>

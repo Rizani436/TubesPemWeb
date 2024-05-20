@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-
+    $uploader = $_SESSION['username'];
     $namaBarang = mysqli_real_escape_string($conn, $_POST['namaBarang']);
     $kategoriBarang = mysqli_real_escape_string($conn, $_POST['kategoriBarang']);
     $tglPenemuan = mysqli_real_escape_string($conn, $_POST['tglPenemuan']);
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kotaKabupaten = mysqli_real_escape_string($conn, $_POST['kotaKabupaten']);
     $datagambar = addslashes(file_get_contents($_FILES['gambarBarang']['tmp_name']));
     $propertiesgambar = getimageSize($_FILES['gambarBarang']['tmp_name']);
-    $query = "INSERT INTO barangtemuan (namaBarang, kategoriBarang, tanggalPenemuan, tempatPenemuan, kotaKabupaten, pertanyaan, noHP,tipeImage, gambarBarang) VALUES ('$namaBarang', '$kategoriBarang', '$tglPenemuan', '$tmptPenemuan', '$kotaKabupaten', '$informasiDetail', '$noHP', '" . $propertiesgambar['mime'] . "', '" . $datagambar . "')";
+    $query = "INSERT INTO barangtemuan (uploader,namaBarang, kategoriBarang, tanggalPenemuan, tempatPenemuan, kotaKabupaten, pertanyaan, noHP,tipeImage, gambarBarang) VALUES ('$uploader','$namaBarang', '$kategoriBarang', '$tglPenemuan', '$tmptPenemuan', '$kotaKabupaten', '$informasiDetail', '$noHP', '" . $propertiesgambar['mime'] . "', '" . $datagambar . "')";
     $result = mysqli_query($conn, $query);
         if ($result) {
             echo "<script>alert('Barang berhasil diupload');</script>";
@@ -51,11 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="kategoriBarang">Kategori Barang</label>
                     <select name="kategoriBarang" id="kategoriBarang" class="kategoriBarang">
                         <option value="0"></option>
-                        <option value="A">Accessoris</option>
-                        <option value="K">Kendaraan</option>
-                        <option value="E">Elektronik</option>
-                        <option value="D">Document</option>
-                        <option value="DLL">Dan Lain-lain</option>
+                        <option value="Accessoris">Accessoris</option>
+                        <option value="Kendaraan">Kendaraan</option>
+                        <option value="Elektronik">Elektronik</option>
+                        <option value="Document">Document</option>
+                        <option value="Dan Lain-lain">Dan Lain-lain</option>
                     </select>
                     <p class="p-kategoriBarang"></p>
                     <label for="tglPenemuan">Tanggal Penemuan</label>
@@ -67,11 +67,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="kotaKabupaten">Kota/Kabupaten</label>
                     <select name="kotaKabupaten" id="kotaKabupaten" class="kotaKabupaten">
                         <option value="0"></option>
-                        <option value="KM">Kota Mataram</option>
-                        <option value="LB">Lombok Barat</option>
-                        <option value="LTG">Lombok Tengah</option>
-                        <option value="LTM">Lombok Timur</option>
-                        <option value="LU">Lombok Utara</option>
+                        <option value="Kota Mataram">Kota Mataram</option>
+                        <option value="Lombok Barat">Lombok Barat</option>
+                        <option value="Lombok Timur">Lombok Tengah</option>
+                        <option value="Lombok Timur">Lombok Timur</option>
+                        <option value="Lombok Utara">Lombok Utara</option>
                     </select>
                     <p class="p-kotaKabupaten"></p>
                     <label for="informasiDetail">Pertanyaan yang ingin diajukan mengenai barang</label>
