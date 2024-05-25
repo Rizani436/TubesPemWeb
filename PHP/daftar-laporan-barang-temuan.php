@@ -8,9 +8,29 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$query_select = "SELECT * FROM barangtemuan";
-$result_select = mysqli_query($conn, $query_select);
+$conditions = [];
+$locationFilter = "";
+$categoryFilter = "";
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_POST['location'])) {
+        $locations = $_POST['location'];
+        $locationFilter = implode("', '", $locations);
+        $conditions[] = "kotaKabupaten IN ('$locationFilter')";
+    }
+    if (!empty($_POST['category'])) {
+        $categories = $_POST['category'];
+        $categoryFilter = implode("', '", $categories);
+        $conditions[] = "kategoriBarang IN ('$categoryFilter')";
+    }
+}
+
+$query_select = "SELECT * FROM barangtemuan";
+if (!empty($conditions)) {
+    $query_select .= " WHERE " . implode(" AND ", $conditions);
+}
+
+$result_select = mysqli_query($conn, $query_select);
 if (!$result_select) {
     die("Error: " . mysqli_error($conn));
 }
@@ -33,31 +53,33 @@ if (!$result_select) {
                         <button type="submit" class="icon-cari"><img src="icon/Cari.png" alt="Searching"></button>
                     </div>
                 </form>
-                <form id="filterForm" action="">
+                <form id="filterForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="lokasi-barang">
                         <p>Kota/Kabupaten</p>
-                        <ul>
-                            <li><button type="button" onclick="setLocation('All')">All</button></li>
-                            <li><button type="button" onclick="setLocation('Kota Mataram')">Kota Mataram</button></li>
-                            <li><button type="button" onclick="setLocation('Lombok Barat')">Lombok Barat</button></li>
-                            <li><button type="button" onclick="setLocation('Lombok Tengah')">Lombok Tengah</button></li>
-                            <li><button type="button" onclick="setLocation('Lombok Timur')">Lombok Timur</button></li>
-                            <li><button type="button" onclick="setLocation('Lombok Utara')">Lombok Utara</button></li>
-                        </ul>
+                        <input type="checkbox" id="KotaMataram" name="location[]" value="Kota Mataram">
+                        <label for="KotaMataram"> Kota Mataram</label><br>
+                        <input type="checkbox" id="LombokBarat" name="location[]" value="Lombok Barat">
+                        <label for="LombokBarat"> Lombok Barat</label><br>
+                        <input type="checkbox" id="LombokTengah" name="location[]" value="Lombok Tengah">
+                        <label for="LombokTengah"> Lombok Tengah</label><br>
+                        <input type="checkbox" id="LombokTimur" name="location[]" value="Lombok Timur">
+                        <label for="LombokTimur"> Lombok Timur</label><br>
+                        <input type="checkbox" id="LombokUtara" name="location[]" value="Lombok Utara">
+                        <label for="LombokUtara"> Lombok Utara</label><br>
                     </div>
                     <div class="kategori">
                         <p>Kategori</p>
-                        <ul>
-                            <li><button type="button" onclick="setCategory('All')">All</button></li>
-                            <li><button type="button" onclick="setCategory('Accessoris')">Accessoris</button></li>
-                            <li><button type="button" onclick="setCategory('Kendaraan')">Kendaraan</button></li>
-                            <li><button type="button" onclick="setCategory('Elektronik')">Elektronik</button></li>
-                            <li><button type="button" onclick="setCategory('Document')">Document</button></li>
-                            <li><button type="button" onclick="setCategory('Dan Lain-lain')">Dan Lain-lain</button></li>
-                        </ul>
+                        <input type="checkbox" id="Accessoris" name="category[]" value="Accessoris">
+                        <label for="Accessoris"> Accessoris</label><br>
+                        <input type="checkbox" id="Kendaraan" name="category[]" value="Kendaraan">
+                        <label for="Kendaraan"> Kendaraan</label><br>
+                        <input type="checkbox" id="Elektronik" name="category[]" value="Elektronik">
+                        <label for="Elektronik"> Elektronik</label><br>
+                        <input type="checkbox" id="Document" name="category[]" value="Document">
+                        <label for="Document"> Document</label><br>
+                        <input type="checkbox" id="DanLainLain" name="category[]" value="Dan Lain-lain">
+                        <label for="DanLainLain"> Dan Lain-lain</label><br>
                     </div>
-                    <input type="hidden" name="location" id="locationInput">
-                    <input type="hidden" name="category" id="categoryInput">
                     <div class="filter">
                         <button type="submit">Filter</button>
                     </div>
