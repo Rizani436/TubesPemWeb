@@ -358,6 +358,12 @@
     /* top: 70px; */
 }
 
+.content .sidebar-left form .cari-barang button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+} 
+
 .content .sidebar-left .cari-barang{
     display: flex;
     flex-direction: row;
@@ -367,6 +373,7 @@
     width: 250px;
     justify-content: center;
     /* height: 70px; */
+    margin-bottom: -30px;
     padding: 10px 10px;
     box-shadow: inset 1px 1px 5px rgba(200, 190, 140, 1),
                 inset -1px -1px 5px rgba(200, 190, 140, 1);
@@ -528,6 +535,29 @@
     color: black; /* Warna teks saat tombol aktif */
 }
 
+
+.content .sidebar-left .filter button{
+    border: none;
+    background-color: rgb(172, 163, 115);
+    width: 270px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    margin-top: 10px;
+    text-shadow: 0px 0px 3px white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content .sidebar-left .filter button:hover{
+    background-color: rgba(200, 190, 140, 1);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3),
+                -1px -1px 1px rgba(0, 0, 0, .3);
+}
+
 .content .sidebar-right{
     /* background-color: aqua; */
     margin-top: 20px;
@@ -665,6 +695,13 @@ th, td {
     text-transform: uppercase;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5),
                 -1px -1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.content .sidebar-right .data-kosong p{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px 1px rgba(200, 190, 140, 1);
+    letter-spacing: 5px;
 }
 
 .footer{

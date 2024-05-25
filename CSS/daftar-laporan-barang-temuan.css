@@ -353,10 +353,17 @@
     /* top: 70px; */
 }
 
+.content .sidebar-left form .cari-barang button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+} 
+
 .content .sidebar-left .cari-barang{
     display: flex;
     flex-direction: row;
     gap: 20px;
+    margin-bottom: -30px;
     margin-top: 10px;
     background-color: rgb(200, 190, 140);
     width: 250px;
@@ -521,6 +528,28 @@
 .content .sidebar-left .lokasi-barang ul li button.active, .content .sidebar-left .kategori ul li button.active {
     background-color: #fff; /* Warna latar belakang saat tombol aktif */
     color: black; /* Warna teks saat tombol aktif */
+}
+
+.content .sidebar-left .filter button{
+    border: none;
+    background-color: rgb(172, 163, 115);
+    width: 270px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: black;
+    text-shadow: 0px 0px 3px white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content .sidebar-left .filter button:hover{
+    background-color: rgba(200, 190, 140, 1);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3),
+                -1px -1px 1px rgba(0, 0, 0, .3);
 }
 
 .content .sidebar-right{

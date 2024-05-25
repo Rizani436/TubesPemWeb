@@ -47,6 +47,10 @@
 
 /* Bagian Header */
 
+body {
+    background-color: rgba(200, 190, 140, 1);
+}
+
 .container {
     background-color: rgba(200, 190, 140, 1);
 }
@@ -312,7 +316,7 @@
     text-shadow: 0px 0px 5px white;
 
 }.content {
-    margin: 25px auto;
+    margin: 100px auto 30px;
     width: 750px;
     display: flex;
     flex-direction: column;

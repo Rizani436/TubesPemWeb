@@ -1,4 +1,4 @@
-menu_dropdowns = document.querySelectorAll('.menu-dropdown')
+var menu_dropdowns = document.querySelectorAll('.menu-dropdown')
 
 menu_dropdowns.forEach(function(menu_dropdown) {
     var dropdown = menu_dropdown.querySelector('.dropdown');

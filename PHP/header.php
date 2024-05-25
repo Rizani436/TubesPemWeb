@@ -15,19 +15,19 @@
             <div class="menu-header">
                 <ul>
                     <li><a href="home.php">Home</a></li>
-                    <li class="menu-dropdown"><a href="#">Daftar Laporan</a>
+                    <li class="menu-dropdown"><button>Daftar Laporan</button>
                         <ul class="dropdown">
                             <li><a href="daftar-laporan-barang-hilang.php">Kehilangan Barang</a></li>
                             <li><a href="daftar-laporan-barang-temuan.php">Penemuan Barang</a></li>
                         </ul>
                     </li>
-                    <li class="menu-dropdown"><a href="#">Histori Laporan</a>
+                    <li class="menu-dropdown"><button>Histori Laporan</button>
                     <ul class="dropdown">
                         <li><a href="histori-barang-hilang.php">Kehilangan Barang</a></li>
                         <li><a href="histori-barang-temuan.php">Penemuan Barang</a></li>
                     </ul>
                     </li>
-                    <li class="menu-dropdown"><a href="#">Lapor</a>
+                    <li class="menu-dropdown"><button>Lapor</button>
                     <ul class="dropdown">
                         <li><a href="daftar-barang-hilang.php">Kehilangan Barang</a></li>
                         <li><a href="daftar-barang-temuan.php">Penemuan Barang</a></li>
@@ -56,6 +56,6 @@
                 </div>
             </div>
         </div>
-        <script src="../JS/home.js"></script>
+        <!-- <script src="../JS/home.js"></script> -->
 </body>
 </html>

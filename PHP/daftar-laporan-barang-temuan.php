@@ -27,32 +27,41 @@ if (!$result_select) {
     <div class="container">
         <div class="content">
             <div class="sidebar-left">
-                <div class="cari-barang">
-                    <input type="text" placeholder="Cari Barang Anda di sini...">
-                    <img src="icon/Cari.png" alt="Searching">
-                </div>
-                <div class="lokasi-barang">
-                    <p>Kota/Kabupaten</p>
-                    <ul>
-                        <li><button>All</a></li>
-                        <li><button>Kota Mataram</button></li>
-                        <li><button>Lombok Barat</button></li>
-                        <li><button>Lombok Tengah</button></li>
-                        <li><button>Lombok Timur</button></li>
-                        <li><button>Lombok Utara</button></li>
-                    </ul>
-                </div>
-                <div class="kategori">
-                    <p>Kategori</p>
-                    <ul>
-                        <li><button>All</button></li>
-                        <li><button>Accessoris</button></li>
-                        <li><button>Kendaraan</button></li>
-                        <li><button>Elektronik</button></li>
-                        <li><button>Document</button></li>
-                        <li><button>Dan Lain-lain</button></li>
-                    </ul>
-                </div>
+                <form id="searchForm" action="/search" method="GET">
+                    <div class="cari-barang">
+                        <input type="search" name="query" placeholder="Cari Barang Anda di sini...">
+                        <button type="submit" class="icon-cari"><img src="icon/Cari.png" alt="Searching"></button>
+                    </div>
+                </form>
+                <form id="filterForm" action="">
+                    <div class="lokasi-barang">
+                        <p>Kota/Kabupaten</p>
+                        <ul>
+                            <li><button type="button" onclick="setLocation('All')">All</button></li>
+                            <li><button type="button" onclick="setLocation('Kota Mataram')">Kota Mataram</button></li>
+                            <li><button type="button" onclick="setLocation('Lombok Barat')">Lombok Barat</button></li>
+                            <li><button type="button" onclick="setLocation('Lombok Tengah')">Lombok Tengah</button></li>
+                            <li><button type="button" onclick="setLocation('Lombok Timur')">Lombok Timur</button></li>
+                            <li><button type="button" onclick="setLocation('Lombok Utara')">Lombok Utara</button></li>
+                        </ul>
+                    </div>
+                    <div class="kategori">
+                        <p>Kategori</p>
+                        <ul>
+                            <li><button type="button" onclick="setCategory('All')">All</button></li>
+                            <li><button type="button" onclick="setCategory('Accessoris')">Accessoris</button></li>
+                            <li><button type="button" onclick="setCategory('Kendaraan')">Kendaraan</button></li>
+                            <li><button type="button" onclick="setCategory('Elektronik')">Elektronik</button></li>
+                            <li><button type="button" onclick="setCategory('Document')">Document</button></li>
+                            <li><button type="button" onclick="setCategory('Dan Lain-lain')">Dan Lain-lain</button></li>
+                        </ul>
+                    </div>
+                    <input type="hidden" name="location" id="locationInput">
+                    <input type="hidden" name="category" id="categoryInput">
+                    <div class="filter">
+                        <button type="submit">Filter</button>
+                    </div>
+                </form>
             </div>
             <div class="sidebar-right">
                 <p class="judul">Barang Temuan</p>

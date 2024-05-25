@@ -1,13 +1,29 @@
 document.addEventListener('DOMContentLoaded', function() {
+    function setLocation(location) {
+        document.getElementById('locationInput').value = location;
+    }
 
+    function setCategory(category) {
+        document.getElementById('categoryInput').value = category;
+    }
 
-    var resultText = document.querySelector('.resultText');
-        
+    const filterButton = document.querySelector('.filter button');
+    
     function updateDisplayText() {
         var lokasi = localStorage.getItem("lokasiDropdown") || "All";
         var kategori = localStorage.getItem("kategoriDropdown") || "All";
         resultText.innerHTML = `Kota/Kabupaten: ${lokasi}, Kategori: ${kategori}`;
     }
+    
+    function updateFilters() {
+        var lokasi = localStorage.getItem("lokasiDropdown") || "All";
+        var kategori = localStorage.getItem("kategoriDropdown") || "All";
+        setLocation(lokasi);
+        setCategory(kategori);
+        updateDisplayText();
+    }
+
+    var resultText = document.querySelector('.resultText');
     
     var firstButtonLokasi = document.querySelector('.lokasi-barang ul li button:first-child');
     firstButtonLokasi.classList.add("active");
@@ -20,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             button.classList.add('active');
             localStorage.setItem("lokasiDropdown", button.textContent);
-            updateDisplayText();
+            // updateDisplayText();
         });
     });
 
@@ -35,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
             button.classList.add('active');
             localStorage.setItem("kategoriDropdown", button.textContent);
-            updateDisplayText();
+            // updateDisplayText();
         });
     });
 
@@ -60,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    updateDisplayText();
+    // updateDisplayText();
 
     var menu_dropdowns = document.querySelectorAll('.menu-dropdown');
 
@@ -106,5 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
+    filterButton.addEventListener('click', function() {
+        updateFilters();
+    });
 });

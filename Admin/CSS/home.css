@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container .header {
+    background-color: rgba(200, 190, 140, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    height: 60px;
+}
+
+.container .header .header-left img{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.container .header .header-left .header-left-menu {
+    width: 300px;
+    background-color: rgba(200, 190, 140, 1);
+    /* background-color: rgba(0, 190, 140, 1); */
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* display: none; */
+    box-shadow: 0 3px 5px rgba(122, 122, 122, .5);
+}
+
+.container .header .header-left .header-left-menu .menu-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 10px;
+    height: 60px;
+    gap: 30px;
+    background-color: rgba(200, 190, 140, 1);
+}
+
+.container .header .header-left .header-left-menu .menu-top img{
+    height: 30px;
+    width: 30px;
+}
+
+.container .header .header-left .header-left-menu .menu-top p{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0px 0px 1px white;
+}
+
+.container .header .header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.container .header .header-right img {
+    height: 40px;
+    width: 40px;
+}
+
+.container .header .header-right p {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 2px white;
+}
+
+.header .header-left-menu .menu-bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.header .header-left-menu .menu-bottom ul {
+    list-style: none;
+    width: 300px;
+}
+
+.header .header-left-menu .menu-bottom ul li a, .header .header-left-menu .menu-bottom ul li button {
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.header .header-left-menu .menu-bottom ul li {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    width: 300px;
+    line-height: 50px;
+    box-shadow: 0 0 2px rgba(122, 122, 122, .5);
+}
+
+.header .header-left-menu .menu-bottom ul li button {
+    cursor: pointer;
+    display: block;
+    width: 250px;
+    background-color: transparent;
+    border: none;
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    box-shadow: 0 0 2px rgba(122, 122, 122, .5);
+    text-align: left;
+    padding-left: 30px;
+    text-shadow: 0px 0px 1px white;
+}
+
+.header .header-left-menu .menu-bottom ul li a{
+    display: block;
+    text-decoration: none;
+    width: 250px;
+    color: black;
+    padding-left: 30px;
+    text-shadow: 0px 0px 1px white;
+    /* text-align: center; */
+}
+
+/* .header .header-left-menu .menu-bottom ul li .dropdown li {
+    display: block;
+    background-color: antiquewhite;
+} */
+
+.header .header-left-menu .menu-bottom ul li ul.dropdown {
+    position: absolute;
+    display: none;
+    top: 100%;
+    margin-left: 300px;
+    margin-top: -52px;
+    /* margin-top: 50px; */
+    border-bottom: 1px solid white;
+    /* width: 320px; */
+}
+
+
+
+.header .header-left-menu .menu-bottom ul li ul.dropdown li{
+    background-color: rgba(200, 190, 140, 1);
+    width: 300px;
+    border-top: 1px solid white;
+    box-shadow: 0px 0px 3px rgba(200, 190, 140, 1);
+}
+
+.header .header-left-menu .menu-bottom ul li a:hover {
+    width: 300px;
+    background-color: rgb(121, 111, 66);
+    color: white;
+    box-sizing: border-box;
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.3),
+                inset 3px 3px 9px rgba(255, 255, 255, 0.3);
+} 
+
+.header .header-left-menu .menu-bottom ul li button:hover {
+    background-color: rgba(200, 190, 140, 1);
+    color: white;
+    box-sizing: border-box;
+    background-color: rgb(121, 111, 66);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.3),
+                inset 3px 3px 9px rgba(255, 255, 255, 0.3);
+} 

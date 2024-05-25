@@ -354,11 +354,18 @@
     /* top: 70px; */
 }
 
+.content .sidebar-left form .cari-barang button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+} 
+
 .content .sidebar-left .cari-barang{
     display: flex;
     flex-direction: row;
     gap: 20px;
     margin-top: 10px;
+    margin-bottom: -30px;
     background-color: rgb(200, 190, 140);
     width: 250px;
     justify-content: center;
@@ -524,12 +531,33 @@
     color: black; /* Warna teks saat tombol aktif */
 }
 
+.content .sidebar-left .filter button{
+    border: none;
+    background-color: rgb(172, 163, 115);
+    width: 270px;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: black;
+    text-shadow: 0px 0px 3px white;
+    text-transform: uppercase;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.content .sidebar-left .filter button:hover{
+    background-color: rgba(200, 190, 140, 1);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3),
+                -1px -1px 1px rgba(0, 0, 0, .3);
+}
+
 .content .sidebar-right{
     /* background-color: aqua; */
     margin-top: 20px;
     /* padding-bottom: 20px; */
     width: 1240px;
-    /* height: 100vh; */
     /* margin-left: 320px; */
 }
 
@@ -729,8 +757,15 @@ th, td {
                 -1px -1px 3px rgba(0, 0, 0, 0.5);
 }
 
+.content .sidebar-right .data-kosong p{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px 1px rgba(200, 190, 140, 1);
+    letter-spacing: 5px;
+}
+
 .footer{
-    background-color: rgba(255, 255, 255, 1);
+    /* background-color: rgba(0, 255, 255, 1); */
     /* margin-top: 100vh; */
     padding: 20px 0;
     box-shadow: inset 3px 3px 5px white,
@@ -738,6 +773,7 @@ th, td {
     /* position: absolute; */
     /* bottom: 0; */
     /* width: 100%; */
+    /* margin-top: 20px; */
     /* border-top: 1px solid rgba(200, 190, 140, 1); */
     border-top: 1px solid rgba(200, 190, 140, 1);
     
