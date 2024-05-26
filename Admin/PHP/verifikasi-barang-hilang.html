@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/verifikasi-barang-hilang.css">
+    <title>Home Admin</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div class="judul-header">
+                    <img src="../../PHP/image/icons8-menu-50.png" alt=""class='menu-left'>
+                    <p class="judul-header">Lost & Found Lombok</p>
+                </div>
+                
+                <div class="header-left-menu">
+                    <div class="menu-top">
+                        <img src="../../PHP/icon/left-arrow.png" alt="" class="close-menu">
+                        <img src="../../PHP/image/lofo.png" alt="" class="logo">
+                    </div>
+                    <div class="menu-bottom">
+                        <ul>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Kelola Akun</a></li>
+                            <li class="menu-dropdown"><button>Verifikasi Informasi ></button>
+                                <ul class="dropdown">
+                                    <li><a href="#">Kehilangan Barang</a></li>
+                                    <li><a href="#">Penemuan Barang</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-dropdown"><button>Kelola Sistem ></button>
+                                <ul class="dropdown">
+                                    <li><a href="histori-barang-hilang.php">Kehilangan Barang</a></li>
+                                    <li><a href="histori-barang-temuan.php">Penemuan Barang</a></li>
+                                </ul>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../PHP/icon/profil.png" alt="Logo">
+                
+                <div class="akun-profil">
+                    <div class="panah">
+                        <img src="../PHP/icon/arrow-up.png" alt="">
+                    </div>
+                    <div class="akun">
+                        <img src="../../PHP/icon/profil.png" alt="Logo">
+                        <p>Admin</p>
+                    </div>
+                    <div class="setting-akun">
+                        <a href="#">Edit</a>
+                        <a href="PHP/logoutSubmit.php">Logo Out</a>
+                    </div>
+                </div>
+                <!-- <p>Lost & Found Lombok</p> -->
+            </div>
+        </div>
+        <div class="content">
+            <div class="popUp-terima">
+                <div class="terima">
+                    <div class="close">
+                        <p>x</p>
+                    </div>
+                    <div class="header-terima">
+                        <p>Verifikasi Informasi Kehilangan Barang</p>
+                    </div>
+                    <div class="isi-terima">
+                        <p>Apakah sistem menerima kasus kehilangan barang ini ?</p>
+                    </div>
+                    <div class="footer-terima">
+                        <button type="button">Tutup</button>
+                        <button type="submit">Terima</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popUp-tolak">
+                <div class="tolak">
+                    <div class="close">
+                        <p>x</p>
+                    </div>
+                    <div class="header-tolak">
+                        <p>Verifikasi Informasi Kehilangan Barang</p>
+                    </div>
+                    <div class="isi-tolak">
+                        <p>Apakah sistem menolak kasus kehilangan barang ini ?</p>
+                    </div>
+                    <div class="footer-tolak">
+                        <button type="button">Tutup</button>
+                        <button type="submit">Tolak</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-top">
+                <p class="judul-content">Verifikasi Informasi</p>
+                <p class="child-judul">Barang Hilang</p>
+                <div class="form">
+                    <a href="#">Barang Temuan ></a>
+                    <form action="/index">
+                        <input type="text" name="" id="" class="cari">
+                        <input type="submit" value="Cari">
+                    </form>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Foto</th>
+                        <th>Username</th>
+                        <th>Nama</th>
+                        <th>Kategori</th>
+                        <th>Tanggal Kehilangan</th>
+                        <th>Tempat Kehilangan</th>
+                        <th>Kota/Kabupaten</th>
+                        <th>Informasi Detail</th>
+                        <th>Nomor Handphone</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td><img src="/PHP/icon/Cari.png" alt="" class="td-img"></td>
+                        <td>RizalDwiKurniawan._</td>
+                        <td>Dompet Hitam</td>
+                        <td>Accessoris</td>
+                        <td>12-12-2003</td>
+                        <td>Parkiran</td>
+                        <td>Kota Mataram</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione dolor quasi ipsa sequi expedita eum fugiat ut illo numquam labore fuga rerum unde, assumenda totam earum ipsam aspernatur voluptatibus aliquid.</td>
+                        <td>08392329832039</td>
+                        <td>
+                            <button type="button" class="btn-terima">Terima</button>
+                            <button type="button" class="btn-tolak">Tolak</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/PHP/icon/Cari.png" alt="" class="td-img"></td>
+                        <td>RizalDwiKurniawan._</td>
+                        <td>Dompet Hitam</td>
+                        <td>Accessoris</td>
+                        <td>12-12-2003</td>
+                        <td>Parkiran</td>
+                        <td>Kota Mataram</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione dolor quasi ipsa sequi expedita eum fugiat ut illo numquam labore fuga rerum unde, assumenda totam earum ipsam aspernatur voluptatibus aliquid.</td>
+                        <td>08392329832039</td>
+                        <td>
+                            <button type="button" class="btn-terima">Terima</button>
+                            <button type="button" class="btn-tolak">Tolak</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/PHP/icon/alamat.png" alt="" class="td-img"></td>
+                        <td>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium, aspernatur accusamus, aliquam maxime tempore et accusantium voluptatibus pariatur laudantium aperiam, id tempora itaque beatae quas nesciunt quae cum eveniet earum?</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia vitae impedit iste? Sit architecto explicabo deleniti. Totam alias rem deserunt dolorum odit cumque amet dolorem eveniet incidunt, error quis eum!</td>
+                        <td>Accessoris</td>
+                        <td>12-12-2003</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, voluptates asperiores! Odit deleniti, ab, id inventore tenetur voluptas possimus excepturi sunt enim unde atque vel est odio. At, corporis provident.</td>
+                        <td>Kota Mataram</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione dolor quasi ipsa sequi expedita eum fugiat ut illo numquam labore fuga rerum unde, assumenda totam earum ipsam aspernatur voluptatibus aliquid.</td>
+                        <td>08392329832039</td>
+                        <td>
+                            <button type="button" class="btn-terima">Terima</button>
+                            <button type="button" class="btn-tolak">Tolak</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+    <script src="../JS/verifikasi-barang-hilang.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/akun.css">
     <title>Home Admin</title>
 </head>
 <body>
@@ -60,67 +60,55 @@
             </div>
         </div>
         <div class="content">
-            <p class="judul-content">Dashboard Admin</p>
-            <p class="child-judul">Dashboard</p>
-            <div class="box">
-                <div class="box-item">
-                    <p class="judul-box">Jumlah Akun</p>
-                    <div class="total">
-                        <div class="total-teks">
-                            <p>50</p>
-                            <a href="#">Lihat Detail >></a>
-                        </div>
-                        <img src="../PHP/icon/akun.png" alt="">
-                    </div>
-                </div>
-                <div class="box-item">
-                    <p class="judul-box">Jumlah Verifikasi</p>
-                    <p>Barang Hilang</p>
-                    <div class="total">
-                        <div class="total-teks">
-                            <p>50</p>
-                            <a href="#">Lihat Detail >></a>
-                        </div>
-                        <img src="../PHP/icon/verifikasi-hilang.png" alt="">
-                    </div>
-                </div>
-                <div class="box-item">
-                    <p class="judul-box">Jumlah Verifikasi</p>
-                    <p>Barang Temuan</p>
-                    <div class="total">
-                        <div class="total-teks">
-                            <p>50</p>
-                            <a href="#">Lihat Detail >></a>
-                        </div>
-                        <img src="../PHP/icon/verifikasi-temuan.png" alt="">
-                    </div>
-                </div>
-                <div class="box-item">
-                    <p class="judul-box">Jumlah Laporan</p>
-                    <p>Barang Hilang</p>
-                    <div class="total">
-                        <div class="total-teks">
-                            <p>50</p>
-                            <a href="#">Lihat Detail >></a>
-                        </div>
-                        <img src="../PHP/icon/barang-hilang.png" alt="">
-                    </div>
-                </div>
-                <div class="box-item">
-                    <p class="judul-box">Jumlah Laporan</p>
-                    <p>Barang Temuan</p>
-                    <div class="total">
-                        <div class="total-teks">
-                            <p>50</p>
-                            <a href="#">Lihat Detail >></a>
-                        </div>
-                        <img src="../PHP/icon/barang-temuan.png" alt="">
-                    </div>
-                </div>
-                
+            <div class="content-top">
+                <p class="judul-content">Dashboard Admin</p>
+                <p class="child-judul">Kelola Akun</p>
+                <form action="/index">
+                    <input type="text" name="" id="" class="cari">
+                    <input type="submit" value="Cari">
+                </form>
+                <table class="table">
+                    <tr>
+                        <th>No</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Nama Lengkap</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Alamat</th>
+                        <th>Nomor Handphone</th>
+                        <th>Action</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>skyway._</td>
+                        <td>amskdmas</td>
+                        <td>Lionel Messi</td>
+                        <td>Laki-laki</td>
+                        <td>Miami, USA</td>
+                        <td>+6289323812322</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Hapus</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>skyway</td>
+                        <td>mxcxmcc</td>
+                        <td>Cristiano Ronaldo</td>
+                        <td>Laki-laki</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus sapiente aut neque maiores culpa numquam fugit officia ullam nam vero, vel aliquam ipsa incidunt magni error saepe voluptatum mollitia. Et.</td>
+                        <td>+6289323121933</td>
+                        <td>
+                            <button type="button">Edit</button>
+                            <button type="button">Hapus</button>
+                        </td>
+                    </tr>
+                </table>
             </div>
+            
         </div>
     </div>
-    <script src="../JS/home.js"></script>
+    <script src="../JS/akun.js"></script>
 </body>
 </html>
