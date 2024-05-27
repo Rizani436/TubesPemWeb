@@ -71,34 +71,14 @@ var tutup = document.querySelector('.footer-terima button[type="button"');
 var btn_terima = document.querySelectorAll('.btn-terima');
 btn_terima.forEach(function(btn_terima) {
     btn_terima.addEventListener('click', function(){
-        if(popUp_terima.style.display === 'none'){
-            popUp_terima.style.display = 'block';
-            document.body.classList.add('no-scroll');
-        } else {
-            popUp_terima.style.display = 'none';
-        }
+        popUp_terima.style.display = 'block';
+        document.body.classList.add('no-scroll');
     });
 });
 
-var close = document.querySelector('.close');
-close.addEventListener('click', function(){
-    if(popUp_terima.style.display === 'none'){
-        popUp_terima.style.display = 'block';
-    }else {
-        popUp_terima.style.display = 'none';
-        document.body.classList.remove('no-scroll');
-    }
-});
-
-
-
 tutup.addEventListener('click', function(){
-    if(popUp_terima.style.display === 'none'){
-        popUp_terima.style.display = 'block';
-    } else {
-        popUp_terima.style.display = 'none';
-        document.body.classList.remove('no-scroll');
-    }
+    popUp_terima.style.display = 'none';
+    document.body.classList.remove('no-scroll');
 });
 
 var tolak = document.querySelector('.footer-tolak button[type="submit"]');
@@ -106,30 +86,12 @@ var tutup2 = document.querySelector('.footer-tolak button[type="button"');
 var btn_tolak = document.querySelectorAll('.btn-tolak');
 btn_tolak.forEach(function(btn_tolak) {
     btn_tolak.addEventListener('click', function(){
-        if(popUp_tolak.style.display === 'none'){
-            popUp_tolak.style.display = 'block';
-            document.body.classList.add('no-scroll');
-        } else {
-            popUp_tolak.style.display = 'none';
-        }
+        popUp_tolak.style.display = 'block';
+        document.body.classList.add('no-scroll');
     });
 });
 
 tutup2.addEventListener('click', function(){
-    if(popUp_tolak.style.display === 'none'){
-        popUp_tolak.style.display = 'block';
-    } else {
-        popUp_tolak.style.display = 'none';
-        document.body.classList.remove('no-scroll');
-    }
-});
-
-var close2 = document.querySelector('.popUp-tolak .close');
-close2.addEventListener('click', function(){
-    if(popUp_tolak.style.display === 'none'){
-        popUp_tolak.style.display = 'block';
-    } else {
-        popUp_tolak.style.display = 'none';
-        document.body.classList.remove('no-scroll');
-    }
+    popUp_tolak.style.display = 'none';
+    document.body.classList.remove('no-scroll');
 });
