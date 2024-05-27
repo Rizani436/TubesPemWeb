@@ -24,10 +24,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conditions[] = "kategoriBarang IN ('$categoryFilter')";
     }
 }
-
-$query_select = "SELECT * FROM barangtemuan";
+$query_select = "SELECT * FROM barangtemuan WHERE status = 'diterima'";
 if (!empty($conditions)) {
-    $query_select .= " WHERE " . implode(" AND ", $conditions);
+    $query_select .= " AND " . implode(" AND ", $conditions);
 }
 
 $result_select = mysqli_query($conn, $query_select);

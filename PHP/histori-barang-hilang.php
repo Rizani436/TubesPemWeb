@@ -43,7 +43,6 @@ if (!$result_select) {
     <link rel="stylesheet" href="../CSS/histori-barang-hilang.css">
 </head>
 <body>
-
     <div class="container">
         <div class="content">
             <div class="sidebar-left">
@@ -96,6 +95,7 @@ if (!$result_select) {
                 <div class="isi-sidebar-right">
                     <?php while($row = mysqli_fetch_assoc($result_select)): ?>
                     <div class="item-barang">
+                        <div class="status">Status : <?= htmlspecialchars($row['status']) ?> </div>
                         <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Hilang">
                         <table>
                             <tr>
@@ -146,7 +146,6 @@ if (!$result_select) {
             <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
         </div>      
     </div>
-    <!-- <script src="../JS/home.js"></script> -->
     <script src="../JS/histori-barang-hilang.js"></script>
 </body>
 </html>

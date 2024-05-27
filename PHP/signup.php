@@ -28,10 +28,10 @@
             if($result){
                 header("Location: login.php");
             }else{
-                echo "Akun gagal dibuat";
+                echo "<script>alert('Akun gagal dibuat');</script>";
             }
         }else{
-            echo "Password dan konfirmasi password tidak sama";
+            echo "<script>alert('Password dan konfirmasi password tidak sama');</script>";
         }
         }
     }
@@ -77,8 +77,8 @@
                     <label for="jenisKelamin">Jenis Kelamin</label>
                     <select name="jenisKelamin" id="jenisKelamin" class="jenisKelamin">
                         <option value="0"></option>
-                        <option value="L">Laki-laki</option>
-                        <option value="P">Perempuan</option>
+                        <option value="Laki-Laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
                     </select>
                     <label for="alamat">Alamat</label>
                     <input type="text" name="alamat" id="alamat" class="alamat">

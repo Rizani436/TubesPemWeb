@@ -95,6 +95,7 @@ if (!$result_select) {
                 <div class="isi-sidebar-right">
                     <?php while($row = mysqli_fetch_assoc($result_select)): ?>
                     <div class="item-barang">
+                    <div class="status">Status : <?= htmlspecialchars($row['status']) ?> </div>
                         <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Hilang">
                         <table>
                             <tr>

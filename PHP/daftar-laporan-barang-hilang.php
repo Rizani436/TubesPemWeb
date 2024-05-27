@@ -25,9 +25,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$query_select = "SELECT * FROM baranghilang";
+$query_select = "SELECT * FROM baranghilang WHERE status = 'diterima'";
 if (!empty($conditions)) {
-    $query_select .= " WHERE " . implode(" AND ", $conditions);
+    $query_select .= " AND " . implode(" AND ", $conditions);
 }
 
 $result_select = mysqli_query($conn, $query_select);

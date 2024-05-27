@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/header.css">
 </head>
 <body>
+<div class="container">
     <div class="header">
         <div class="logo">
                 <img src="image/lofo.png" alt="logo">
@@ -56,6 +57,8 @@
                 </div>
             </div>
         </div>
-        <!-- <script src="../JS/home.js"></script> -->
+    </div>
+</div>
+        <script src="../JS/home.js"></script>
 </body>
 </html>

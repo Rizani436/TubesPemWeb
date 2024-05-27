@@ -14,5 +14,9 @@ document.addEventListener('DOMContentLoaded', function(){
             event.preventDefault()
             alert('Mohon isi semua kolom dengan baik');
         }
+        if(password != confPassword){
+            event.preventDefault()
+            alert('Password dan konfirmasi password tidak sama');
+        }
     });
 });

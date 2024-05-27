@@ -1,4 +1,7 @@
 <?php
+function generateUniqueId($prefix = 'idBT') {
+    return $prefix . rand(1000, 9999);
+}
 include "PHP/cekSession.php";
 require_once 'header.php';
 
@@ -8,6 +11,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
+    $idBarangTemuan = generateUniqueId();
+    $query_select = "SELECT idBarangTemuan FROM barangTemuan";
+    $result_select = mysqli_query($conn, $query_select);
+    while($row = mysqli_fetch_assoc($result_select)):
+        if ($idBarangTemuan == $row['idBarangTemuan']) {
+            $idBarangTemuan = generateUniqueId();
+        }
+    endwhile;
     $uploader = $_SESSION['username'];
     $namaBarang = mysqli_real_escape_string($conn, $_POST['namaBarang']);
     $kategoriBarang = mysqli_real_escape_string($conn, $_POST['kategoriBarang']);
@@ -18,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $kotaKabupaten = mysqli_real_escape_string($conn, $_POST['kotaKabupaten']);
     $datagambar = addslashes(file_get_contents($_FILES['gambarBarang']['tmp_name']));
     $propertiesgambar = getimageSize($_FILES['gambarBarang']['tmp_name']);
-    $query = "INSERT INTO barangtemuan (uploader,namaBarang, kategoriBarang, tanggalPenemuan, tempatPenemuan, kotaKabupaten, pertanyaan, noHP,tipeImage, gambarBarang) VALUES ('$uploader','$namaBarang', '$kategoriBarang', '$tglPenemuan', '$tmptPenemuan', '$kotaKabupaten', '$informasiDetail', '$noHP', '" . $propertiesgambar['mime'] . "', '" . $datagambar . "')";
+    $query = "INSERT INTO barangtemuan (idBarangTemuan,uploader,namaBarang, kategoriBarang, tanggalPenemuan, tempatPenemuan, kotaKabupaten, informasiDetail, noHP,tipeImage, gambarBarang) VALUES ('$idBarangTemuan','$uploader','$namaBarang', '$kategoriBarang', '$tglPenemuan', '$tmptPenemuan', '$kotaKabupaten', '$informasiDetail', '$noHP', '" . $propertiesgambar['mime'] . "', '" . $datagambar . "')";
     $result = mysqli_query($conn, $query);
         if ($result) {
             echo "<script>alert('Barang berhasil diupload');</script>";

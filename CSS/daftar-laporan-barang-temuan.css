@@ -731,7 +731,12 @@ th, td {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5),
                 -1px -1px 3px rgba(0, 0, 0, 0.5);
 }
-
+.content .sidebar-right .data-kosong p{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px 1px rgba(200, 190, 140, 1);
+    letter-spacing: 5px;
+}
 .footer{
     background-color: rgba(255, 255, 255, 1);
     /* margin-top: 100vh; */
