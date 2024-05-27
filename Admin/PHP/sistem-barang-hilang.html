@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/sistem-barang-hilang.css">
+    <title>Home Admin</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div class="judul-header">
+                    <img src="../../PHP/image/icons8-menu-50.png" alt=""class='menu-left'>
+                    <p class="judul-header">Lost & Found Lombok</p>
+                </div>
+                
+                <div class="header-left-menu">
+                    <div class="menu-top">
+                        <img src="../../PHP/icon/left-arrow.png" alt="" class="close-menu">
+                        <img src="../../PHP/image/lofo.png" alt="" class="logo">
+                    </div>
+                    <div class="menu-bottom">
+                        <ul>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#">Kelola Akun</a></li>
+                            <li class="menu-dropdown"><button>Verifikasi Informasi ></button>
+                                <ul class="dropdown">
+                                    <li><a href="#">Kehilangan Barang</a></li>
+                                    <li><a href="#">Penemuan Barang</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-dropdown"><button>Kelola Sistem ></button>
+                                <ul class="dropdown">
+                                    <li><a href="histori-barang-hilang.php">Kehilangan Barang</a></li>
+                                    <li><a href="histori-barang-temuan.php">Penemuan Barang</a></li>
+                                </ul>
+                            </li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="../PHP/icon/profil.png" alt="Logo">
+                
+                <div class="akun-profil">
+                    <div class="panah">
+                        <img src="../PHP/icon/arrow-up.png" alt="">
+                    </div>
+                    <div class="akun">
+                        <img src="../../PHP/icon/profil.png" alt="Logo">
+                        <p>Admin</p>
+                    </div>
+                    <div class="setting-akun">
+                        <a href="#">Edit</a>
+                        <a href="PHP/logoutSubmit.php">Logo Out</a>
+                    </div>
+                </div>
+                <!-- <p>Lost & Found Lombok</p> -->
+            </div>
+        </div>
+        <div class="content">
+            <div class="popUp-terima">
+                <div class="terima">
+                    <form action="sistem-barang-hilang.html" method="get" class="formTerima">
+                        <div class="header-terima">    
+                            <p>Kelola Sistem Kehilangan Barang</p>
+                            <p>Ubah Kasus</p>
+                        </div>
+                        <div class="isi-terima">
+                            <table>
+                                <tr>
+                                    <td><label for="namaBarang">Nama Barang</label></td>
+                                    <td><input type="text" name="namaBarang" id="namaBarang" class="namaBarang"></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><p class="p-namaBarang"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="kategoriBarang">Kategori Barang</label></td>
+                                    <td><select name="kategoriBarang" id="kategoriBarang" class="kategoriBarang">
+                                        <option value="0"></option>
+                                        <option value="Accessoris">Accessoris</option>
+                                        <option value="Kendaraan">Kendaraan</option>
+                                        <option value="Elektronik">Elektronik</option>
+                                        <option value="Document">Document</option>
+                                        <option value="Dan Lain-lain">Dan Lain-lain</option>
+                                    </select></td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><p class="p-kategoriBarang"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="tglKehilangan">Tanggal Kehilangan</label></td>
+                                    <td><input type="date" name="tglKehilangan" id="tglKehilangan" class="tglKehilangan"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><p class="p-tglKehilangan"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="tmptKehilangan">Tempat Kehilangan</label></td>
+                                    <td><input type="text" name="tmptKehilangan" id="tmptKehilangan" class="tmptKehilangan"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><p class="p-tmptKehilangan"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="kotaKabupaten">Kota/Kabupaten</label></td>
+                                    <td><select name="kotaKabupaten" id="kotaKabupaten" class="kotaKabupaten">
+                                        <option value="0"></option>
+                                        <option value="Kota Mataram">Kota Mataram</option>
+                                        <option value="Lombok Barat">Lombok Barat</option>
+                                        <option value="Lombok Timur">Lombok Tengah</option>
+                                        <option value="Lombok Timur">Lombok Timur</option>
+                                        <option value="Lombok Utara">Lombok Utara</option>
+                                    </select></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><p class="p-kotaKabupaten"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="informasiDetail">Informasi Detail</label></td>
+                                    <td><input type="text" name="informasiDetail" id="informasiDetail" class="informasiDetail"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><p class="p-informasiDetail"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="noHP">Nomor Handphone</label></td>
+                                    <td><input type="text" name="noHP" id="noHP" class="noHP"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><p class="p-noHP"></p></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="gambarBarang">Gambar Barang</label></td>
+                                    <td><input type="file" name="gambarBarang" id="gambarBarang" accept="image/*"></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><p class="p-gambarBarang"></p></td>
+                                </tr>
+                            </table>    
+                        </div>
+                        <div class="footer-terima">
+                            <button type="button">Tutup</button>
+                            <button type="submit">Ubah</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="popUp-tolak">
+                <div class="tolak">
+                    <div class="header-tolak">
+                        <p>Kelola Sistem Kehilangan Barang</p>
+                    </div>
+                    <div class="isi-tolak">
+                        <p>Apakah sistem menghapus kasus kehilangan barang ini ?</p>
+                    </div>
+                    <div class="footer-tolak">
+                        <button type="button">Batal</button>
+                        <button type="submit">Hapus</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content-top">
+                <p class="judul-content">Kelola Sistem</p>
+                <p class="child-judul">Barang Hilang</p>
+                <div class="form">
+                    <a href="#">Barang Temuan ></a>
+                    <form action="/index">
+                        <input type="text" name="" id="" class="cari">
+                        <input type="submit" value="Cari">
+                    </form>
+                </div>
+                <table class="table">
+                    <tr>
+                        <th>Foto</th>
+                        <th>Username</th>
+                        <th>Nama Barang</th>
+                        <th>Kategori Barang</th>
+                        <th>Tanggal Kehilangan</th>
+                        <th>Tempat Kehilangan</th>
+                        <th>Kota/Kabupaten</th>
+                        <th>Informasi Detail</th>
+                        <th>Nomor Handphone</th>
+                        <th>Action</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td><img src="/PHP/icon/Cari.png" alt="" class="td-img"></td>
+                        <td>RizalDwiKurniawan._</td>
+                        <td>Dompet Hitam</td>
+                        <td>Accessoris</td>
+                        <td>12-12-2003</td>
+                        <td>Parkiran</td>
+                        <td>Kota Mataram</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione dolor quasi ipsa sequi expedita eum fugiat ut illo numquam labore fuga rerum unde, assumenda totam earum ipsam aspernatur voluptatibus aliquid.</td>
+                        <td>08392329832039</td>
+                        <td>
+                            <button type="button" class="btn-terima">Ubah</button>
+                            <button type="button" class="btn-tolak">Hapus</button>
+                        </td>
+                        <td>
+                            <p class="selesai">Selesai</p>
+                            <!-- <p class="proses">Proses</p> -->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/PHP/icon/Cari.png" alt="" class="td-img"></td>
+                        <td>RizalDwiKurniawan._</td>
+                        <td>Dompet Hitam</td>
+                        <td>Accessoris</td>
+                        <td>12-12-2003</td>
+                        <td>Parkiran</td>
+                        <td>Kota Mataram</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione dolor quasi ipsa sequi expedita eum fugiat ut illo numquam labore fuga rerum unde, assumenda totam earum ipsam aspernatur voluptatibus aliquid.</td>
+                        <td>08392329832039</td>
+                        <td>
+                            <button type="button" class="btn-terima">Ubah</button>
+                            <button type="button" class="btn-tolak">Hapus</button>
+                        </td>
+                        <td>
+                            <!-- <p class="selesai">Selesai</p> -->
+                            <p class="proses">Proses</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="/PHP/icon/Cari.png" alt="" class="td-img"></td>
+                        <td>RizalDwiKurniawan._</td>
+                        <td>Dompet Hitam</td>
+                        <td>Accessoris</td>
+                        <td>12-12-2003</td>
+                        <td>Parkiran</td>
+                        <td>Kota Mataram</td>
+                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione dolor quasi ipsa sequi expedita eum fugiat ut illo numquam labore fuga rerum unde, assumenda totam earum ipsam aspernatur voluptatibus aliquid.</td>
+                        <td>08392329832039</td>
+                        <td>
+                            <button type="button" class="btn-terima">Ubah</button>
+                            <button type="button" class="btn-tolak">Hapus</button>
+                        </td>
+                        <td>
+                            <!-- <p class="selesai">Selesai</p> -->
+                            <p class="proses">Proses</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+    <script src="../JS/sistem-barang-hilang.js"></script>
+</body>
+</html>
