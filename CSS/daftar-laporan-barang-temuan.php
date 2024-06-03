@@ -1,7 +1,7 @@
 <?php
 include "PHP/cekSession.php";
 require_once 'header.php';
-$akun = $_SESSION['username']; 
+$username = $_SESSION['username']; 
 include 'PHP/config.php';
 
 if (!$conn) {
@@ -24,9 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $conditions[] = "kategoriBarang IN ('$categoryFilter')";
     }
 }
-$query_select = "SELECT * FROM barangtemuan WHERE uploader = '$akun'";
+
+$query_select = "SELECT * FROM barangtemuan";
 if (!empty($conditions)) {
-    $query_select .= " AND " . implode(" AND ", $conditions);
+    $query_select .= " WHERE " . implode(" AND ", $conditions);
 }
 
 $result_select = mysqli_query($conn, $query_select);
@@ -39,8 +40,8 @@ if (!$result_select) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histori Barang Temuan</title>
-    <link rel="stylesheet" href="../CSS/histori-barang-temuan.css">
+    <title>Barang Temuan</title>
+    <link rel="stylesheet" href="../CSS/daftar-laporan-barang-temuan.css">
 </head>
 <body>
     <div class="container">
@@ -85,18 +86,21 @@ if (!$result_select) {
                 </form>
             </div>
             <div class="sidebar-right">
-                <p class="judul">Histori Barang Temuan</p>
+                <p class="judul">Barang Temuan</p>
                 <p class="resultText"></p>
-                <?php if (mysqli_num_rows($result_select) == 0): ?>
+            <?php if (mysqli_num_rows($result_select) == 0): ?>
                 <div class="data-kosong">
                     <p>No Result</p>
                 </div>
-                <?php else: ?>
+            <?php else: ?>
                 <div class="isi-sidebar-right">
                     <?php while($row = mysqli_fetch_assoc($result_select)): ?>
-                    <div class="item-barang"data-id="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
-                    <div class="status">Status : <?= htmlspecialchars($row['status']) ?> </div>
-                        <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Temuan">
+                    <div class="item-barang">
+                        <div class="user">
+                            <img src="icon/profil.png" alt="">
+                            <p class="username"><?= htmlspecialchars($row['uploader']) ?></p>
+                        </div>
+                        <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Hilang">
                         <table>
                             <tr>
                                 <th>Nama Barang</th>
@@ -121,27 +125,17 @@ if (!$result_select) {
                         </table>
                         <div class="reaction">
                             <div class="like">
+                                <img src="icon/love-white.png" alt="">
                                 <p class="love">0 likes</p>
                             </div>
                             <div class="klaim">
-                                <form class="Hapus" action="hapus-barang-Temuan.php" method="POST">
-                                    <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
-                                    <button type="submit">Hapus</button>
-                                </form>
-                                <form class ="Ubah" action="ubah-barang-Temuan.php" method="POST">
-                                    <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
-                                    <button type="submit">Ubah</button>
-                                </form>
-                                <form class ="Laporan" action="laporan-klaim.php" method="POST">
-                                    <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
-                                    <button type="submit">Laporan</button>
-                                </form>
+                                <p><a href="klaim-barang.php">Klaim</a></p>
                             </div>
                         </div>
                     </div>
                     <?php endwhile; ?>
-                <?php endif; ?>
                 </div>
+                <?php endif; ?>
             </div>
         </div>
         <div class="footer">
@@ -149,6 +143,6 @@ if (!$result_select) {
         </div>      
     </div>
     <!-- <script src="../JS/home.js"></script> -->
-    <script src="../JS/histori-barang-temuan.js"></script>
+    <script src="../JS/daftar-laporan-barang-temuan.js"></script>
 </body>
 </html>

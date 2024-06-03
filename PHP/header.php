@@ -51,7 +51,7 @@
                         ?>
                     </div>
                     <div class="setting-akun">
-                        <a href="#">Edit Profil</a>
+                        <a href="edit-profil.php">Edit Profil</a>
                         <a href="PHP/logoutSubmit.php">Log Out</a>
                     </div>
                 </div>

@@ -112,5 +112,8 @@ if (!$result_select) {
         </div>
     </div>
     <script src="../JS/verifikasi-barang-hilang.js"></script>
+    <script src="../JS/dashboard.js"></script>
+    <script src="../JS/dashboard.js"></script>
+    
 </body>
 </html>

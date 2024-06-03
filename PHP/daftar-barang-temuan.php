@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
         </div>      
     </div>
-    <!-- <script src="../JS/home.js"></script> -->
+    <script src="../JS/home.js"></script>
     <script src="../JS/daftar-barang-temuan.js"></script>
 </body>
 </html>

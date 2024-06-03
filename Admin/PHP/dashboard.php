@@ -76,5 +76,7 @@
         </div>
     </div>
     <script src="../JS/dashboard.js"></script>
+    <script src="../JS/dashboard.js"></script>
+    
 </body>
 </html>

@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* .header .menu-header ul {
+    list-style: none;
+    background-color: darkblue;
+    text-align: center;
+}
+
+.header .menu-header ul li {
+    display: inline-block;
+    position: relative;
+}
+
+.header .menu-header ul li a {
+    display: block;
+    padding: 20px 25px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.header .menu-header ul li ul.dropdown li {
+    display: block;
+    background: #333;
+    margin: 2px 0px;
+}
+
+.header .menu-header ul li ul.dropdown{
+    width: auto;
+    background-color: #22438C;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+.header .menu-header ul li a:hover {
+    background-color: bisque;
+}
+
+.header .menu-header ul li:hover ul.dropdown{
+    display: block;
+} */
+
+/* Bagian Header */
+
+.header {
+    /* background-color: #6CBEEB; */
+    height: 50px;
+    padding: 10px;
+    line-height: 50px;
+    background-color: white;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(200, 190, 140, 1);
+}
+
+.header .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    margin-left: 200px;
+    /* margin-top: 0px; */
+}
+
+.header .logo img{
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
+}
+
+.header .logo h1{
+    /* margin-left: 150px;  */
+    font-size: 12px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    letter-spacing: 0px;
+    /* margin-left: 10px; */
+    margin-top: -20px;
+}
+
+.header .menu-header ul{
+    list-style: none;
+    /* background-color: green; */
+    text-align: center;
+}
+
+.header .menu-header ul li {
+    display: inline-block;
+    position: relative;
+    padding: 10px 0px;
+    width: 180px;
+    /* border: 1px solid salmon; */
+}
+
+.header .menu-header ul li a {
+    display: block;
+    padding: 0px 0px;
+    color: #000;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+}
+
+.header .menu-header ul li ul.dropdown li {
+    display: block;
+    background: peachpuff;
+    margin:  0px;
+    width: 180px;
+    margin-left: 1px;
+    /* height: ; */
+    height: 50px;
+    line-height: 50px;
+    /* margin-top: 0px; */
+}
+
+.header .menu-header ul li ul.dropdown{
+    width: auto;
+    /* background-color: red; */
+    position: absolute;
+    /* height: 10px; */
+    z-index: 999;
+    /* line-height: 50px; */
+    /* height: 50px; */
+    /* margin-left: 2px; */
+    /* border: 1px solid gold; */
+    display: none;
+    margin-top: 10px;
+}
+
+.header .menu-header ul li ul.dropdown li{
+    background-color: white;
+    /* border: 1px solid salmon; */
+    box-shadow: 0px 0px 3px rgba(200, 190, 140, 1);
+}
+
+
+.header .menu-header ul li a:hover {
+    background-color: rgba(200, 190, 140, 1);
+    color: white;
+    line-height: 50px;
+    height: 50px;
+    margin: 0 10px;
+    box-sizing: border-box;
+    box-shadow: inset -3px -3px 9px rgba(94, 104, 121, 0.3),
+                inset 3px 3px 9px rgba(94, 104, 121, 0.3);
+} 
+
+.content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(200, 190, 140, 1);
+    align-items: center;
+    padding: 120px 0 50px;
+    justify-content: center;
+}
+
+.content .klaim {
+    display: flex;
+    box-shadow: 0px 0px 3px gray;
+    flex-direction: column;
+    border-radius: 5px;
+    align-items: flex-start;
+    /* margin-top: 70px; */
+    justify-content: flex-start;
+    background-color: rgb(242, 242, 243);
+}
+
+.content .isi-klaim {
+    padding-bottom: 20px;
+    background-color: white;
+    /* background-color: lightgreen; */
+    display: flex;
+    padding-top: 30px;
+    /* box-shadow: 0px 0px 3px gray; */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+    /* height: 500px; */
+    width: 550px;
+    gap: 10px;
+    /* padding: 150px 0; */
+}
+
+.content .klaim .isi-klaim img {
+    height: 300px;
+    width: 300px;
+}
+
+.content .klaim .isi-klaim p.judul-klaim{
+    font-size: 24px;
+}
+
+
+
+.content .klaim .isi-klaim table{
+    border-collapse: collapse;
+    width: 450px;
+    margin-bottom: 20px;
+    /* background-color: aqua; */
+    /* max-width: 800px; */
+    /* text-align: left; */
+}
+
+th, td {
+    /* height: 30px; */
+    padding: 5px;
+    text-align: justify;
+    vertical-align: top;
+    width: 50%;
+}
+
+td:first-child {
+    /* width: 100px; */
+}
+
+table, tr, td {
+    border: 1px solid black;
+}
+
+.content .klaim p.judul-content {
+    /* padding: 20px; */
+    height: 70px;
+    line-height: 70px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    /* padding-left: 10px; */
+    margin-top: 0;
+    /* background-color: rgba(94, 97, 100, .2); */
+    font-size: 24px;
+    border-bottom: 1px solid rgba(200, 190, 140, 1);
+    /* font-weight: bold; */
+    width: 500px;
+}
+
+.content .klaim .button-klaim button {
+    background-color: red;
+    padding: 5px 30px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.content .klaim .button-klaim button:nth-child(2) {
+    background-color: rgb(26, 163, 26);
+}
+
+.popUp-terima, .popUp-tolak {
+    background-color: rgba(211, 211, 211, .3);
+    position: fixed; /* Diganti menjadi fixed agar pop-up tetap di tengah saat menggulir */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* display: none; */
+}
+
+.popUp-tolak {
+    display: none;
+}
+
+.terima, .tolak {
+    background-color: white;
+    width: 500px;
+    position: relative;
+    
+    /* overflow: hidden; */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Menambahkan sedikit shadow untuk efek visual */
+}
+
+.terima .header-terima, .terima .isi-terima, .terima .footer-terima, .tolak .header-tolak, .tolak .isi-tolak, .tolak .footer-tolak {
+    padding: 20px 15px;
+}
+
+.terima .header-terima, .tolak .header-tolak {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terima .close, .tolak .close {
+    border-radius: 100%;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    /* display: none; */
+}
+
+.terima .isi-terima, .tolak .isi-tolak {
+    border-top: 1px solid rgba(200, 190, 140, 1);
+    border-bottom: 1px solid rgba(200, 190, 140, 1);
+}
+
+.terima .footer-terima, .tolak .footer-tolak {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.terima .footer-terima button, .tolak .footer-tolak button{
+    cursor: pointer;
+    border: none;
+    float: right;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+}
+
+.terima .footer-terima button:hover, .tolak .footer-tolak button:hover{background-color: rgb(11, 235, 78);}
+
+.terima .footer-terima button:nth-child(1), .tolak .footer-tolak button:nth-child(2) {background-color: red;}
+.terima .footer-terima button:nth-child(1):hover, .tolak .footer-tolak button:nth-child(2):hover {background-color: rgb(255, 90, 90);}
+
+body.no-scroll {overflow: hidden;}
+
+
+.footer{
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+.footer p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 0px 0px 5px white;
+}

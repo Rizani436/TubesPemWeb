@@ -24,8 +24,8 @@
                         <img src="icon/search.png" alt="Searching">
                     </div>
                     <div class="input-content">
-                        <span><a href="#">Barang Kehilangan</a></span>
-                        <span><a href="#">Barang Temuan</a></span>
+                        <span><a href="daftar-laporan-barang-hilang.php">Barang Kehilangan</a></span>
+                        <span><a href="daftar-laporan-barang-temuan.php">Barang Temuan</a></span>
                     </div>
                 </div>
             </div>
@@ -71,6 +71,5 @@
             <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
         </div>      
     </div>
-    <script src="../JS/home.js"></script>
 </body>
 </html>

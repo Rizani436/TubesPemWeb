@@ -695,11 +695,11 @@ th, td {
 }
 
 .content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p a{
-    text-shadow: 2px 1px 3px black;
+    text-shadow: 2px 1px 3px white;
     text-decoration: none;
     padding: 5px 20px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: white;
+    color: black;
     text-transform: uppercase;
     border-radius: 5px;
 }
@@ -710,8 +710,8 @@ th, td {
 } */
 
 .content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p a:hover{
-    color: black;    
-    text-shadow: 1px 1px 3px white;
+    color: white;    
+    text-shadow: 1px 1px 3px black;
     /* border: 1px solid rgb(74, 224, 74); */
     background-color: rgb(127, 240, 127);
 }
@@ -731,12 +731,7 @@ th, td {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5),
                 -1px -1px 3px rgba(0, 0, 0, 0.5);
 }
-.content .sidebar-right .data-kosong p{
-    text-align: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-shadow: 1px 1px 1px rgba(200, 190, 140, 1);
-    letter-spacing: 5px;
-}
+
 .footer{
     background-color: rgba(255, 255, 255, 1);
     /* margin-top: 100vh; */

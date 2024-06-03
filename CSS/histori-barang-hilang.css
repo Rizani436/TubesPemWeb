@@ -416,7 +416,7 @@ th, td {
     gap: 10px;
 }
 
-.content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim p:first-child{
+.content .sidebar-right .isi-sidebar-right .item-barang .reaction .klaim .Hapus button{
     background-color: red;
 }
 

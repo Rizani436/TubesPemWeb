@@ -94,7 +94,7 @@ if (!$result_select) {
                 <?php else: ?>
                 <div class="isi-sidebar-right">
                     <?php while($row = mysqli_fetch_assoc($result_select)): ?>
-                    <div class="item-barang">
+                    <div class="item-barang" data-id="<?= htmlspecialchars($row['idBarangHilang']) ?>">
                         <div class="status">Status : <?= htmlspecialchars($row['status']) ?> </div>
                         <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Hilang">
                         <table>
@@ -132,8 +132,14 @@ if (!$result_select) {
                                 <p class="love">0 likes</p>
                             </div>
                             <div class="klaim">
-                                <p><a href="#">Hapus</a></p>
-                                <p><a href="#">Ubah</a></p>
+                                <form class="Hapus" action="hapus-barang-hilang.php" method="POST">
+                                    <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangHilang']) ?>">
+                                    <button type="submit">Hapus</button>
+                                </form>
+                                <form class ="Ubah" action="ubah-barang-hilang.php" method="POST">
+                                    <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangHilang']) ?>">
+                                    <button type="submit">Ubah</button>
+                                </form>
                             </div>
                         </div>
                     </div>

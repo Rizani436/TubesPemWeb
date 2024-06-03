@@ -105,5 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>      
     </div>
     <script src="../JS/daftar-barang-hilang.js"></script>
+    <script src="../JS/home.js"></script>
+    
 </body>
 </html>
