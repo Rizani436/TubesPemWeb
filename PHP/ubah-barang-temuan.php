@@ -1,46 +1,87 @@
 <?php
-    include "PHP/cekSession.php";
-    require_once 'header.php';
-    $akun = $_SESSION['username']; 
-    include 'PHP/config.php';
+ob_start(); // Start output buffering
+include "PHP/cekSession.php";
+require_once 'header.php';
+$akun = $_SESSION['username']; 
+include 'PHP/config.php';
 
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+if (isset($_POST['id'])) {
+    $idBarangTemuan = $_POST['id'];
+    $query_select = "SELECT * FROM barangTemuan WHERE idBarangTemuan = '$idBarangTemuan'";
+    $result_select = mysqli_query($conn, $query_select);
+    if (!$result_select) {
+        die("Error: " . mysqli_error($conn));
+    }
+    $row = mysqli_fetch_assoc($result_select);
+} else {
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-
-    if (isset($_POST['id'])) {
-            $idBarangTemuan = $_POST['id'];
-            $query_select = "SELECT * FROM barangTemuan WHERE idBarangTemuan = '$idBarangTemuan'";
-            $result_select = mysqli_query($conn, $query_select);
-            if (!$result_select) {
-                die("Error: " . mysqli_error($conn));
-            }
-            $row = mysqli_fetch_assoc($result_select);
-    }else{
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        $idBarangTemuan = $_POST['idBH'];
+    
+    $idBarangTemuan = $_POST['idBH'];
+    $updates = [];
+    
+    if (!empty($_POST['nbBaru'])) {
         $namaBarang = mysqli_real_escape_string($conn, $_POST['nbBaru']);
+        $updates[] = "namaBarang = '$namaBarang'";
+    }
+    
+    if (!empty($_POST['kbBaru'])) {
         $kategoriBarang = mysqli_real_escape_string($conn, $_POST['kbBaru']);
+        $updates[] = "kategoriBarang = '$kategoriBarang'";
+    }
+    
+    if (!empty($_POST['tglBaru'])) {
         $tglPenemuan = mysqli_real_escape_string($conn, $_POST['tglBaru']);
+        $updates[] = "tanggalPenemuan = '$tglPenemuan'";
+    }
+    
+    if (!empty($_POST['tmptBaru'])) {
         $tmptPenemuan = mysqli_real_escape_string($conn, $_POST['tmptBaru']);
-        $informasiDetail = mysqli_real_escape_string($conn, $_POST['idBaru']);
-        $noHP = mysqli_real_escape_string($conn, $_POST['nhBaru']);
+        $updates[] = "tempatPenemuan = '$tmptPenemuan'";
+    }
+    
+    if (!empty($_POST['kkBaru'])) {
         $kotaKabupaten = mysqli_real_escape_string($conn, $_POST['kkBaru']);
+        $updates[] = "kotaKabupaten = '$kotaKabupaten'";
+    }
+    
+    if (!empty($_POST['idBaru'])) {
+        $informasiDetail = mysqli_real_escape_string($conn, $_POST['idBaru']);
+        $updates[] = "informasiDetail = '$informasiDetail'";
+    }
+    
+    if (!empty($_POST['nhBaru'])) {
+        $noHP = mysqli_real_escape_string($conn, $_POST['nhBaru']);
+        $updates[] = "noHP = '$noHP'";
+    }
+    
+    if (!empty($_FILES['fotoBaru']['tmp_name'])) {
         $datagambar = addslashes(file_get_contents($_FILES['fotoBaru']['tmp_name']));
         $propertiesgambar = getimageSize($_FILES['fotoBaru']['tmp_name']);
-        $query = "UPDATE barangTemuan SET idBarangTemuan='$idBarangTemuan',uploader='$akun',namaBarang = '$namaBarang', kategoriBarang = '$kategoriBarang', tanggalPenemuan = '$tglPenemuan', tempatPenemuan = '$tmptPenemuan', kotaKabupaten = '$kotaKabupaten', informasiDetail = '$informasiDetail', noHP = '$noHP',tipeImage = '" . $propertiesgambar['mime'] . "', gambarBarang =  '" . $datagambar . "' WHERE idBarangTemuan = '$idBarangTemuan'";
+        $updates[] = "tipeImage = '" . $propertiesgambar['mime'] . "', gambarBarang =  '" . $datagambar . "'";
+    }
+
+    if (count($updates) > 0) {
+        $query = "UPDATE barangTemuan SET " . implode(", ", $updates) . ", uploader='$akun' WHERE idBarangTemuan = '$idBarangTemuan'";
         $result = mysqli_query($conn, $query);
         if ($result) {
             echo "<script>alert('Barang berhasil diUpdate');</script>";
             header("Location: histori-barang-Temuan.php");
+            exit(); // Ensure script stops after redirect
         } else {
             echo "<script>alert('Barang gagal diUpdate');</script>";
         }
-        mysqli_close($conn);
-    
+    } else {
+        echo "<script>alert('Tidak ada data yang diupdate');</script>";
     }
+    mysqli_close($conn);
+    ob_end_flush(); // Flush the output buffer
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,9 +148,9 @@
                                 </select></td>
                             </tr>
                             <tr>
-                                <th>Pertanyaan yang diajukan</th>
+                                <th>Informasi Detail</th>
                                 <td><?= htmlspecialchars($row['informasiDetail'])?></td>
-                                <td><label for="idBaru">Pertanyaan baru</label></td>
+                                <td><label for="idBaru">Informasi Detail baru</label></td>
                                 <td><input type="text" name="idBaru" id="idBaru" maxlength="255"></td>
                             </tr>
                             <tr>

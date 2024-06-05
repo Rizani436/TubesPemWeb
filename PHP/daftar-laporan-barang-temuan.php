@@ -128,7 +128,10 @@ if (!$result_select) {
                                 <p class="love">0 likes</p>
                             </div>
                             <div class="klaim">
-                                <p><a href="#">Klaim</a></p>
+                                <form class ="Laporan" action="klaim-barang.php" method="POST">
+                                    <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
+                                    <button type="submit">Klaim</button>
+                                </form>
                             </div>
                         </div>
                     </div>

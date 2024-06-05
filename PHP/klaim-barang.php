@@ -1,7 +1,25 @@
 <?php
     include "PHP/cekSession.php";
     require_once 'header.php';
-    $username = $_SESSION['username']; 
+    $akun = $_SESSION['username']; 
+    include 'PHP/config.php';
+    
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    
+    if (isset($_POST['id'])) {
+        $idBarangTemuan = $_POST['id'];
+        $query_select = "SELECT * FROM barangTemuan WHERE idBarangTemuan = '$idBarangTemuan'";
+        $result_select = mysqli_query($conn, $query_select);
+        if (!$result_select) {
+            die("Error: " . mysqli_error($conn));
+        }
+        $row = mysqli_fetch_assoc($result_select);
+    }else{
+
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,8 +36,8 @@
                 <p>Klaim Barang</p>
                 <p>Jawablah pertanyaan di bawah ini sesuai dengan yang anda ketahui mengenai barang ini.</p>
                 <p>Pertanyaan</p>
-                <p>Berapa isi dalam dompet ini?</p>
-                <form action="daftar-laporan-barang-temuan.php" method="post">
+                <p><?php echo $row['informasiDetail'] ?></p>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get" enctype="multipart/form-data">
                     <label for="jawaban">Jawaban Anda</label>
                     <textarea name="jawaban" id="" cols="50" rows="10"></textarea>
                     <button type="submit">Klaim</button>
