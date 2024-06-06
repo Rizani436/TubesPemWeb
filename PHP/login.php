@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" name="username" id="username" >
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password">
-                <a href="changepassword.php"><p>Lupa Password?</p></a>
+                <a href="lupaPassword.php"><p>Lupa Password?</p></a>
                 <input type="submit" value="Submit">
             </form>
         </div>

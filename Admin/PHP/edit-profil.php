@@ -1,8 +1,8 @@
 <?php
-    include "PHP/cekSession.php";
+    include "cekSession.php";
     // require_once 'header.php';
     $akun = $_SESSION['username'];
-    include 'PHP/config.php';
+    include 'config.php';
 
     // Ambil data akun dari database
 
@@ -48,11 +48,11 @@
             }
 
             if (count($updates) > 0) {
-                $query = "UPDATE akun SET " . implode(", ", $updates) . " WHERE username = '$akun'";
+                $query = "UPDATE admin SET " . implode(", ", $updates) . " WHERE username = '$akun'";
                 $result = mysqli_query($conn, $query);
                 if ($result) {
                     echo "<script>alert('Akun berhasil diUpdate');</script>";
-                    header("Location: beranda.php");
+                    header("Location: dashboard.php");
                     exit();
                 } else {
                     echo "<script>alert('Akun gagal diUpdate');</script>";
@@ -62,7 +62,7 @@
             }
         }
     }
-    $query = "SELECT * FROM akun WHERE username = '$akun'";
+    $query = "SELECT * FROM admin WHERE username = '$akun'";
     $result = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($result);
 ?>
@@ -72,8 +72,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../CSS/edit-profil.css">
-    <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="../CSS/edit-profil.css"> 
     <style>
         .profil, .akun img {
             width: 100px; /* Adjust size as needed */
@@ -86,41 +86,44 @@
 <body>
     <div class="container">
     <div class="header">
-        <div class="logo">
-            <img src="image/lofo.png" alt="logo">
-            <h1>Lost & Found Lombok</h1>
-        </div>
-        <div class="menu-header">
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li class="menu-dropdown"><button>Daftar Laporan</button>
-                    <ul class="dropdown">
-                        <li><a href="daftar-laporan-barang-hilang.php">Kehilangan Barang</a></li>
-                        <li><a href="daftar-laporan-barang-temuan.php">Penemuan Barang</a></li>
-                    </ul>
-                </li>
-                <li class="menu-dropdown"><button>Histori Laporan</button>
-                    <ul class="dropdown">
-                        <li><a href="histori-barang-hilang.php">Kehilangan Barang</a></li>
-                        <li><a href="histori-barang-temuan.php">Penemuan Barang</a></li>
-                    </ul>
-                </li>
-                <li class="menu-dropdown"><button>Lapor</button>
-                    <ul class="dropdown">
-                        <li><a href="daftar-barang-hilang.php">Kehilangan Barang</a></li>
-                        <li><a href="daftar-barang-temuan.php">Penemuan Barang</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        <div class="akun-login">
-            <img src="icon/notifikasi.png" alt="notifikasi" class="notifikasi">
-            <div class="jumlah-notifikasi">
-                <p>1</p>
+        <div class="header-left">
+            <div class="judul-header">
+                <img src="../../PHP/image/icons8-menu-50.png" alt=""class='menu-left'>
+                <p class="judul-header">Lost & Found Lombok</p>
             </div>
+            
+            <div class="header-left-menu">
+                <div class="menu-top">
+                    <img src="../../PHP/icon/left-arrow.png" alt="" class="close-menu">
+                    <img src="../../PHP/image/lofo.png" alt="" class="logo">
+                </div>
+                <div class="menu-bottom">
+                    <ul>
+                        <li><a href="dashboard.php">Dashboard</a></li>
+                        <li><a href="akun.php">Kelola Akun</a></li>
+                        <li class="menu-dropdown"><button>Verifikasi Informasi ></button>
+                            <ul class="dropdown">
+                                <li><a href="verifikasi-barang-hilang.php">Kehilangan Barang</a></li>
+                                <li><a href="verifikasi-barang-temuan.php">Penemuan Barang</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-dropdown"><button>Kelola Sistem ></button>
+                            <ul class="dropdown">
+                                <li><a href="sistem-barang-hilang.php">Kehilangan Barang</a></li>
+                                <li><a href="sistem-barang-temuan.php">Penemuan Barang</a></li>
+                            </ul>
+                        </li>
+                    </ul>    
+                </div>
+            </div>
+        </div>
+        <div class="header-right">
             <img src="<?php echo empty($row['fotoProfil']) ? 'icon/profil.png' : 'data:' . $row['tipeImage'] . ';base64,' . base64_encode($row['fotoProfil']); ?>" alt="Profil" class="profil">
+            
             <div class="akun-profil">
-                <img src="icon/arrow-up.png" alt="Panah" class="panah">
+                <div class="panah">
+                    <img src="../PHP/icon/arrow-up.png" alt="">
+                </div>
                 <div class="akun">
                     <img src="<?php echo empty($row['fotoProfil']) ? 'icon/profil.png' : 'data:' . $row['tipeImage'] . ';base64,' . base64_encode($row['fotoProfil']); ?>" alt="profil">
                     <?php
@@ -128,16 +131,17 @@
                     ?>
                 </div>
                 <div class="setting-akun">
-                    <a href="edit-profil.php">Edit Profil</a>
-                    <a href="PHP/logoutSubmit.php">Log Out</a>
+                    <a href="edit-profil.php">Edit</a>
+                    <a href="logoutSubmit.php">Logo Out</a>
                 </div>
             </div>
+            <!-- <p>Lost & Found Lombok</p> -->
         </div>
     </div>
         <div class="content">
             <div class="klaim">
                 <div class="header-klaim">
-                    <a href="beranda.php"><img src="icon/left-arrow.png" alt="Kembali" height="40" width="40"></a>
+                    <a href="dashboard.php"><img src="icon/left-arrow.png" alt="Kembali" height="40" width="40"></a>
                     <p>Edit Profil</p>
                 </div>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
@@ -153,30 +157,12 @@
                             <td><input type="text" name="username" value="<?php echo ($row['username']) ?>" id="username"></td>
                         </tr>
                         <tr>
-                            <td><label for="email">Email</label></td>
-                            <td><input type="text" name="email" value="<?php echo ($row['email']) ?>" id="email"></td>
-                        </tr>
-                        <tr>
                             <td><label for="password">Password</label></td>
                             <td><input type="password" name="password" value="<?php echo ($row['password']) ?>" id="password"></td>
                         </tr>
                         <tr>
                             <td><label for="namaLengkap">Nama Lengkap</label></td>
                             <td><input type="text" name="namaLengkap" value="<?php echo ($row['namaLengkap']) ?>" id="namaLengkap"></td>
-                        </tr>
-                        <tr>
-                            <td><label for="jenisKelamin">Jenis Kelamin</label></td>
-                            <td>
-                                <select name="jenisKelamin" id="jenisKelamin">
-                                    <option value="<?php echo ($row['jenisKelamin']) ?>"><?php echo ($row['jenisKelamin']) ?></option>
-                                    <option value="Laki-laki">Laki-laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="alamat">Alamat</label></td>
-                            <td><input type="text" name="alamat" value="<?php echo ($row['alamat']) ?>" id="alamat"></td>
                         </tr>
                         <tr>
                             <td><label for="noHP">Nomor Handphone</label></td>
@@ -191,6 +177,6 @@
             <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
         </div>
     </div>
-    <script src="../JS/home.js"></script>
+    <script src="../JS/dashboard.js"></script>
 </body>
 </html>

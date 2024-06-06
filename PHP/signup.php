@@ -11,6 +11,7 @@
         die("Koneksi Gagal".mysql_error());
     }else{
         $username = $_POST['username'];
+        $email = $_POST['email'];
         $password = $_POST['password'];
         $confPassword = $_POST['confPassword'];
         $namaLengkap = $_POST['namaLengkap'];
@@ -23,7 +24,7 @@
             echo "Username sudah digunakan";
         }else{
         if($password == $confPassword && $password != "" && $confPassword != ""){
-            $query = "INSERT INTO akun (username, password, namaLengkap, jenisKelamin, alamat, noHP) VALUES ('$username', '$password', '$namaLengkap', '$jenisKelamin', '$alamat', '$noHP')";
+            $query = "INSERT INTO akun (username, password, namaLengkap, jenisKelamin, alamat, noHP,email) VALUES ('$username', '$password', '$namaLengkap', '$jenisKelamin', '$alamat', '$noHP','$email')";
             $result = mysqli_query($conn, $query);
             if($result){
                 header("Location: login.php");
@@ -68,6 +69,8 @@
                 <div class="input-data">
                     <label for="username">Username</label>
                     <input type="text" name="username" id="username" class="username">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" class="email">
                     <label for="password">Password</label>
                     <input type="password" name="password" id="password" class="password">
                     <label for="confPassword">Konfrimasi Password</label>

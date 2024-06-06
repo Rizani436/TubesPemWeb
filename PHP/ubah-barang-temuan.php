@@ -175,5 +175,6 @@ if (isset($_POST['id'])) {
         </div>      
     </div>
     <script src="../JS/home.js"></script>
+    <script src="../JS/home.js"></script>
 </body>
 </html>

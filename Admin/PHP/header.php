@@ -1,10 +1,24 @@
 <?php
-    $username = $_SESSION['username'];
+include 'config.php';
+$akun = $_SESSION['username'];
+
+// Ambil data akun dari database
+$query = "SELECT * FROM admin WHERE username = '$akun'";
+$result = mysqli_query($conn, $query);
+$row = mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../CSS/dashboard.css">
+    <style>
+        .profil, .akun img {
+            width: 100px; /* Adjust size as needed */
+            height: 100px; /* Adjust size as needed */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
@@ -41,18 +55,20 @@
             </div>
         </div>
         <div class="header-right">
-            <img src="../PHP/icon/profil.png" alt="Logo">
+            <img src="<?php echo empty($row['fotoProfil']) ? 'icon/profil.png' : 'data:' . $row['tipeImage'] . ';base64,' . base64_encode($row['fotoProfil']); ?>" alt="Profil" class="profil">
             
             <div class="akun-profil">
                 <div class="panah">
                     <img src="../PHP/icon/arrow-up.png" alt="">
                 </div>
                 <div class="akun">
-                    <img src="../../PHP/icon/profil.png" alt="Logo">
-                    <p><?php echo $username ?></p>
+                    <img src="<?php echo empty($row['fotoProfil']) ? 'icon/profil.png' : 'data:' . $row['tipeImage'] . ';base64,' . base64_encode($row['fotoProfil']); ?>" alt="profil">
+                    <?php
+                        echo "<p>$akun</p>";
+                    ?>
                 </div>
                 <div class="setting-akun">
-                    <a href="#">Edit</a>
+                    <a href="edit-profil.php">Edit</a>
                     <a href="logoutSubmit.php">Logo Out</a>
                 </div>
             </div>

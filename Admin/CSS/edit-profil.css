@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container .header {
+    background-color: rgba(200, 190, 140, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    height: 60px;
+}
+
+.header .header-left .judul-header {
+    /* width: 300px; */
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.header .header-left .judul-header p{
+    font-size: 30px;
+    margin-left: 230px;
+    text-transform: uppercase;
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+    /* text-shadow: 3px 3px 5px white; */
+}
+
+.container .header .header-left img{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.container .header .header-left .header-left-menu {
+    width: 300px;
+    background-color: rgba(200, 190, 140, 1);
+    /* background-color: rgba(0, 190, 140, 1); */
+    /* height: 100vh; */
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    /* display: none; */
+    box-shadow: 0 3px 5px rgba(122, 122, 122, .5);
+    height: 100vh;
+    /* display: none; */
+}
+
+.container .header .header-left .header-left-menu .menu-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    height: 60px;
+    gap: 75px;
+    background-color: rgba(200, 190, 140, 1);
+}
+
+.container .header .header-left .header-left-menu .menu-top img{
+    height: 30px;
+    width: 30px;
+}
+
+.container .header .header-left .header-left-menu .menu-top .logo{
+    height: 50px;
+    width: 50px;
+}
+
+.container .header .header-left .header-left-menu .menu-top p{
+    font-size: 10px;
+    /* text-transform: uppercase; */
+    color: black;
+    background-color: aqua;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0px 0px 1px white;
+}
+
+.container .header .header-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.container .header .header-right img {
+    height: 40px;
+    width: 40px;
+}
+
+.container .header .header-right p {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 1px 1px 2px white;
+}
+
+.header .header-left-menu .menu-bottom {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(200, 190, 140, 1);
+}
+
+.header .header-left-menu .menu-bottom ul {
+    list-style: none;
+    width: 300px;
+}
+
+.header .header-left-menu .menu-bottom ul li a, .header .header-left-menu .menu-bottom ul li button {
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.header .header-left-menu .menu-bottom ul li {
+    /* display: inline-block; */
+    /* position: relative; */
+    height: 50px;
+    width: 300px;
+    /* margin-bottom: 100px; */
+    line-height: 50px;
+    box-shadow: 0 0 2px rgba(122, 122, 122, .5);
+}
+
+.header .header-left-menu .menu-bottom ul li button {
+    cursor: pointer;
+    display: block;
+    width: 250px;
+    background-color: transparent;
+    border: none;
+    width: 300px;
+    height: 50px;
+    /* margin-bottom: 100px; */
+    line-height: 50px;
+    box-shadow: 0 0 2px rgba(122, 122, 122, .5);
+    text-align: left;
+    padding-left: 30px;
+    text-shadow: 0px 0px 1px white;
+    /* background-color: wheat; */
+}
+
+.header .header-left-menu .menu-bottom ul li a{
+    display: block;
+    text-decoration: none;
+    width: 250px;
+    color: black;
+    padding-left: 30px;
+    text-shadow: 0px 0px 1px white;
+}
+
+
+/* .header .header-left-menu .menu-bottom ul li .dropdown li {
+    display: block;
+    background-color: antiquewhite;
+} */
+
+.header .header-left-menu .menu-bottom ul li ul.dropdown {
+    /* position: absolute; */
+    /* display: block; */
+    
+    /* margin-left: 300px; */
+    /* margin-top: -52px; */
+    /* margin-top: 50px; */
+    border-bottom: 1px solid white;
+    height: 50px;
+    display: none;
+    /* margin-bottom: 100px; */
+    /* width: 320px; */
+}
+
+
+
+.header .header-left-menu .menu-bottom ul li ul.dropdown li{
+    background-color: rgba(200, 190, 140, 1);
+    width: 300px;
+    height: 50px;
+    border-top: 1px solid white;
+    /* border-bottom: 1px solid white; */
+    background-color: white;
+    box-shadow: 0px 0px 3px rgba(200, 190, 140, 1);
+}
+
+.header .header-left-menu .menu-bottom ul li a:hover {
+    width: 300px;
+    background-color: rgb(121, 111, 66);
+    color: white;
+    box-sizing: border-box;
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.3),
+                inset 3px 3px 9px rgba(255, 255, 255, 0.3);
+} 
+
+.header .header-left-menu .menu-bottom ul li button:hover {
+    background-color: rgba(200, 190, 140, 1);
+    color: white;
+    box-sizing: border-box;
+    background-color: rgb(121, 111, 66);
+    box-shadow: inset -3px -3px 9px rgba(255, 255, 255, 0.3),
+                inset 3px 3px 9px rgba(255, 255, 255, 0.3);
+} 
+
+.header .header-right {
+    cursor: pointer;
+}
+
+.header .header-right .akun-profil img {
+    height: 50px;
+    width: 50px;
+}
+
+.header .header-right .akun-profil {
+    position: absolute;
+    top: 70px;
+    right: 70px;
+    background-color: white;
+    border: 1px solid rgba(200, 190, 140, 1);
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 3px rgba(122, 122, 122, .2);
+    display: none;
+}
+
+.header .header-right .akun-profil .panah {
+    height: 0px;
+    position: absolute;
+    right: 12px;
+    top: -15px;
+}
+
+.header .header-right .akun-profil .panah img {
+    height: 15px;
+    width: 15px;
+}
+
+.header .header-right .akun-profil .akun {
+    /* display: inline-block; */
+    height: 50px;
+    /* background-color: #34db4a; */
+}
+
+.header .header-right .akun-profil .akun p{
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 50px;
+    margin-left: 10px;
+    /* margin-right: 1px; */
+    display: inline-block;
+    /* background-color: antiquewhite; */
+}
+
+.header .header-right .akun-profil .akun img{
+    margin-top: 12px ;
+    float: left;
+    height: 30px;
+    width: 30px;
+    margin-left: 20px;
+}
+
+.header .header-right .akun-profil .setting-akun{
+    display: flex;
+    flex-direction: column;
+    /* background-color: bisque; */
+    /* width: 90%; */
+    padding: 0px 0px 0 20px;
+}
+
+.header .header-right .akun-profil .setting-akun a{
+    text-decoration: none;
+    font-size: 18px;
+    height: 35px;
+    /* width: 125%; */
+    line-height: 35px;
+    color: black;
+    border-top: 1px solid rgba(200, 190, 140, 1);
+}
+
+.header .header-right .akun-profil .setting-akun a:hover{
+    color: red;
+    padding-left: 10px;
+
+}
+
+
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: 80px;
+    /* padding-top: -130px; */
+}
+
+.content .klaim {
+    margin-top: -10px;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 500px;
+    margin-left: 350px;
+    /* padding: 0px; */
+    padding-bottom: 10px;
+    box-shadow: 3px 3px 3px rgb(202, 201, 201),
+                -3px -3px 3px rgb(202, 201, 201);
+}
+
+.content .klaim form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: 10px 20px;
+}
+
+.content .klaim input.editForm{
+    background-color: blue;
+    border: none;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+
+.content .klaim form input.editForm:hover{background-color: rgb(115, 167, 235);}
+
+.content .klaim .header-klaim {
+    background-color: rgba(94, 97, 100, .2);
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.content .klaim .header-klaim p {
+    font-size: 24px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow:  2px 2px 3px white;
+    /* border-bottom: 1px solid rgba(200, 190, 140, 1); */
+    /* font-weight: bold; */
+}
+
+.content .klaim form img {
+    margin: 5px auto;
+    border-radius: 100%;
+    /* background-color: aqua; */
+}
+
+.content .klaim .profil-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: antiquewhite; */
+}
+
+table {
+    /* border: 1px solid black; */
+    height: 250px;
+}
+
+tr {
+    margin-top: 100px;
+    /* background-color: bisque; */
+}
+
+table tr td:first-child {
+    /* background-color: aqua; */
+    width: 170px;
+    padding: 5px;
+}
+table tr td select {width: 312px;}
+table tr td input {width: 300px;}
+
+table tr td input, table tr td select {
+    padding: 5px;
+    border: none;
+    background-color: white;
+    /* box-shadow: inset 0px -1px 3px rgba(0, 0, 0, .1); */
+                /* inset -2px -2px 3px rgba(0, 0, 0, .1); */
+    border-bottom: 1px solid rgba(200, 190, 140, 1);
+}
+
+table tr td input:focus, table tr td select:focus{
+    outline: none;
+}
