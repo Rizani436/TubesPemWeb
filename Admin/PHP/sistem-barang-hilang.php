@@ -207,7 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="footer-tolak">
                             <button type="button" onclick="document.querySelector('.popUp-tolak').style.display = 'none';">Batal</button>
                             <input type="hidden" name="idBH" id="idBH_tolak">
-                            <button type="submit" name="delete">Hapus</button>
+                            <button type="submit" name="delete" class="btnDelete">Hapus</button>
                         </div>
                     </form>
                 </div>
@@ -226,9 +226,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $query_select = "SELECT * FROM barangHilang";
                 $result_select = mysqli_query($conn, $query_select); 
                 if (mysqli_num_rows($result_select) == 0): ?>
-                <div class="data-kosong">
-                    <p>No Result</p>
-                </div>
+                <table class="table">
+                    <tr>
+                        <th>Foto</th>
+                        <th>Username</th>
+                        <th>Nama Barang</th>
+                        <th>Kategori Barang</th>
+                        <th>Tanggal Kehilangan</th>
+                        <th>Tempat Kehilangan</th>
+                        <th>Kota/Kabupaten</th>
+                        <th>Informasi Detail</th>
+                        <th>Nomor Handphone</th>
+                        <th>Action</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td colspan="11">Tidak Ada Data</td>
+                    </tr>
                 <?php else: ?>
                 <table class="table">
                     <tr>
@@ -281,6 +295,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
+    <script src="../JS/dashboard2.js"></script>
     <script>
         var btn_terima = document.querySelectorAll('.btn-terima');
         btn_terima.forEach(function(button) {
@@ -347,5 +362,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         });
     </script>
+    <!-- <script src="../JS/dashboard2.js"></script> -->
 </body>
 </html>

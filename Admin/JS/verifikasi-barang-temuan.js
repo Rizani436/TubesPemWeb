@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     terimaButtons.forEach(button => {
         button.addEventListener('click', function() {
             const id = this.getAttribute('data-id');
-            if (confirm('Apakah sistem menerima kasus kehilangan barang ini?')) {
+            if (confirm('Apakah sistem menerima kasus Penemuan barang ini?')) {
                 updateStatus(id, 'Diterima');
             }
         });
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
     tolakButtons.forEach(button => {
         button.addEventListener('click', function() {
             const id = this.getAttribute('data-id');
-            if (confirm('Apakah sistem menolak kasus kehilangan barang ini?')) {
+            if (confirm('Apakah sistem menolak kasus Penemuan barang ini?')) {
                 updateStatus(id, 'Ditolak');
             }
         });

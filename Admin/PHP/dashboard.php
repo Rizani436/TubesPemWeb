@@ -31,7 +31,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/dashboard.css">
-    <title>Home Admin</title>
+    <title>Dashboard</title>
 </head>
 <body>
     <div class="container">
@@ -96,6 +96,6 @@
             </div>
         </div>
     </div>
-    <!-- <script src="../JS/dashboard.js"></script> -->
+    <script src="../JS/dashboard2.js"></script>
 </body>
 </html>

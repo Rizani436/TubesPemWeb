@@ -75,7 +75,7 @@ $row = mysqli_fetch_assoc($result);
             <!-- <p>Lost & Found Lombok</p> -->
         </div>
     </div>
-    <script src="../JS/dashboard.js"></script>
+    <script src="../JS/header.js"></script>
     </div>
 </body>
 </html>

@@ -3,57 +3,15 @@
     padding: 0;
 }
 
-/* .header .menu-header ul {
-    list-style: none;
-    background-color: darkblue;
-    text-align: center;
+body {
+    background-color: rgba(200, 190, 140, 1);
 }
-
-.header .menu-header ul li {
-    display: inline-block;
-    position: relative;
-}
-
-.header .menu-header ul li a {
-    display: block;
-    padding: 20px 25px;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    font-size: 20px;
-}
-
-.header .menu-header ul li ul.dropdown li {
-    display: block;
-    background: #333;
-    margin: 2px 0px;
-}
-
-.header .menu-header ul li ul.dropdown{
-    width: auto;
-    background-color: #22438C;
-    position: absolute;
-    z-index: 999;
-    display: none;
-}
-
-.header .menu-header ul li a:hover {
-    background-color: bisque;
-}
-
-.header .menu-header ul li:hover ul.dropdown{
-    display: block;
-} */
-
-/* Bagian Header */
 
 .header {
-    /* background-color: #6CBEEB; */
     height: 50px;
     padding: 10px;
     line-height: 50px;
     background-color: white;
-    /* width: 100%; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -68,41 +26,34 @@
     align-items: center;
     height: 70px;
     margin-left: 200px;
-    /* margin-top: 0px; */
 }
 
-.header .logo img{
+.header .logo img {
     height: 50px;
     width: 50px;
     margin-top: 10px;
 }
 
-.header .logo h1{
-    /* margin-left: 150px;  */
+.header .logo h1 {
     font-size: 12px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: 0px;
-    /* margin-left: 10px; */
     margin-top: -20px;
 }
 
-.header .menu-header ul{
+.header .menu-header ul {
     list-style: none;
-    /* background-color: green; */
     text-align: center;
 }
 
 .header .menu-header ul li {
     display: inline-block;
     position: relative;
-    padding: 10px 0px;
+    padding: 10px 0;
     width: 180px;
-    /* border: 1px solid salmon; */
 }
 
 .header .menu-header ul li a {
     display: block;
-    padding: 0px 0px;
     color: #000;
     text-decoration: none;
     text-align: center;
@@ -112,35 +63,23 @@
 .header .menu-header ul li ul.dropdown li {
     display: block;
     background: peachpuff;
-    margin:  0px;
     width: 180px;
-    margin-left: 1px;
-    /* height: ; */
+    margin: 1px;
     height: 50px;
     line-height: 50px;
-    /* margin-top: 0px; */
 }
 
-.header .menu-header ul li ul.dropdown{
-    width: auto;
-    /* background-color: red; */
+.header .menu-header ul li ul.dropdown {
     position: absolute;
-    /* height: 10px; */
     z-index: 999;
-    /* line-height: 50px; */
-    /* height: 50px; */
-    /* margin-left: 2px; */
-    /* border: 1px solid gold; */
     display: none;
     margin-top: 10px;
 }
 
-.header .menu-header ul li ul.dropdown li{
+.header .menu-header ul li ul.dropdown li {
     background-color: white;
-    /* border: 1px solid salmon; */
     box-shadow: 0px 0px 3px rgba(200, 190, 140, 1);
 }
-
 
 .header .menu-header ul li a:hover {
     background-color: rgba(200, 190, 140, 1);
@@ -149,45 +88,41 @@
     height: 50px;
     margin: 0 10px;
     box-sizing: border-box;
-    box-shadow: inset -3px -3px 9px rgba(94, 104, 121, 0.3),
-                inset 3px 3px 9px rgba(94, 104, 121, 0.3);
-} 
+    box-shadow: inset -3px -3px 9px rgba(94, 104, 121, 0.3), inset 3px 3px 9px rgba(94, 104, 121, 0.3);
+}
 
 .content {
-    height: 100vh;
+    min-height: calc(100vh - 100px); /* Adjusted to ensure full height minus header and footer */
     display: flex;
     flex-direction: column;
     background-color: rgba(200, 190, 140, 1);
     align-items: center;
-    padding: 200px 0 150px;
     justify-content: center;
+    padding: 120px 0 50px; /* Ensure there is some padding inside content */
 }
 
 .content .klaim {
     display: flex;
     box-shadow: 0px 0px 3px gray;
     flex-direction: column;
-    border-radius: 5px;
+    border-radius: 10px;
     align-items: flex-start;
-    /* margin-top: 70px; */
     justify-content: flex-start;
     background-color: rgb(242, 242, 243);
 }
 
 .content .isi-klaim {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     background-color: white;
-    /* background-color: lightgreen; */
     display: flex;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     padding-top: 30px;
-    /* box-shadow: 0px 0px 3px gray; */
     flex-direction: column;
     align-items: center;
-    justify-content: center ;
-    /* height: 500px; */
+    justify-content: center;
     width: 550px;
     gap: 10px;
-    /* padding: 150px 0; */
 }
 
 .content .klaim .isi-klaim img {
@@ -195,21 +130,18 @@
     width: 300px;
 }
 
-.content .klaim .isi-klaim table{
+.content .klaim .isi-klaim table {
     border-collapse: collapse;
     width: 450px;
     margin: 20px 0;
-    /* background-color: aqua; */
-    /* max-width: 800px; */
-    /* text-align: left; */
 }
 
 th, td {
-    /* height: 30px; */
     padding: 5px;
     text-align: justify;
     vertical-align: top;
     width: 50%;
+    background-color: rgb(242, 242, 243);
 }
 
 td.td-terima p {
@@ -221,21 +153,16 @@ td.td-terima p {
 }
 
 table, tr, td {
-    border: 1px solid black;
+    border: 3px solid white;
 }
 
 .content .klaim p.judul-content {
-    /* padding: 20px; */
     height: 70px;
     line-height: 70px;
     padding-left: 10px;
     box-sizing: border-box;
-    /* padding-left: 10px; */
     margin-top: 0;
-    /* background-color: rgba(94, 97, 100, .2); */
     font-size: 24px;
-    border-bottom: 1px solid rgba(200, 190, 140, 1);
-    /* font-weight: bold; */
     width: 500px;
 }
 
@@ -246,8 +173,15 @@ table, tr, td {
     gap: 10px;
 }
 
-.content .klaim .button-klaim button{border: none; cursor: pointer; background-color: red;}
-.content .klaim .button-klaim a{background-color: rgb(75, 172, 75);}
+.content .klaim .button-klaim button {
+    border: none;
+    cursor: pointer;
+    background-color: red;
+}
+
+.content .klaim .button-klaim a {
+    background-color: rgb(75, 172, 75);
+}
 
 .content .klaim .button-klaim a, .content .klaim .button-klaim button {
     border-radius: 5px;
@@ -262,22 +196,105 @@ table, tr, td {
     margin-bottom: 20px;
 }
 
-.content .klaim .button-klaim button:hover{background-color: rgb(212, 140, 118);}
+.content .klaim .button-klaim button:hover {
+    background-color: rgb(212, 140, 118);
+}
 
-.content .klaim .button-klaim a:hover{
+.content .klaim .button-klaim a:hover {
     background-color: rgb(140, 212, 118);
 }
 
-.footer{
+.footer {
     background-color: rgba(255, 255, 255, 1);
-    padding: 20px 0;
-    margin-top: auto;
+    border: 1px solid rgba(200, 190, 140, 1);
+    color: #000;
+    padding: 20px 0 0 0;
+    font-size: 14px;
+    box-shadow: inset 0 1px 3px rgba(200, 190, 140, 1);
+    line-height: 1.6;
+    margin-top: 30px;
 }
 
-.footer p{
+.footer .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin: auto;
+}
+
+.footer .footer-section {
+    margin: 20px;
+    min-width: 250px;
+}
+
+.footer .footer-section h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+}
+
+.footer .footer-section h2 {
+    font-family: 'Lobster', cursive;
+    margin-bottom: 10px;
+    font-size: 18px;
+    margin-left: 100px;
+    font-weight: 600;
+}
+
+.footer .footer-section p {
+    font-size: 16px;
+    font-family: 'Lobster', cursive;
+    line-height: 1.8;
+    padding-left: 15px;
+}
+
+.footer .contact {
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.footer .contact span {
+    display: block;
+    font-family: 'Lobster', cursive;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.footer .contact img {
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+.footer .social-icons img {
+    height: 30px;
+    width: 30px;
+}
+
+.footer .social-icons {
+    margin-left: 100px;
+}
+
+.footer .social-icons a {
+    margin-right: 10px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+
+.footer .footer-bottom {
     text-align: center;
-    font-size: 20px;
+    height: 50px;
     font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    text-shadow: 0px 0px 5px white;
+    font-size: 20px;
+    line-height: 50px;
+    font-family: 'Lobster', cursive;
+    border-top: 1px solid #444;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 1);
 }

@@ -7,9 +7,11 @@ $newPassword = $_POST['newPassword'];
 // Update password di database
 $sql = "UPDATE akun SET password='$newPassword' WHERE email='$email'";
 if ($conn->query($sql) === TRUE) {
-    echo 'Password berhasil direset. <a href="login.php">Login</a>';
+    $message = "Password berhasil direset.";
+    echo '<script>alert("' . $message . '"); window.location.href = "login.php";</script>';
 } else {
-    echo 'Terjadi kesalahan: ' . $conn->error;
+    $error = "Terjadi kesalahan: " . $conn->error;
+    echo '<script>alert("' . $error . '"); window.history.back();</script>';
 }
 
 $conn->close();

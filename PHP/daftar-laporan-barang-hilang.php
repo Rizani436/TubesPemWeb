@@ -15,14 +15,17 @@ $categoryFilter = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST['location'])) {
         $locations = $_POST['location'];
-        $locationFilter = implode("', '", $locations);
-        $conditions[] = "kotaKabupaten IN ('$locationFilter')";
+        $locationFilter = implode(", ", $locations);
+        $conditions[] = "kotaKabupaten IN ('" . implode("', '", $locations) . "')";
     }
     if (!empty($_POST['category'])) {
         $categories = $_POST['category'];
-        $categoryFilter = implode("', '", $categories);
-        $conditions[] = "kategoriBarang IN ('$categoryFilter')";
+        $categoryFilter = implode(", ", $categories);
+        $conditions[] = "kategoriBarang IN ('" . implode("', '", $categories) . "')";
     }
+} elseif (isset($_GET['category'])) {
+    $categoryFilter = htmlspecialchars($_GET['category']);
+    $conditions[] = "kategoriBarang = '$categoryFilter'";
 }
 
 $query_select = "SELECT * FROM baranghilang WHERE status = 'diterima'";
@@ -33,6 +36,16 @@ if (!empty($conditions)) {
 $result_select = mysqli_query($conn, $query_select);
 if (!$result_select) {
     die("Error: " . mysqli_error($conn));
+}
+
+$lokasiText = "Semua Lokasi";
+if (!empty($locationFilter)) {
+    $lokasiText = $locationFilter;
+}
+
+$kategoriText = "Semua Kategori";
+if (!empty($categoryFilter)) {
+    $kategoriText = $categoryFilter;
 }
 ?>
 <!DOCTYPE html>
@@ -87,10 +100,11 @@ if (!$result_select) {
             </div>
             <div class="sidebar-right">
                 <p class="judul">Barang Hilang</p>
-                <p class="resultText"></p>
+                <p class="lokasiText">Lokasi: <?php echo $lokasiText; ?></p>
+                <p class="kategoriText">Kategori: <?php echo $kategoriText; ?></p>                
                 <?php if (mysqli_num_rows($result_select) == 0): ?>
                 <div class="data-kosong">
-                    <p>No Result</p>
+                    <p>Tidak Ada Hasil yang Ditemukan</p>
                 </div>
                 <?php else: ?>
                 <div class="isi-sidebar-right">
@@ -140,10 +154,39 @@ if (!$result_select) {
                 <?php endif; ?>
                 </div>
             </div>
+            <div class="back-top">
+                <img src="icon/icons8-arrow-up.png" alt="Back to top">
+            </div>
         </div>
         <div class="footer">
-            <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
-        </div>      
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h1 class="logo-text">
+                        <img src="image/lofo.png" alt="Logo" height="50" width="50"> <!-- Add your logo file here -->
+                        <span>Lost & Found Lombok</span>
+                    </h1>
+                    <p>
+                        Menemukan kembali barang hilang, membawa ketenangan, dan mengembalikan harapan.
+                    </p>
+                    <div class="contact">
+                        <span><img src="icon/icons8-phone-100.png" alt="Phone Icon"> &nbsp; +62 123 4567</span>
+                        <span><img src="icon/emailicon.png" alt="Email Icon"> &nbsp; LostNFound.Lombok@gmail.com</span>
+                    </div>
+                </div>
+                <div class="footer-section social">
+                    <h2>Follow us</h2>
+                    <div class="social-icons">
+                        <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
+                        <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>
+                        <a href="#"><img src="icon/twitterx.png" alt="Twitter Icon"></a>
+                        <a href="#"><img src="icon/linkedin.png" alt="LinkedIn Icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 LoFo | Lost & Found Lombok</p>
+            </div>
+        </div>     
     </div>
     <script src="../JS/daftar-laporan-barang-hilang.js"></script>
 </body>

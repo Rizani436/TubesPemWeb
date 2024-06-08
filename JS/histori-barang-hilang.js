@@ -1,107 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    function setLocation(location) {
-        document.getElementById('locationInput').value = location;
-    }
-
-    function setCategory(category) {
-        document.getElementById('categoryInput').value = category;
-    }
-
-    const filterButton = document.querySelector('.filter button');
-    
-    function updateDisplayText() {
-        var lokasi = localStorage.getItem("lokasiDropdown") || "All";
-        var kategori = localStorage.getItem("kategoriDropdown") || "All";
-        resultText.innerHTML = `Kota/Kabupaten: ${lokasi}, Kategori: ${kategori}`;
-    }
-    
-    function updateFilters() {
-        var lokasi = localStorage.getItem("lokasiDropdown") || "All";
-        var kategori = localStorage.getItem("kategoriDropdown") || "All";
-        setLocation(lokasi);
-        setCategory(kategori);
-        updateDisplayText();
-    }
-
-    var resultText = document.querySelector('.resultText');
-    
-    var firstButtonLokasi = document.querySelector('.lokasi-barang ul li button:first-child');
-    firstButtonLokasi.classList.add("active");
-    var buttonLokasi = document.querySelectorAll(".lokasi-barang ul li button");
-
-    buttonLokasi.forEach(function(button) {
-        button.addEventListener('click', function() {
-            buttonLokasi.forEach(function(btn){ 
-                btn.classList.remove('active');
-            });
-            button.classList.add('active');
-            localStorage.setItem("lokasiDropdown", button.textContent);
-            // updateDisplayText();
-        });
-    });
-
-    var firstButtonKategori = document.querySelector('.kategori ul li button:first-child');
-    firstButtonKategori.classList.add("active");
-    var buttonsKategori = document.querySelectorAll(".kategori ul li button");
-    
-    buttonsKategori.forEach(function(button) {
-        button.addEventListener('click', function() {
-            buttonsKategori.forEach(function(btn){ 
-                btn.classList.remove('active');
-            });
-            button.classList.add('active');
-            localStorage.setItem("kategoriDropdown", button.textContent);
-            // updateDisplayText();
-        });
-    });
-
-    var savedLokasiPenemuan = localStorage.getItem("lokasiDropdown");
-    var savedKategoriPenemuan = localStorage.getItem("kategoriDropdown");
-    
-    if (savedLokasiPenemuan){
-        firstButtonLokasi.classList.remove("active");
-        buttonLokasi.forEach(function(button){
-            if (button.textContent === savedLokasiPenemuan) {
-                button.classList.add('active');
-            }
-        });
-    }
-
-    if (savedKategoriPenemuan){
-        firstButtonKategori.classList.remove("active");
-        buttonsKategori.forEach(function(button){
-            if (button.textContent === savedKategoriPenemuan) {
-                button.classList.add('active');
-            }
-        });
-    }
-    
-    // updateDisplayText();
-
-    var menu_dropdowns = document.querySelectorAll('.menu-dropdown');
-
-    menu_dropdowns.forEach(function(menu_dropdown) {
-        var dropdown = menu_dropdown.querySelector('.dropdown');
-        menu_dropdown.addEventListener("click", function(){
-            if (dropdown.style.display == 'none'){
-                dropdown.style.display = 'block';
-            } else {
-                dropdown.style.display = 'none';
-            }
-        });
-    });
-
-    var akun_profil = document.querySelector('.akun-profil');
-    var profil = document.querySelector('.profil');
-    
-    profil.addEventListener('click', function(){
-        if(akun_profil.style.display == 'none'){
-            akun_profil.style.display = 'block';
-        } else {
-            akun_profil.style.display = 'none';
-        }
-    })
-    
     const reactionImages = document.querySelectorAll('.reaction img');
     
     reactionImages.forEach((img, index) => {
@@ -122,7 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    filterButton.addEventListener('click', function() {
-        updateFilters();
+    
+    var backToTopBtn = document.querySelector('.back-top');
+
+    backToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });

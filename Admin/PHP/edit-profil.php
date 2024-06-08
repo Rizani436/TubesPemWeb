@@ -72,7 +72,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <!-- <link rel="stylesheet" href="../CSS/dashboard.css"> -->
     <link rel="stylesheet" href="../CSS/edit-profil.css"> 
     <style>
         .profil, .akun img {
@@ -173,10 +173,7 @@
                 </form>
             </div>
         </div>
-        <div class="footer">
-            <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
-        </div>
     </div>
-    <script src="../JS/dashboard.js"></script>
+    <script src="../JS/edit-profil.js"></script>
 </body>
 </html>

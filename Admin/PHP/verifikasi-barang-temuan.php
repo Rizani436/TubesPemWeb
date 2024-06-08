@@ -22,7 +22,7 @@ if (!$result_select) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/verifikasi-barang-hilang.css">
-    <title>Home Admin</title>
+    <title>Verifikasi Barang Temuan</title>
 </head>
 <body>
     <div class="container">
@@ -71,24 +71,24 @@ if (!$result_select) {
                         <input type="submit" value="Cari">
                     </form>
                 </div>
-                <?php if (mysqli_num_rows($result_select) == 0): ?>
-                <div class="data-kosong">
-                    <p>No Result</p>
-                </div>
-                <?php else: ?>
-                    <table class="table">
+                <table class="table">
+                    <tr>
+                        <th>Foto</th>
+                        <th>Username</th>
+                        <th>Nama</th>
+                        <th>Kategori</th>
+                        <th>Tanggal Kehilangan</th>
+                        <th>Tempat Kehilangan</th>
+                        <th>Kota/Kabupaten</th>
+                        <th>Informasi Detail</th>
+                        <th>Nomor Handphone</th>
+                        <th>Action</th>
+                    </tr>
+                    <?php if (mysqli_num_rows($result_select) == 0): ?>
                         <tr>
-                            <th>Foto</th>
-                            <th>Username</th>
-                            <th>Nama</th>
-                            <th>Kategori</th>
-                            <th>Tanggal Kehilangan</th>
-                            <th>Tempat Kehilangan</th>
-                            <th>Kota/Kabupaten</th>
-                            <th>Informasi Detail</th>
-                            <th>Nomor Handphone</th>
-                            <th>Action</th>
+                            <td colspan="10">Tidak ada data</td>
                         </tr>
+                    <?php else: ?>
                         <?php while($row = mysqli_fetch_assoc($result_select)): ?>
                         <tr data-id="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
                             <td><img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="" class="td-img"></td>
@@ -112,8 +112,8 @@ if (!$result_select) {
         </div>
     </div>
     <script src="../JS/verifikasi-barang-temuan.js"></script>
-    <script src="../JS/dashboard.js"></script>
-    <script src="../JS/dashboard.js"></script>
+    <script src="../JS/dashboard2.js"></script>
+    <!-- <script src="../JS/dashboard.js"></script> -->
      
 </body>
 </html>

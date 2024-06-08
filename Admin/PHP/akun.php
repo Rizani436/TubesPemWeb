@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/sistem-barang-hilang.css">
+    <link rel="stylesheet" href="../CSS/akun.css">
     <title>Kelola Akun</title>
 </head>
 <body>
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <td><input type="text" name="noHP" id="noHP" class="noHP"></td>
                                     </tr>
                                     <tr>
-                                        <td><label for="fotoProfil">fotoProfil</label></td>
+                                        <td><label for="fotoProfil">Foto Profil</label></td>
                                         <td><input type="file" name="fotoProfil" id="fotoProfil" accept="image/*"></td>
                                     </tr>
                                 </table>    
@@ -175,7 +175,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <table class="table">
                     <tr>
-                        <th>fotoProfil</th>
+                        <th>Foto Profil</th>
                         <th>Username</th>
                         <th>Email</th>
                         <th>Password</th>
@@ -211,6 +211,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
+    <script src="../JS/dashboard2.js"></script>
     <script>
         var btn_terima = document.querySelectorAll('.btn-terima');
         btn_terima.forEach(function(button) {

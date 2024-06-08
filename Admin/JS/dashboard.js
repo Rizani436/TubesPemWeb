@@ -1,30 +1,24 @@
 var header_left = document.querySelector('.menu-left');
 var header_left_menu = document.querySelector('.header-left-menu');
-var content = document.querySelector('.content');
-var box_item = document.querySelectorAll('.box-item');
-var box = document.querySelector('.box');
 var judul_header = document.querySelector('.judul-header p');
 
 header_left.addEventListener('click', function(){
     if (header_left_menu.style.display === 'none'){
         header_left_menu.style.display = 'block';
-        // content.style.marginLeft = '20px';
-        content.style.marginLeft = '350px';
-        box.style.width = '1100px';
         judul_header.style.marginLeft = '230px';
-        box_item.forEach(function(box_item) {
-            box_item.style.width = '300px';
-            box_item.style.height = '200px';
-        });
+        // box_item.forEach(function(box_item) {
+            // box_item.style.width = '300px';
+            // box_item.style.height = '200px';
+        // });
     } else {
         header_left_menu.style.display ='none';
-        box.style.width = '1500px';
-        judul_header.style.marginLeft = '0px';
-        content.style.marginLeft = '20px';
-        box_item.forEach(function(box_item) {
-            box_item.style.width = '250px';
-            box_item.style.height = '230px';
-        });
+        // box.style.width = '1500px';
+        // judul_header.style.marginLeft = '0px';
+        // content.style.marginLeft = '20px';
+        // box_item.forEach(function(box_item) {
+            // box_item.style.width = '250px';
+            // box_item.style.height = '230px';
+        // });
     }
 });
 
@@ -56,13 +50,13 @@ close_menu.addEventListener('click', function(){
         header_left_menu.style.display = 'block';
     } else {
         header_left_menu.style.display ='none';
-        content.style.marginLeft = '20px';
-        box.style.width = '1500px';
-        judul_header.style.marginLeft = '0px'
-        box_item.forEach(function(box_item) {
-            box_item.style.width = '250px';
-            box_item.style.height = '230px';
-        });
+        // content.style.marginLeft = '20px';
+        // box.style.width = '1500px';
+        // judul_header.style.marginLeft = '0px'
+        // box_item.forEach(function(box_item) {
+        //     box_item.style.width = '250px';
+        //     box_item.style.height = '230px';
+        // });
     }
 });
 

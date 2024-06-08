@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    background-color: #f5f5f5;
+}
+
 .container .header {
     background-color: rgba(200, 190, 140, 1);
     display: flex;
@@ -298,7 +302,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: #f5f5f5;
     margin-top: 80px;
     /* padding-top: -130px; */
 }
@@ -311,10 +315,10 @@
     background-color: white;
     width: 500px;
     margin-left: 350px;
+    border-radius: 10px;
     /* padding: 0px; */
     padding-bottom: 10px;
-    box-shadow: 3px 3px 3px rgb(202, 201, 201),
-                -3px -3px 3px rgb(202, 201, 201);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
 }
 
 .content .klaim form {
@@ -347,6 +351,8 @@
     padding: 10px 20px;
     display: flex;
     flex-direction: row;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     justify-content: space-between;
     align-items: center;
 }
@@ -355,7 +361,7 @@
 .content .klaim .header-klaim p {
     font-size: 24px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-shadow:  2px 2px 3px white;
+    /* text-shadow:  2px 2px 3px white; */
     /* border-bottom: 1px solid rgba(200, 190, 140, 1); */
     /* font-weight: bold; */
 }

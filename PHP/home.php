@@ -34,42 +34,109 @@
                     <h1>Kategori</h1>
                     <div class="isi-kategori">
                         <div class="item">
-                            <a href="#">
-                            <img src="../PHP/icon/bags.png" alt="Accessoris">
-                            <p>Accessoris</p>
-                            </a>
+                            <button type="button">
+                                <img src="../PHP/icon/bags.png" alt="Accessoris">
+                                <p>Accessoris</p>
+                            </button>
+                            <div class="jenis">
+                                <a href="daftar-laporan-barang-hilang.php?category=Accessoris">Barang Hilang</a>
+                                <a href="daftar-laporan-barang-temuan.php?category=Accessoris">Barang Temuan</a>
+                            </div>
                         </div>
                         <div class="item">
-                            <a href="#">
+                            <button type="button">
                                 <img src="../PHP/icon/car.png" alt="Car">
                                 <p>Kendaraan</p>
-                            </a>
+                            </button>
+                            <div class="jenis">
+                                <a href="daftar-laporan-barang-hilang.php?category=Kendaraan">Barang Hilang</a>
+                                <a href="daftar-laporan-barang-temuan.php?category=Kendaraan">Barang Temuan</a>
+                            </div>
                         </div>
                         <div class="item">
-                            <a href="#">
+                            <button type="button">
                                 <img src="../PHP/icon/responsive.png" alt="Accessoris">
                                 <p>Elektronik</p>
-                            </a>
+                            </button>
+                            <div class="jenis">
+                                <a href="daftar-laporan-barang-hilang.php?category=Elektronik">Barang Hilang</a>
+                                <a href="daftar-laporan-barang-temuan.php?category=Elektronik">Barang Temuan</a>
+                            </div>
                         </div>
                         <div class="item">
-                            <a href="#">
+                            <button type="button">
                                 <img src="../PHP/icon/document.png" alt="Accessoris">
                                 <p>Document</p>
-                            </a>
+                            </button>
+                            <div class="jenis">
+                                <a href="daftar-laporan-barang-hilang.php?category=Document">Barang Hilang</a>
+                                <a href="daftar-laporan-barang-temuan.php?category=Document">Barang Temuan</a>
+                            </div>
                         </div>
                         <div class="item">
-                            <a href="#">
+                            <button type="button">
                                 <img src="../PHP/icon/menu-bar.png" alt="Accessoris">
                                 <p>Dan Lain-lain</p>
-                            </a>
+                            </button>
+                            <div class="jenis">
+                                <a href="daftar-laporan-barang-hilang.php?category=Dan Lain-lain">Barang Hilang</a>
+                                <a href="daftar-laporan-barang-temuan.php?category=Dan Lain-lain">Barang Temuan</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer">
-            <p><bold>&copy;</bold> 2024. LoFo: Lost & Found Lombok</p>
-        </div>      
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h1 class="logo-text">
+                        <img src="image/lofo.png" alt="Logo" height="50" width="50"> <!-- Add your logo file here -->
+                        <span>Lost & Found Lombok</span>
+                    </h1>
+                    <p>
+                        Menemukan kembali barang hilang, membawa ketenangan, dan mengembalikan harapan.
+                    </p>
+                    <div class="contact">
+                        <span><img src="icon/icons8-phone-100.png" alt="Phone Icon"> &nbsp; +62 123 4567</span>
+                        <span><img src="icon/emailicon.png" alt="Email Icon"> &nbsp; LostNFound.Lombok@gmail.com</span>
+                    </div>
+                </div>
+                <div class="footer-section social">
+                    <h2>Follow us</h2>
+                    <div class="social-icons">
+                        <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
+                        <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>
+                        <a href="#"><img src="icon/twitterx.png" alt="Twitter Icon"></a>
+                        <a href="#"><img src="icon/linkedin.png" alt="LinkedIn Icon"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2024 LoFo | Lost & Found Lombok
+            </div>
+        </div>    
     </div>
+    <script>
+        var itemsElement = document.querySelectorAll('.item');
+        itemsElement.forEach(function(itemElement) {
+            var jenisElement = itemElement.querySelector('.jenis');
+            itemElement.addEventListener("click", function(){
+                if (jenisElement.style.display === 'none'){
+                    jenisElement.style.display = 'flex';
+                    // Menyembunyikan semua elemen '.jenis' yang tidak sedang aktif
+                    itemsElement.forEach(function(item){
+                        var otherJenisElement = item.querySelector('.jenis');
+                        if (item !== itemElement && otherJenisElement.style.display === 'flex'){
+                            otherJenisElement.style.display = 'none';
+                        }
+                    });
+                } else {
+                    jenisElement.style.display = 'none';
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>
