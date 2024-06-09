@@ -79,6 +79,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($conn);
     ob_end_flush();
 }
+
+$search = '';
+if (isset($_GET['search'])) {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+}
+
+$query_select = "SELECT * FROM akun";
+if (!empty($search)) {
+    $query_select .= " WHERE username LIKE '%$search%' OR email LIKE '%$search%' OR password LIKE '%$search%' OR namaLengkap LIKE '%$search%' OR jenisKelamin LIKE '%$search%' OR alamat LIKE '%$search%' OR noHP LIKE '%$search%'";
+}
+
+$result_select = mysqli_query($conn, $query_select);
+if (!$result_select) {
+    die("Error: " . mysqli_error($conn));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -168,8 +183,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p class="judul-content">Dashboard Admin</p>
                 <p class="child-judul">Kelola Akun</p>
                 <div class="form">
-                    <form action="/index">
-                        <input type="text" name="" id="" class="cari">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+                        <input type="text" name="search" id="search" class="cari" placeholder="Cari..." value="<?php echo htmlspecialchars($search); ?>">
                         <input type="submit" value="Cari">
                     </form>
                 </div>
@@ -186,11 +201,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <th>Action</th>
                     </tr>
                     <?php
-                    $query_select = "SELECT * FROM akun";
-                    $result_select = mysqli_query($conn, $query_select);
-                    if (!$result_select) {
-                        die("Error: " . mysqli_error($conn));
-                    }
                     while ($row = mysqli_fetch_assoc($result_select)): ?>
                         <tr data-id="<?= htmlspecialchars($row['username']) ?>">
                             <td><img src="data:image/jpeg;base64,<?= base64_encode($row['fotoProfil']) ?>" alt="" class="td-img"></td>

@@ -1,7 +1,38 @@
 <?php
-    include "PHP/cekSession.php";
-    require_once 'header.php';
-    $username = $_SESSION['username']; 
+include "PHP/cekSession.php";
+require_once 'header.php';
+$username = $_SESSION['username']; 
+include 'PHP/config.php';
+
+if (isset($_POST['update_read']) && $_POST['update_read'] == 'sudahDibaca') {
+    $id = $_POST['id'];
+    $query_update = "UPDATE notifikasi SET `read` = 'sudahDibaca' WHERE notification_id = '$id'";
+    $result_update = mysqli_query($conn, $query_update);
+    if (!$result_update) {
+        die("Error: " . mysqli_error($conn));
+    }
+}
+
+$id = $_POST['id'];
+$query_select = "SELECT * FROM notifikasi WHERE notification_id = '$id'";
+$result_select = mysqli_query($conn, $query_select);
+if (!$result_select) {
+    die("Error: " . mysqli_error($conn));
+}
+$row = mysqli_fetch_assoc($result_select);
+$idBarangTemuan = $row['idBarangTemuan'];
+$query_select = "SELECT * FROM barangTemuan WHERE idBarangTemuan = '$idBarangTemuan'";
+$result_select = mysqli_query($conn, $query_select);
+if (!$result_select) {
+    die("Error: " . mysqli_error($conn));
+}
+$row = mysqli_fetch_assoc($result_select);
+$noHP = $row['noHP']; // Ambil nomor HP dari database
+
+// Ganti 0 di awal nomor dengan +62
+if (substr($noHP, 0, 1) === '0') {
+    $noHP = '+62' . substr($noHP, 1);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,28 +51,28 @@
                     <p>Terima Laporan Klaim</p>
                 </div>
                 <div class="isi-klaim">
-                    <img src="image/sembalun.jpg" alt="barang-klaim">
+                <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Temuan">
                     <p class="judul-klaim">Tas</p>
                     <table>
                         <tr>
                             <th>Username</th>
-                            <td>Pelapor</td>
+                            <td><?php echo $row['uploader'] ?></td>
                         </tr>
                         <tr>
                             <th>Tanggal Penemuan</th>
-                            <td>02-10-2003</td>
+                            <td><?php echo $row['tanggalPenemuan'] ?></td>
                         </tr>
                         <tr>
                             <th>Tempat Penemuan</th>
-                            <td>Masjid</td>
+                            <td><?php echo $row['tempatPenemuan'] ?></td>
                         </tr>
                         <tr>
                             <th>Kota/Kabupaten</th>
-                            <td>Kota Mataram</td>
+                            <td><?php echo $row['kotaKabupaten'] ?></td>
                         </tr>
                         <tr>
                             <th>Kategori</th>
-                            <td>Aksesoris</td>
+                            <td><?php echo $row['kategoriBarang'] ?></td>
                         </tr>
                         <tr>
                             <th>Status</th>
@@ -49,7 +80,7 @@
                         </tr>
                     </table>
                     <div class="button-klaim">
-                        <a href="https://wa.me/+62dst">
+                        <a href="https://wa.me/<?= $noHP ?>">
                             <img src="icon/social.png" alt="WhatsApp" height="50px" width="50px">
                             <p>Chat WhatsApp</p>
                         </a>
@@ -70,25 +101,12 @@
                     </p>
                     <div class="contact">
                         <span><img src="icon/icons8-phone-100.png" alt="Phone Icon"> &nbsp; +62 123 4567</span>
-                        <span><img src="icon/emailicon.png" alt="Email Icon"> &nbsp; LostNFound.Lombok@gmail.com</span>
+                        <span><img src="icon/emailicon.png" alt="Email Icon"> &nbsp; info@lostfoundlombok.com</span>
                     </div>
                 </div>
-                <div class="footer-section social">
-                    <h2>Follow us</h2>
-                    <div class="social-icons">
-                        <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
-                        <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>
-                        <a href="#"><img src="icon/twitterx.png" alt="Twitter Icon"></a>
-                        <a href="#"><img src="icon/linkedin.png" alt="LinkedIn Icon"></a>
-                    </div>
-                </div>
+                <!-- Add other footer sections as needed -->
             </div>
-            <div class="footer-bottom">
-                &copy; 2024 LoFo | Lost & Found Lombok
-            </div>
-        </div>     
+        </div>
     </div>
-    <!-- <script src="../JS/home.js"></script> -->
-    <script src="../JS/laporan-klaim.js"></script>
 </body>
 </html>

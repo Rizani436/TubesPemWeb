@@ -1,7 +1,13 @@
 <?php
     include "PHP/cekSession.php";
     require_once 'header.php';
-    $username = $_SESSION['username']; 
+    $akun = $_SESSION['username']; 
+    include 'PHP/config.php';
+    $query_select = "SELECT * FROM notifikasi WHERE idUser = '$akun'";
+    $result_select = mysqli_query($conn, $query_select);
+    if (!$result_select) {
+        die("Error: " . mysqli_error($conn));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,17 +30,31 @@
                         <th>Pesan</th>
                         <th>Tautan</th>
                     </tr>
-                    <!-- <tr  class="data-kosong">
-                        <td colspan="2">Tidak ada notifikasi</td>
-                    </tr> -->
+                    <?php if (mysqli_num_rows($result_select) == 0): ?>
+                        <tr>
+                            <td colspan="4">Tidak ada data</th>
+                        </tr>
+                    <?php else: ?>
+                    <?php while($row = mysqli_fetch_assoc($result_select)): ?>
                     <tr>
-                        <td>Pelapor telah menerima klaim barang Anda</td>
-                        <td><a href="#" class="tampil">Tampilkan</a></td>
+                        <td><?php
+                            echo $row['pesanNotifikasi'];
+                        ?>
+                        </td>
+                        <?php if($row['pesanNotifikasi'] == "Telah menerima klaim barang Anda"): ?>
+                            <form class="Laporan" action="terima-klaim-barang.php" method="POST">
+                                <td>
+                                <input type="hidden" name="id" value="<?= htmlspecialchars($row['notification_id']) ?>">
+                                <input type="hidden" name="update_read" value="sudahDibaca">
+                                <button type="submit">Tampilkan</button>
+                                </td>
+                            </form>
+                        <?php else: ?>
+                            <td></td>
+                        <?php endif; ?>
                     </tr>
-                    <tr>
-                        <td>Pelapor telah menolak klaim barang Anda</td>
-                        <td></td>
-                    </tr>
+                    <?php endwhile; ?>
+                    <?php endif; ?>
                 </table>
             </div>
         </div>

@@ -8,7 +8,15 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+$search = '';
+if (isset($_GET['search'])) {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+}
+
 $query_select = "SELECT * FROM barangtemuan WHERE status = 'menunggu'";
+if (!empty($search)) {
+    $query_select .= " AND (namaBarang LIKE '%$search%' OR kategoriBarang LIKE '%$search%' OR tanggalPenemuan LIKE '%$search%' OR tempatPenemuan LIKE '%$search%' OR kotaKabupaten LIKE '%$search%' OR informasiDetail LIKE '%$search%' OR noHP LIKE '%$search%')";
+}
 
 $result_select = mysqli_query($conn, $query_select);
 if (!$result_select) {
@@ -66,8 +74,8 @@ if (!$result_select) {
                 <p class="child-judul">Barang Temuan</p>
                 <div class="form">
                     <a href="verifikasi-barang-hilang.php">Barang Hilang ></a>
-                    <form action="/index">
-                        <input type="text" name="" id="" class="cari">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+                        <input type="text" name="search" id="search" class="cari" placeholder="Cari..." value="<?php echo htmlspecialchars($search); ?>">
                         <input type="submit" value="Cari">
                     </form>
                 </div>
@@ -77,8 +85,8 @@ if (!$result_select) {
                         <th>Username</th>
                         <th>Nama</th>
                         <th>Kategori</th>
-                        <th>Tanggal Kehilangan</th>
-                        <th>Tempat Kehilangan</th>
+                        <th>Tanggal Penemuan</th>
+                        <th>Tempat Penemuan</th>
                         <th>Kota/Kabupaten</th>
                         <th>Informasi Detail</th>
                         <th>Nomor Handphone</th>

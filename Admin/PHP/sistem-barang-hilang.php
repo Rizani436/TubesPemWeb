@@ -84,6 +84,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($conn);
     ob_end_flush(); // Flush the output buffer
 }
+
+$search = '';
+if (isset($_GET['search'])) {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+}
+
+$query_select = "SELECT * FROM baranghilang";
+if (!empty($search)) {
+    $query_select .= " WHERE namaBarang LIKE '%$search%' OR kategoriBarang LIKE '%$search%' OR tanggalKehilangan LIKE '%$search%' OR tempatKehilangan LIKE '%$search%' OR kotaKabupaten LIKE '%$search%' OR informasiDetail LIKE '%$search%' OR noHP LIKE '%$search%'";
+}
+
+$result_select = mysqli_query($conn, $query_select);
+if (!$result_select) {
+    die("Error: " . mysqli_error($conn));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -217,14 +232,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p class="child-judul">Barang Hilang</p>
                 <div class="form">
                     <a href="sistem-barang-temuan.php">Barang Temuan ></a>
-                    <form action="/index">
-                        <input type="text" name="" id="" class="cari">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+                        <input type="text" name="search" id="search" class="cari" placeholder="Cari...">
                         <input type="submit" value="Cari">
                     </form>
                 </div>
                 <?php
-                $query_select = "SELECT * FROM barangHilang";
-                $result_select = mysqli_query($conn, $query_select); 
                 if (mysqli_num_rows($result_select) == 0): ?>
                 <table class="table">
                     <tr>
@@ -259,11 +272,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <th>Status</th>
                     </tr>
                     <?php
-                    $query_select = "SELECT * FROM baranghilang";
-                    $result_select = mysqli_query($conn, $query_select);
-                    if (!$result_select) {
-                        die("Error: " . mysqli_error($conn));
-                    }
                     while ($row = mysqli_fetch_assoc($result_select)): ?>
                         <tr data-id="<?= htmlspecialchars($row['idBarangHilang']) ?>">
                         <td><img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="" class="td-img"></td>
@@ -362,6 +370,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         });
     </script>
-    <!-- <script src="../JS/dashboard2.js"></script> -->
 </body>
 </html>

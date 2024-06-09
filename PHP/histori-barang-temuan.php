@@ -8,11 +8,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$conditions = [];
+$conditions = ["uploader = '$akun'"];
 $locationFilter = "";
 $categoryFilter = "";
+$search = '';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" || isset($_GET['search'])) {
     if (!empty($_POST['location'])) {
         $locations = $_POST['location'];
         $locationFilter = implode(", ", $locations);
@@ -23,11 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $categoryFilter = implode(", ", $categories);
         $conditions[] = "kategoriBarang IN ('" . implode("', '", $categories) . "')";
     }
+    if (!empty($_GET['search'])) {
+        $search = mysqli_real_escape_string($conn, $_GET['search']);
+        $conditions[] = "(namaBarang LIKE '%$search%' OR kategoriBarang LIKE '%$search%' OR tanggalPenemuan LIKE '%$search%' OR tempatPenemuan LIKE '%$search%' OR kotaKabupaten LIKE '%$search%' OR informasiDetail LIKE '%$search%' OR noHP LIKE '%$search%')";
+    }
 }
-$query_select = "SELECT * FROM barangtemuan WHERE uploader = '$akun'";
-if (!empty($conditions)) {
-    $query_select .= " AND " . implode(" AND ", $conditions);
-}
+
+$query_select = "SELECT * FROM barangtemuan WHERE " . implode(" AND ", $conditions);
 
 $result_select = mysqli_query($conn, $query_select);
 if (!$result_select) {
@@ -56,9 +59,9 @@ if (!empty($categoryFilter)) {
     <div class="container">
         <div class="content">
             <div class="sidebar-left">
-                <form id="searchForm" action="/search" method="GET">
+                <form id="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
                     <div class="cari-barang">
-                        <input type="search" name="query" placeholder="Cari Barang Anda di sini...">
+                        <input type="search" name="search" placeholder="Cari Barang Anda di sini..." value="<?php echo htmlspecialchars($search); ?>">
                         <button type="submit" class="icon-cari"><img src="icon/Cari.png" alt="Searching"></button>
                     </div>
                 </form>
@@ -105,7 +108,7 @@ if (!empty($categoryFilter)) {
                 <?php else: ?>
                 <div class="isi-sidebar-right">
                     <?php while($row = mysqli_fetch_assoc($result_select)): ?>
-                    <div class="item-barang"data-id="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
+                    <div class="item-barang" data-id="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
                         <img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="Barang Temuan">
                         <table>
                             <tr>
@@ -148,7 +151,7 @@ if (!empty($categoryFilter)) {
                                 </form>
                             </div>
                         </div>
-                        <div class="status">Status : <?= htmlspecialchars($row['status']) ?> </div>
+                        <div class="status">Status: <?= htmlspecialchars($row['status']) ?></div>
                     </div>
                     <?php endwhile; ?>
                 <?php endif; ?>

@@ -8,11 +8,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-$conditions = [];
+$conditions = ["status = 'diterima'"];
 $locationFilter = "";
 $categoryFilter = "";
+$search = '';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" || isset($_GET['query'])) {
     if (!empty($_POST['location'])) {
         $locations = $_POST['location'];
         $locationFilter = implode(", ", $locations);
@@ -23,15 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $categoryFilter = implode(", ", $categories);
         $conditions[] = "kategoriBarang IN ('" . implode("', '", $categories) . "')";
     }
-} elseif (isset($_GET['category'])) {
-    $categoryFilter = htmlspecialchars($_GET['category']);
-    $conditions[] = "kategoriBarang = '$categoryFilter'";
+    if (!empty($_GET['query'])) {
+        $search = mysqli_real_escape_string($conn, $_GET['query']);
+        $conditions[] = "(namaBarang LIKE '%$search%' OR kategoriBarang LIKE '%$search%' OR tanggalKehilangan LIKE '%$search%' OR tempatKehilangan LIKE '%$search%' OR kotaKabupaten LIKE '%$search%' OR informasiDetail LIKE '%$search%' OR noHP LIKE '%$search%')";
+    }
 }
 
-$query_select = "SELECT * FROM baranghilang WHERE status = 'diterima'";
-if (!empty($conditions)) {
-    $query_select .= " AND " . implode(" AND ", $conditions);
-}
+$query_select = "SELECT * FROM baranghilang WHERE " . implode(" AND ", $conditions);
 
 $result_select = mysqli_query($conn, $query_select);
 if (!$result_select) {
@@ -60,9 +59,9 @@ if (!empty($categoryFilter)) {
     <div class="container">
         <div class="content">
             <div class="sidebar-left">
-                <form id="searchForm" action="/search" method="GET">
+                <form id="searchForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
                     <div class="cari-barang">
-                        <input type="search" name="query" placeholder="Cari Barang Anda di sini...">
+                        <input type="search" name="query" placeholder="Cari Barang Anda di sini..." value="<?php echo htmlspecialchars($search); ?>">
                         <button type="submit" class="icon-cari"><img src="icon/Cari.png" alt="Searching"></button>
                     </div>
                 </form>

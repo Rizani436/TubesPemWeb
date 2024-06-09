@@ -84,6 +84,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     mysqli_close($conn);
     ob_end_flush(); // Flush the output buffer
 }
+
+$search = '';
+if (isset($_GET['search'])) {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+}
+
+$query_select = "SELECT * FROM barangTemuan";
+if (!empty($search)) {
+    $query_select .= " WHERE namaBarang LIKE '%$search%' OR kategoriBarang LIKE '%$search%' OR tanggalPenemuan LIKE '%$search%' OR tempatPenemuan LIKE '%$search%' OR kotaKabupaten LIKE '%$search%' OR informasiDetail LIKE '%$search%' OR noHP LIKE '%$search%'";
+}
+
+$result_select = mysqli_query($conn, $query_select);
+if (!$result_select) {
+    die("Error: " . mysqli_error($conn));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                             <option value="0"></option>
                                             <option value="Kota Mataram">Kota Mataram</option>
                                             <option value="Lombok Barat">Lombok Barat</option>
-                                            <option value="Lombok Timur">Lombok Tengah</option>
+                                            <option value="Lombok Tengah">Lombok Tengah</option>
                                             <option value="Lombok Timur">Lombok Timur</option>
                                             <option value="Lombok Utara">Lombok Utara</option>
                                         </select></td>
@@ -217,14 +232,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p class="child-judul">Barang Temuan</p>
                 <div class="form">
                     <a href="sistem-barang-hilang.php">Barang Hilang ></a>
-                    <form action="/index">
-                        <input type="text" name="" id="" class="cari">
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get">
+                        <input type="text" name="search" id="search" class="cari" placeholder="Cari...">
                         <input type="submit" value="Cari">
                     </form>
                 </div>
                 <?php 
-                $query_select = "SELECT * FROM barangTemuan";
-                $result_select = mysqli_query($conn, $query_select);
                 if (mysqli_num_rows($result_select) == 0): ?>
                 <table class="table">
                     <tr>
@@ -260,11 +273,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <th>Status</th>
                     </tr>
                     <?php
-                    $query_select = "SELECT * FROM barangTemuan";
-                    $result_select = mysqli_query($conn, $query_select);
-                    if (!$result_select) {
-                        die("Error: " . mysqli_error($conn));
-                    }
                     while ($row = mysqli_fetch_assoc($result_select)): ?>
                         <tr data-id="<?= htmlspecialchars($row['idBarangTemuan']) ?>">
                         <td><img src="data:image/jpeg;base64,<?= base64_encode($row['gambarBarang']) ?>" alt="" class="td-img"></td>
