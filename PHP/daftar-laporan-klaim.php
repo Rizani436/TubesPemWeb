@@ -1,7 +1,16 @@
 <?php
     include "PHP/cekSession.php";
     require_once 'header.php';
-    $username = $_SESSION['username']; 
+    include 'PHP/config.php';
+    if(isset($_POST['id'])){
+        $_SESSION['idBarangTemuan'] = $_POST['id'];
+    }
+    $idBarangTemuan = $_SESSION['idBarangTemuan'];
+    $query_select = "SELECT DISTINCT penjawab FROM jawabanPertanyaan WHERE idBarangTemuan = '$idBarangTemuan'";
+    $result_select = mysqli_query($conn, $query_select);
+    if (!$result_select) {
+        die("Error: " . mysqli_error($conn));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,21 +35,34 @@
                         <td>Alamat</td>
                         <td>Tombol</td>
                     </tr>
-                    <!-- <tr  class="data-kosong">
-                        <td colspan="4">Data Tidak Ada</td>
-                    </tr> -->
+                    <?php if (mysqli_num_rows($result_select) == 0): ?>
+                        <tr>
+                            <td colspan="4">Tidak ada data</th>
+                        </tr>
+                    <?php else: ?>
+                    <?php while($row = mysqli_fetch_assoc($result_select)): ?>
+                        <?php 
+                            $tempPenjawab = $row['penjawab'];
+                            $query = "SELECT * FROM akun WHERE username = '$tempPenjawab'";
+                            $result = mysqli_query($conn, $query);
+                            if (!$result) {
+                                die("Error: " . mysqli_error($conn));
+                            }
+                            $data = mysqli_fetch_assoc($result); 
+                        ?>
                     <tr>
-                        <td>Lionel Messi</td>
-                        <td>LeoMessi</td>
-                        <td>Miami, USA</td>
-                        <td><a href="laporan-klaim.php">Lihat Jawaban</a></td>
+                        <td><?= htmlspecialchars($data['namaLengkap']) ?></td>
+                        <td><?= htmlspecialchars($data['username']) ?></td>
+                        <td><?= htmlspecialchars($data['alamat']) ?></td>
+                        <td>
+                            <form class="Laporan" action="laporan-klaim.php" method="POST">
+                                <input type="hidden" name="id" value="<?= htmlspecialchars($row['penjawab']) ?>">
+                                <button type="submit">Lihat Jawaban</button>
+                            </form>
+                        </td>
                     </tr>
-                    <tr>
-                        <td>Cristiano Ronaldo</td>
-                        <td>CR7</td>
-                        <td>Miami, USA</td>
-                        <td><a href="laporan-klaim.php">Lihat Jawaban</a></td>
-                    </tr>
+                    <?php endwhile; ?>
+                <?php endif; ?>
                 </table>
             </div>
         </div>

@@ -3,7 +3,6 @@ include 'PHP/config.php';
 session_start();
 if (isset($_SESSION['username'])) {
     header("Location: home.php");
-    exit();
 }
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$conn) {

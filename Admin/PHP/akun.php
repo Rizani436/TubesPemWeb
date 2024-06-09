@@ -1,5 +1,5 @@
 <?php
-ob_start(); // Start output buffering
+ob_start();
 include "cekSession.php";
 require_once 'header.php';
 include 'config.php';
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result_delete) {
             echo "<script>alert('Akun berhasil dihapus');</script>";
             header("Location: akun.php");
-            exit(); // Ensure script stops after redirect
+            exit(); 
         } else {
             echo "<script>alert('Akun gagal dihapus');</script>";
         }
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($result) {
                 echo "<script>alert('Akun berhasil diUpdate');</script>";
                 header("Location: akun.php");
-                exit(); // Ensure script stops after redirect
+                exit();
             } else {
                 echo "<script>alert('Akun gagal diUpdate');</script>";
             }
@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     mysqli_close($conn);
-    ob_end_flush(); // Flush the output buffer
+    ob_end_flush();
 }
 ?>
 <!DOCTYPE html>

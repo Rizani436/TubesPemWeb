@@ -159,6 +159,15 @@ if (isset($_POST['id'])) {
                                 <td><label for="nhBaru">Nomor Handphone baru</label></td>
                                 <td><input type="text" name="nhBaru" id="nhBaru"></td>
                             </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td><?= htmlspecialchars($row['status'])?></td>
+                                <td><label for="statusBaru">Kota/Kabupaten baru</label></td>
+                                <td><select name="selesaiBaru" id="selesaiBaru" class="selesaiBaru">
+                                    <option value="0"></option>
+                                    <option value="Selesai">Selesai</option>
+                                </select></td>
+                            </tr>
                         </table>
                         <div class="button-klaim">
                             <a href="histori-barang-Temuan.php">Kembali</a>

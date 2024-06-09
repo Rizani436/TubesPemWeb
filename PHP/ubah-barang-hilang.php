@@ -59,6 +59,11 @@ if (isset($_POST['id'])) {
         $noHP = mysqli_real_escape_string($conn, $_POST['nhBaru']);
         $updates[] = "noHP = '$noHP'";
     }
+
+    if (!empty($_POST['selesaiBaru'])) {
+        $status = mysqli_real_escape_string($conn, $_POST['selesaiBaru']);
+        $updates[] = "status = '$status'";
+    }
     
     if (!empty($_FILES['fotoBaru']['tmp_name'])) {
         $datagambar = addslashes(file_get_contents($_FILES['fotoBaru']['tmp_name']));
@@ -158,6 +163,15 @@ if (isset($_POST['id'])) {
                                 <td><?= htmlspecialchars($row['noHP'])?></td>
                                 <td><label for="nhBaru">Nomor Handphone baru</label></td>
                                 <td><input type="text" name="nhBaru" id="nhBaru"></td>
+                            </tr>
+                            <tr>
+                                <th>Status</th>
+                                <td><?= htmlspecialchars($row['status'])?></td>
+                                <td><label for="statusBaru">Kota/Kabupaten baru</label></td>
+                                <td><select name="selesaiBaru" id="selesaiBaru" class="selesaiBaru">
+                                    <option value="0"></option>
+                                    <option value="Selesai">Selesai</option>
+                                </select></td>
                             </tr>
                         </table>
                         <div class="button-klaim">

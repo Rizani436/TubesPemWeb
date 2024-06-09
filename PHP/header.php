@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 $akun = $_SESSION['username'];
 include 'PHP/config.php';
 
@@ -52,10 +52,12 @@ $row = mysqli_fetch_assoc($result);
             </ul>
         </div>
         <div class="akun-login">
+            <a href="notifikasi.php">
             <img src="icon/notifikasi.png" alt="notifikasi" class="notifikasi">
             <div class="jumlah-notifikasi">
                 <p>1</p>
             </div>
+            </a>
             <img src="<?php echo empty($row['fotoProfil']) ? 'icon/profil.png' : 'data:' . $row['tipeImage'] . ';base64,' . base64_encode($row['fotoProfil']); ?>" alt="Profil" class="profil">
             <div class="akun-profil">
                 <img src="icon/arrow-up.png" alt="Panah" class="panah">

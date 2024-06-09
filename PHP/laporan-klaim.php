@@ -1,7 +1,14 @@
 <?php
     include "PHP/cekSession.php";
     require_once 'header.php';
-    $username = $_SESSION['username']; 
+    include 'PHP/config.php';
+    $penjawab = $_POST['id'];
+    $idBarangTemuan = $_SESSION['idBarangTemuan'];
+    $query_select = "SELECT * FROM jawabanPertanyaan WHERE penjawab = '$penjawab' and idBarangTemuan = '$idBarangTemuan'";
+    $result_select = mysqli_query($conn, $query_select);
+    if (!$result_select) {
+        die("Error: " . mysqli_error($conn));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,21 +60,31 @@
 
                 </div>
                 <div class="isi-klaim">
-                    <img src="image/sembalun.jpg" alt="barang-klaim">
+                    <?php 
+                            $query = "SELECT * FROM barangTemuan WHERE idBarangTemuan = '$idBarangTemuan'";
+                            $result = mysqli_query($conn, $query);
+                            if (!$result) {
+                                die("Error: " . mysqli_error($conn));
+                            }
+                            $gambar = mysqli_fetch_assoc($result); 
+                        ?>
+                    <img src="data:image/jpeg;base64,<?= base64_encode($gambar['gambarBarang']) ?>" alt="barang-klaim">
                     <p class="judul-klaim">Tas</p>
                     <table>
+                        <?php while($row = mysqli_fetch_assoc($result_select)): ?>
                         <tr>
                             <td>Username</td>
-                            <td>skyway._</td>
+                            <td><?= htmlspecialchars($row['penjawab']) ?></td>
                         </tr>
                         <tr>
                             <td>Pertanyaan</td>
-                            <td>berapa isi dalam dompet itu?</td>
+                            <td><?= htmlspecialchars($row['pertanyaan']) ?></td>
                         </tr>
                         <tr>
                             <td>Jawaban Anda</td>
-                            <td>500 Ribu</td>
+                            <td><?= htmlspecialchars($row['jawaban']) ?></td>
                         </tr>
+                    <?php endwhile; ?>
                     </table>
                     <div class="button-klaim">
                         <button type="button" class="btn-tolak">Tolak</button>

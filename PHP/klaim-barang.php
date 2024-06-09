@@ -1,6 +1,6 @@
 <?php
     include "PHP/cekSession.php";
-    require_once 'header.php';
+    require_once 'header.php'; 
     $akun = $_SESSION['username']; 
     include 'PHP/config.php';
     
@@ -16,10 +16,30 @@
             die("Error: " . mysqli_error($conn));
         }
         $row = mysqli_fetch_assoc($result_select);
-    }else{
-
+    } else {
+        $idBarangTemuan = null;
+        $row = null;
     }
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['jawaban'])) {
+        $jawaban = mysqli_real_escape_string($conn, $_POST['jawaban']);
+        $idBarangTemuan = mysqli_real_escape_string($conn, $_POST['idBarangTemuan']);
+        $query_select = "SELECT * FROM barangTemuan WHERE idBarangTemuan = '$idBarangTemuan'";
+        $result_select = mysqli_query($conn, $query_select);
+        if (!$result_select) {
+            die("Error: " . mysqli_error($conn));
+        }
+        $row = mysqli_fetch_assoc($result_select);
+        $penanya = $row['uploader'];
+        $pertanyaan = $row['informasiDetail'];
+        $query_insert = "INSERT INTO jawabanPertanyaan (idBarangTemuan,penanya,pertanyaan, penjawab, jawaban) VALUES ('$idBarangTemuan', '$penanya', '$pertanyaan' , '$akun' , '$jawaban')";
+        
+        if (mysqli_query($conn, $query_insert)) {
+            echo "<script>alert('Jawaban berhasil disimpan!');</script>";
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,10 +56,11 @@
                 <p>Klaim Barang</p>
                 <p>Jawablah pertanyaan di bawah ini sesuai dengan yang anda ketahui mengenai barang ini.</p>
                 <p>Pertanyaan</p>
-                <p><?php echo $row['informasiDetail'] ?></p>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="get" enctype="multipart/form-data">
+                <p><?php echo isset($row['informasiDetail']) ? $row['informasiDetail'] : ''; ?></p>
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                     <label for="jawaban">Jawaban Anda</label>
-                    <textarea name="jawaban" id="" cols="50" rows="10"></textarea>
+                    <textarea name="jawaban" id="jawaban" cols="50" rows="10"></textarea>
+                    <input type="hidden" name="idBarangTemuan" value="<?php echo isset($idBarangTemuan) ? $idBarangTemuan : ''; ?>">
                     <button type="submit">Klaim</button>
                 </form>
                 <a href="daftar-laporan-barang-temuan.php"><button>Kembali</button></a>
@@ -49,7 +70,7 @@
             <div class="footer-content">
                 <div class="footer-section about">
                     <h1 class="logo-text">
-                        <img src="image/lofo.png" alt="Logo" height="50" width="50"> <!-- Add your logo file here -->
+                        <img src="image/lofo.png" alt="Logo" height="50" width="50"> 
                         <span>Lost & Found Lombok</span>
                     </h1>
                     <p>
