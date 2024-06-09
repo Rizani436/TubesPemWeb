@@ -1,5 +1,6 @@
 <?php
 include "PHP/cekSession.php";
+require_once 'header.php';
 include 'PHP/config.php';
 
 // Periksa apakah $_POST['id'] diatur, jika tidak, inisialisasi ke string kosong
@@ -122,12 +123,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['status'])) {
                         <form class="Laporan" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                             <input type="hidden" name="status" value="tolak">
                             <input type="hidden" name="id" value="<?= htmlspecialchars($penjawab) ?>">
-                            <button type="submit">Tolak</button>
+                            <button type="submit" class="submitTolak">Tolak</button>
                         </form>
                         <form class="Laporan" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                             <input type="hidden" name="status" value="terima">
                             <input type="hidden" name="id" value="<?= htmlspecialchars($penjawab) ?>">
-                            <button type="submit">Terima</button>
+                            <button type="submit" class="submitTerima">Terima</button>
                         </form>
                     </div>
                 </div>

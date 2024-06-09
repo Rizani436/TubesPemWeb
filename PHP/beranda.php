@@ -30,9 +30,9 @@ if (isset($_SESSION['username'])) {
         <div class="content">
             <div class="background-content">
                 <div class="text-content">
-                    <p>Menemukan kembali barang hilang</p>
-                    <p>Membawa Ketenangan</p>
-                    <p>dan Mengembalikan harapan</p>
+                    <p>Menemukan kembali <span class="textSpan">barang hilang</span></p>
+                    <p><span class="textSpan">Membawa</span> Ketenangan</p>
+                    <p>dan Mengembalikan <span class="textSpan">harapan</span></p>
                     <div class="input-content">
                         <span><a href="login.php">Barang Kehilangan</a></span>
                         <span><a href="login.php">Barang Temuan</a></span>
@@ -107,5 +107,31 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
+    <script>
+        function isElementInViewport(el) {
+            var rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function handleScrollAnimation() {
+            var kategoriElement = document.querySelector('.content .isi-content .kategori');
+            var itemElements = kategoriElement.querySelectorAll('.item');
+            if (isElementInViewport(kategoriElement)) {
+                itemElements.forEach(function(item) {
+                    item.classList.add('active');
+                });
+            }else {
+                itemElements.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+            }
+        }
+        window.addEventListener('scroll', handleScrollAnimation);
+    </script>
 </body>
 </html>

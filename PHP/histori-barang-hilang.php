@@ -141,9 +141,6 @@ if (!empty($categoryFilter)) {
                             </tr>
                         </table>
                         <div class="reaction">
-                            <div class="like">
-                                <p class="love">0 likes</p>
-                            </div>
                             <div class="klaim">
                                 <form class="Hapus" action="hapus-barang-hilang.php" method="POST">
                                     <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangHilang']) ?>">

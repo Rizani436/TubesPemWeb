@@ -100,6 +100,11 @@
 .content .background-content .text-content p{
     text-transform: uppercase;
     opacity: 1;
+    color: black;
+}
+
+.content .background-content .text-content p span.textSpan {
+    color: white;
 }
 
 .content .background-content .text-content .input-content{
@@ -176,7 +181,7 @@
     text-transform: uppercase;
     letter-spacing: 10px;
     color: rgba(200, 190, 140, 1);
-    text-shadow: 2px 1px 3px black;
+    text-shadow: 2px 2px black;
 }
 
 .content .isi-content .kategori .isi-kategori{
@@ -214,8 +219,8 @@
 .content .isi-content p{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 25px;
-    color: black;
-    text-shadow: 1px 1px white;
+    color: white;
+    text-shadow: 2px 2px black;
     letter-spacing: 3px;
 }
 
@@ -314,4 +319,20 @@
     /* background-color: #34db4a; */
     border-top: 1px solid #444;
     box-shadow:  0 3px 7px rgba(0, 0, 0, 1);
+}
+
+.content .isi-content .item {
+    opacity: 1;
+    transform: translateY(100%);
+    transition: transform 0.5s ease;
+}
+.content .isi-content .item.active {
+    transform: translateY(0);
+}
+
+.footer .social-icons img {
+    transition: transform 0.3s ease;
+}
+.footer .social-icons img:hover {
+    transform: scale(1.30);
 }

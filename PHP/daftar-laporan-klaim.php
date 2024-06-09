@@ -37,7 +37,7 @@
                     </tr>
                     <?php if (mysqli_num_rows($result_select) == 0): ?>
                         <tr>
-                            <td colspan="4">Tidak ada data</th>
+                            <td colspan="4" class="td-kosong">Tidak ada data</th>
                         </tr>
                     <?php else: ?>
                     <?php while($row = mysqli_fetch_assoc($result_select)): ?>

@@ -371,3 +371,10 @@ table tr td input:focus, table tr td select:focus{
     border-top: 1px solid #444;
     box-shadow:  0 3px 7px rgba(0, 0, 0, 1);
 }
+
+.footer .social-icons img {
+    transition: transform 0.3s ease;
+}
+.footer .social-icons img:hover {
+    transform: scale(1.30);
+}

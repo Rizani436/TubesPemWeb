@@ -133,9 +133,6 @@ if (!empty($categoryFilter)) {
                             </tr>
                         </table>
                         <div class="reaction">
-                            <div class="like">
-                                <p class="love">0 likes</p>
-                            </div>
                             <div class="klaim">
                                 <form class="Hapus" action="hapus-barang-Temuan.php" method="POST">
                                     <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangTemuan']) ?>">

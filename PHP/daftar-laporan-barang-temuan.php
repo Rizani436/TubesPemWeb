@@ -28,6 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" || isset($_GET['query'])) {
         $search = mysqli_real_escape_string($conn, $_GET['query']);
         $conditions[] = "(namaBarang LIKE '%$search%' OR kategoriBarang LIKE '%$search%' OR tanggalPenemuan LIKE '%$search%' OR tempatPenemuan LIKE '%$search%' OR kotaKabupaten LIKE '%$search%' OR informasiDetail LIKE '%$search%' OR noHP LIKE '%$search%')";
     }
+} elseif (isset($_GET['category'])) {
+    $categoryFilter = htmlspecialchars($_GET['category']);
+    $conditions[] = "kategoriBarang = '$categoryFilter'";
 }
 
 $query_select = "SELECT * FROM barangtemuan WHERE " . implode(" AND ", $conditions);
@@ -137,10 +140,6 @@ if (!empty($categoryFilter)) {
                             </tr>
                         </table>
                         <div class="reaction">
-                            <div class="like">
-                                <img src="icon/love-white.png" alt="">
-                                <p class="love">0 likes</p>
-                            </div>
                             <div class="klaim">
                                 <form class ="Laporan" action="klaim-barang.php" method="POST">
                                     <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangTemuan']) ?>">

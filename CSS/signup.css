@@ -137,62 +137,6 @@ body {
     outline: none;
 }
 
-/* .input-data .username {
-    background-image: url("../HTML/icon/username.png");
-    background-position: 10px 3px;
-    background-repeat: no-repeat;
-    background-size: 30px;   
-    padding-left: 50px;
-}
-
-.input-data .password {
-    background-image: url("../HTML/icon/password.png");
-    background-position: 10px 3px;
-    background-repeat: no-repeat;
-    background-size: 30px;   
-    padding-left: 50px;
-}
-
-.input-data .confPassword {
-    background-image: url("../HTML/icon/password.png");
-    background-position: 10px 3px;
-    background-repeat: no-repeat;
-    background-size: 30px;   
-    padding-left: 50px;
-}
-
-.input-data .namaLengkap {
-    background-image: url("../HTML/icon/nama.png");
-    background-position: 10px 3px;
-    background-repeat: no-repeat;
-    background-size: 30px;   
-    padding-left: 50px;
-}
-
-.input-data .jenisKelamin {
-    background-image: url("../HTML/icon/jeniskelamin.png");
-    background-position: 10px 3px;
-    background-repeat: no-repeat;
-    background-size: 30px;   
-    padding-left: 50px;
-}
-
-.input-data .alamat {
-    background-image: url("../HTML/icon/alamat.png");
-    background-position: 10px 3px;
-    background-repeat: no-repeat;
-    background-size: 30px;   
-    padding-left: 50px;
-}
-
-.input-data .noHP {
-    background-image: url("../HTML/icon/noHp.png");
-    background-position: 10px 3px;
-    background-repeat: no-repeat;
-    background-size: 30px;   
-    padding-left: 50px;
-} */
-
 .content input, .content select {
     padding: 10px;
     border: none;
@@ -314,4 +258,11 @@ body {
     /* background-color: #34db4a; */
     border-top: 1px solid #444;
     box-shadow:  0 3px 7px rgba(0, 0, 0, 1);
+}
+
+.footer .social-icons img {
+    transition: transform 0.3s ease;
+}
+.footer .social-icons img:hover {
+    transform: scale(1.30);
 }
