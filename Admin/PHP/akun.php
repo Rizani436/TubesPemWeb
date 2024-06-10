@@ -188,6 +188,26 @@ if (!$result_select) {
                         <input type="submit" value="Cari">
                     </form>
                 </div>
+                <?php
+                if (mysqli_num_rows($result_select) == 0): ?>
+                <table class="table">
+                    <tr>
+                        <th>Foto</th>
+                        <th>Username</th>
+                        <th>Nama Barang</th>
+                        <th>Kategori Barang</th>
+                        <th>Tanggal Kehilangan</th>
+                        <th>Tempat Kehilangan</th>
+                        <th>Kota/Kabupaten</th>
+                        <th>Informasi Detail</th>
+                        <th>Nomor Handphone</th>
+                        <th>Action</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td colspan="11">Tidak Ada Data</td>
+                    </tr>
+                <?php else: ?>
                 <table class="table">
                     <tr>
                         <th>Foto Profil</th>
@@ -218,6 +238,7 @@ if (!$result_select) {
                         </tr>
                     <?php endwhile; ?>
                 </table>
+                <?php endif; ?>
             </div>
         </div>
     </div>

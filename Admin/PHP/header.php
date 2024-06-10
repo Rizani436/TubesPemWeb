@@ -69,7 +69,7 @@ $row = mysqli_fetch_assoc($result);
                 </div>
                 <div class="setting-akun">
                     <a href="edit-profil.php">Edit</a>
-                    <a href="logoutSubmit.php">Logo Out</a>
+                    <a href="logoutSubmit.php">Log-Out</a>
                 </div>
             </div>
             <!-- <p>Lost & Found Lombok</p> -->

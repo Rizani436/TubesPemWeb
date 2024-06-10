@@ -20,8 +20,12 @@
         $noHP = $_POST['noHP'];
         $queryUsername = "SELECT * FROM akun WHERE username = '$username'";
         $namaAkun = mysqli_query($conn, $queryUsername);
+        $queryemail = "SELECT * FROM akun WHERE email = '$email'";
+        $namaemail = mysqli_query($conn, $queryemail);
         if(mysqli_num_rows($namaAkun) > 0){
-            echo "Username sudah digunakan";
+            echo "<script>alert('Username sudah ada');</script>";
+        }else if(mysqli_num_rows($namaemail) > 0){
+            echo "<script>alert('Email sudah ada');</script>";
         }else{
         if($password == $confPassword && $password != "" && $confPassword != ""){
             $query = "INSERT INTO akun (username, password, namaLengkap, jenisKelamin, alamat, noHP,email) VALUES ('$username', '$password', '$namaLengkap', '$jenisKelamin', '$alamat', '$noHP','$email')";

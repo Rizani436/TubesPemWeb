@@ -1,6 +1,6 @@
 <?php
 include "PHP/cekSession.php";
-require_once 'header.php';
+// require_once 'header.php';
 include 'PHP/config.php';
 
 // Periksa apakah $_POST['id'] diatur, jika tidak, inisialisasi ke string kosong

@@ -107,31 +107,5 @@ if (isset($_SESSION['username'])) {
             </div>
         </div>
     </div>
-    <script>
-        function isElementInViewport(el) {
-            var rect = el.getBoundingClientRect();
-            return (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-        }
-
-        function handleScrollAnimation() {
-            var kategoriElement = document.querySelector('.content .isi-content .kategori');
-            var itemElements = kategoriElement.querySelectorAll('.item');
-            if (isElementInViewport(kategoriElement)) {
-                itemElements.forEach(function(item) {
-                    item.classList.add('active');
-                });
-            }else {
-                itemElements.forEach(function(item) {
-                    item.classList.remove('active');
-                });
-            }
-        }
-        window.addEventListener('scroll', handleScrollAnimation);
-    </script>
 </body>
 </html>
