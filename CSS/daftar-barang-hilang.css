@@ -47,7 +47,9 @@ body {
 .header .logo h1{
     /* margin-left: 150px;  */
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     letter-spacing: 0px;
     /* margin-left: 10px; */
     margin-top: -20px;
@@ -74,7 +76,7 @@ body {
     color: #000;
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .header .menu-header ul li ul.dropdown li {
@@ -83,6 +85,7 @@ body {
     margin:  0px;
     width: 180px;
     margin-left: 1px;
+    font-size: 15px;
     /* height: ; */
     height: 50px;
     line-height: 50px;
@@ -248,7 +251,9 @@ body {
     text-transform: uppercase;
     line-height: 35px;
     font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .input-data {
@@ -268,10 +273,17 @@ body {
     outline: none;
 }
 
+.content select, .content input[type='date'], .content input[type='file']{
+    cursor: pointer;
+}
+
 .content input, .content select {
     padding: 10px;
-    cursor: pointer;
+    /* cursor: pointer; */
     border: none;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     background-color: rgb(248, 248, 248);
     /* border-bottom: 1px solid black; */
 }
@@ -292,7 +304,9 @@ body {
     background-color: #3498db;
     text-transform: uppercase;
     border: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -336,12 +350,16 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 24px;
 }
 
 .footer .footer-section h2 {
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 10px;
     font-size: 18px;
     margin-left: 100px;
@@ -350,7 +368,9 @@ body {
 
 .footer .footer-section p {
     font-size: 16px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.8;
     /* margin-bottom: 20px; */
     padding-left: 15px;
@@ -362,7 +382,9 @@ body {
 }
 .footer .contact span {
     display: block;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -396,7 +418,9 @@ body {
     font-size: 20px;
     /* background-color: rgba(200, 190, 140, 1); */
     line-height: 50px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     /* background-color: #34db4a; */
     border-top: 1px solid #444;
     box-shadow:  0 3px 7px rgba(0, 0, 0, 1);

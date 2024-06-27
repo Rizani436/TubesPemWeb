@@ -30,6 +30,9 @@ if (!$result_select) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/verifikasi-barang-hilang.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     <title>Verifikasi Barang Hilang</title>
 </head>
 <body>
@@ -56,7 +59,7 @@ if (!$result_select) {
                         <th>Kota/Kabupaten</th>
                         <th>Informasi Detail</th>
                         <th>Nomor Handphone</th>
-                        <th>Action</th>
+                        <th>Aksi</th>
                     </tr>
                     <?php if (mysqli_num_rows($result_select) == 0): ?>
                         <tr>

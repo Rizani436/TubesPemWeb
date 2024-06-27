@@ -1,6 +1,6 @@
 <?php
 include "PHP/cekSession.php";
-// require_once 'header.php';
+require_once 'header.php';
 include 'PHP/config.php';
 
 // Periksa apakah $_POST['id'] diatur, jika tidak, inisialisasi ke string kosong
@@ -47,6 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['status'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laporan Klaim</title>
     <link rel="stylesheet" href="../CSS/laporan-klaim.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="container">
@@ -150,7 +154,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['status'])) {
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

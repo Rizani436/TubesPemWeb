@@ -39,7 +39,9 @@ body {
 
 .header .logo h1 {
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-top: -20px;
 }
 
@@ -61,7 +63,10 @@ body {
     color: #000;
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .header .menu-header ul li ul.dropdown li {
@@ -71,6 +76,7 @@ body {
     margin: 1px;
     height: 50px;
     line-height: 50px;
+    font-size: 15px;
 }
 
 .header .menu-header ul li ul.dropdown {
@@ -150,6 +156,9 @@ body {
 table input {
     width: 250px;
     height: 20px;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     border: none;
     /* padding-left: 5px; */
 }
@@ -192,7 +201,9 @@ td, th {
     width: 100px;
     padding: 10px;
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     text-decoration: none;
     color: white;
     display: inline-block;
@@ -206,6 +217,12 @@ td, th {
 
 .content .klaim .button-klaim a:hover {
     background-color: rgb(212, 140, 118);
+}
+
+input[type='file'] {
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .footer {
@@ -238,12 +255,16 @@ td, th {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 24px;
 }
 
 .footer .footer-section h2 {
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 10px;
     font-size: 18px;
     margin-left: 100px;
@@ -252,7 +273,9 @@ td, th {
 
 .footer .footer-section p {
     font-size: 16px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.8;
     padding-left: 15px;
 }
@@ -264,7 +287,9 @@ td, th {
 
 .footer .contact span {
     display: block;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -298,7 +323,9 @@ td, th {
     font-weight: bold;
     font-size: 20px;
     line-height: 50px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     border-top: 1px solid #444;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 1);
 }

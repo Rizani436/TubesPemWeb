@@ -3,48 +3,6 @@
     padding: 0;
 }
 
-/* .header .menu-header ul {
-    list-style: none;
-    background-color: darkblue;
-    text-align: center;
-}
-
-.header .menu-header ul li {
-    display: inline-block;
-    position: relative;
-}
-
-.header .menu-header ul li a {
-    display: block;
-    padding: 20px 25px;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    font-size: 20px;
-}
-
-.header .menu-header ul li ul.dropdown li {
-    display: block;
-    background: #333;
-    margin: 2px 0px;
-}
-
-.header .menu-header ul li ul.dropdown{
-    width: auto;
-    background-color: #22438C;
-    position: absolute;
-    z-index: 999;
-    display: none;
-}
-
-.header .menu-header ul li a:hover {
-    background-color: bisque;
-}
-
-.header .menu-header ul li:hover ul.dropdown{
-    display: block;
-} */
-
 /* Bagian Header */
 
 .header {
@@ -81,7 +39,9 @@
 .header .logo h1{
     /* margin-left: 150px;  */
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     letter-spacing: 0px;
     /* margin-left: 10px; */
     margin-top: -20px;
@@ -107,7 +67,7 @@
     color: #000;
     text-decoration: none;
     text-align: center;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .header .menu-header ul li ul.dropdown li {
@@ -119,6 +79,7 @@
     /* height: ; */
     height: 50px;
     line-height: 50px;
+    font-size: 15px;
     /* margin-top: 0px; */
 }
 
@@ -195,7 +156,9 @@
     font-weight: bold;
     color: white;
     padding: 10px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     cursor: pointer;
     border-radius: 10px;
 }
@@ -218,7 +181,9 @@
 
 .content .klaim .header-klaim p {
     font-size: 24px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     /* text-shadow:  2px 2px 3px white; */
     /* border-bottom: 1px solid rgba(200, 190, 140, 1); */
     /* font-weight: bold; */
@@ -240,6 +205,9 @@
 
 .content .klaim .profil-img img, .content .klaim .profil-img input[type="file"] {
     cursor: pointer;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 table {
@@ -259,11 +227,14 @@ table tr td:first-child {
     padding: 5px;
 }
 
-table tr td select {width: 312px;}
+table tr td select {width: 312px; }
 table tr td input {width: 300px;}
 
 table tr td input, table tr td select {
     padding: 5px;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     border: none;
     background-color: rgb(248, 248, 248);
     /* box-shadow: inset 0px -1px 3px rgba(0, 0, 0, .1); */
@@ -306,12 +277,16 @@ table tr td input:focus, table tr td select:focus{
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 24px;
 }
 
 .footer .footer-section h2 {
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 10px;
     font-size: 18px;
     margin-left: 100px;
@@ -320,7 +295,9 @@ table tr td input:focus, table tr td select:focus{
 
 .footer .footer-section p {
     font-size: 16px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.8;
     /* margin-bottom: 20px; */
     padding-left: 15px;
@@ -332,7 +309,9 @@ table tr td input:focus, table tr td select:focus{
 }
 .footer .contact span {
     display: block;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -366,7 +345,9 @@ table tr td input:focus, table tr td select:focus{
     font-size: 20px;
     /* background-color: rgba(200, 190, 140, 1); */
     line-height: 50px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     /* background-color: #34db4a; */
     border-top: 1px solid #444;
     box-shadow:  0 3px 7px rgba(0, 0, 0, 1);

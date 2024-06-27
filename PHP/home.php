@@ -10,6 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -32,7 +35,7 @@
                         <div class="item">
                             <button type="button">
                                 <img src="../PHP/icon/bags.png" alt="Accessoris">
-                                <p>Accessoris</p>
+                                <p>Aksesoris</p>
                             </button>
                             <div class="jenis">
                                 <a href="daftar-laporan-barang-hilang.php?category=Accessoris">Barang Hilang</a>
@@ -62,7 +65,7 @@
                         <div class="item">
                             <button type="button">
                                 <img src="../PHP/icon/document.png" alt="Accessoris">
-                                <p>Document</p>
+                                <p>Dokumen</p>
                             </button>
                             <div class="jenis">
                                 <a href="daftar-laporan-barang-hilang.php?category=Document">Barang Hilang</a>
@@ -99,7 +102,7 @@
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

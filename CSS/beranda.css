@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+body {
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
 /* Bagian Header */
 
 .header {
@@ -39,7 +45,6 @@
 .header .logo h1{
     /* margin-left: 150px;  */
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 0px;
     /* margin-left: 10px; */
     margin-top: -20px;
@@ -177,7 +182,6 @@
 
 .content .isi-content .kategori h1{
     font-size: 50px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     text-transform: uppercase;
     letter-spacing: 10px;
     color: rgba(200, 190, 140, 1);
@@ -217,10 +221,9 @@
 }
 
 .content .isi-content p{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
-    text-shadow: 2px 2px black;
+    text-shadow: 1px 1px 7px black;
     letter-spacing: 3px;
 }
 
@@ -255,12 +258,10 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Lobster', cursive;
     font-size: 24px;
 }
 
 .footer .footer-section h2 {
-    font-family: 'Lobster', cursive;
     margin-bottom: 10px;
     font-size: 18px;
     margin-left: 100px;
@@ -269,7 +270,6 @@
 
 .footer .footer-section p {
     font-size: 16px;
-    font-family: 'Lobster', cursive;
     line-height: 1.8;
     /* margin-bottom: 20px; */
     padding-left: 15px;
@@ -281,7 +281,6 @@
 }
 .footer .contact span {
     display: block;
-    font-family: 'Lobster', cursive;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -315,7 +314,6 @@
     font-size: 20px;
     /* background-color: rgba(200, 190, 140, 1); */
     line-height: 50px;
-    font-family: 'Lobster', cursive;
     /* background-color: #34db4a; */
     border-top: 1px solid #444;
     box-shadow:  0 3px 7px rgba(0, 0, 0, 1);

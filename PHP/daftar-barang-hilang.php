@@ -47,13 +47,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pendaftaran Barang Hilang</title>
     <link rel="stylesheet" href="../CSS/daftar-barang-hilang.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <div class="content">
             <div class="judul-content">
                 <a href="home.php"><img src="../PHP/icon/left-arrow.png" alt="Left"></a>
-                <p>Form Barang Hilang</p>
+                <p>Formulir Barang Hilang</p>
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
                 <div class="input-data">
@@ -63,10 +66,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <label for="kategoriBarang">Kategori Barang</label>
                     <select name="kategoriBarang" id="kategoriBarang" class="kategoriBarang">
                         <option value="0"></option>
-                        <option value="Accessoris">Accessoris</option>
+                        <option value="Accessoris">Aksesoris</option>
                         <option value="Kendaraan">Kendaraan</option>
                         <option value="Elektronik">Elektronik</option>
-                        <option value="Document">Document</option>
+                        <option value="Document">Dokumen</option>
                         <option value="Dan Lain-lain">Dan Lain-lain</option>
                     </select>
                     <p class="p-kategoriBarang"></p>
@@ -116,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

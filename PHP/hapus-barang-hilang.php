@@ -41,6 +41,9 @@
     <title>Hapus Barang Hilang</title>
     <link rel="stylesheet" href="../CSS/hapus-histori.css">
     <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     <style>
         .profil, .akun img {
             width: 100px; /* Adjust size as needed */
@@ -114,7 +117,7 @@
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

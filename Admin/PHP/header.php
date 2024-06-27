@@ -11,6 +11,9 @@ $row = mysqli_fetch_assoc($result);
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     <style>
         .profil, .akun img {
             width: 100px; /* Adjust size as needed */
@@ -68,8 +71,8 @@ $row = mysqli_fetch_assoc($result);
                     ?>
                 </div>
                 <div class="setting-akun">
-                    <a href="edit-profil.php">Edit</a>
-                    <a href="logoutSubmit.php">Log-Out</a>
+                    <a href="edit-profil.php">Perbarui Profil</a>
+                    <a href="logoutSubmit.php">Keluar</a>
                 </div>
             </div>
             <!-- <p>Lost & Found Lombok</p> -->

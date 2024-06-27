@@ -57,6 +57,9 @@ if (!empty($categoryFilter)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barang Hilang</title>
     <link rel="stylesheet" href="../CSS/daftar-laporan-barang-hilang.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -96,7 +99,7 @@ if (!empty($categoryFilter)) {
                         <label for="DanLainLain"> Dan Lain-lain</label><br>
                     </div>
                     <div class="filter">
-                        <button type="submit">Filter</button>
+                        <button type="submit">Cari</button>
                     </div>
                 </form>
             </div>
@@ -172,7 +175,7 @@ if (!empty($categoryFilter)) {
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

@@ -12,6 +12,9 @@ if (isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beranda</title>
     <link rel="stylesheet" href="../CSS/beranda.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -22,8 +25,8 @@ if (isset($_SESSION['username'])) {
             </div>
             <div class="menu-header">
                 <ul>
-                    <li><a href="login.php">Login</a></li>
-                    <li><a href="signup.php">Sign Up</a></li>
+                    <li><a href="login.php">Masuk</a></li>
+                    <li><a href="signup.php">Daftar</a></li>
                 </ul>
             </div>
         </div>
@@ -46,7 +49,7 @@ if (isset($_SESSION['username'])) {
                         <div class="item">
                             <a href="login.php">
                             <img src="../PHP/icon/bags.png" alt="Accessoris">
-                            <p>Accessoris</p>
+                            <p>Aksesoris</p>
                             </a>
                         </div>
                         <div class="item">
@@ -64,7 +67,7 @@ if (isset($_SESSION['username'])) {
                         <div class="item">
                             <a href="login.php">
                                 <img src="../PHP/icon/document.png" alt="Accessoris">
-                                <p>Document</p>
+                                <p>Dokumen</p>
                             </a>
                         </div>
                         <div class="item">
@@ -93,7 +96,7 @@ if (isset($_SESSION['username'])) {
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

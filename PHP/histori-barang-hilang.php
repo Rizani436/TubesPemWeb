@@ -52,8 +52,11 @@ if (!empty($categoryFilter)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Histori Barang Hilang</title>
+    <title>Riwayat Barang Hilang</title>
     <link rel="stylesheet" href="../CSS/histori-barang-hilang.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -82,23 +85,23 @@ if (!empty($categoryFilter)) {
                     <div class="kategori">
                         <p>Kategori</p>
                         <input type="checkbox" id="Accessoris" name="category[]" value="Accessoris">
-                        <label for="Accessoris"> Accessoris</label><br>
+                        <label for="Accessoris"> Aksesoris</label><br>
                         <input type="checkbox" id="Kendaraan" name="category[]" value="Kendaraan">
                         <label for="Kendaraan"> Kendaraan</label><br>
                         <input type="checkbox" id="Elektronik" name="category[]" value="Elektronik">
                         <label for="Elektronik"> Elektronik</label><br>
                         <input type="checkbox" id="Document" name="category[]" value="Document">
-                        <label for="Document"> Document</label><br>
+                        <label for="Document"> Dokumen</label><br>
                         <input type="checkbox" id="DanLainLain" name="category[]" value="Dan Lain-lain">
                         <label for="DanLainLain"> Dan Lain-lain</label><br>
                     </div>
                     <div class="filter">
-                        <button type="submit">Filter</button>
+                        <button type="submit">Cari</button>
                     </div>
                 </form>
             </div>
             <div class="sidebar-right">
-                <p class="judul">Histori Barang Hilang</p>
+                <p class="judul">Riwayat Barang Hilang</p>
                 <p class="lokasiText">Lokasi: <?php echo $lokasiText; ?></p>
                 <p class="kategoriText">Kategori: <?php echo $kategoriText; ?></p>
                 <?php if (mysqli_num_rows($result_select) == 0): ?>
@@ -152,7 +155,18 @@ if (!empty($categoryFilter)) {
                                 </form>
                             </div>
                         </div>
-                        <div class="status">Status: <?= htmlspecialchars($row['status']) ?></div>
+                        <div class="status">
+                            <p>Status: <?= htmlspecialchars($row['status']) ?></p>
+                            <form action="ubah-status.php" method="POST">
+                                <input type="hidden" name="id" value="<?= htmlspecialchars($row['idBarangHilang']) ?>">
+                                <select name="status">
+                                    <option value="Selesai" <?= $row['status'] == 'Selesai' ? 'selected' : '' ?>>Selesai</option>
+                                    <option value="Diterima" <?= $row['status'] == 'Diterima' ? 'selected' : '' ?>>Diterima</option>
+                                    <option value="Ditolak" <?= $row['status'] == 'Ditolak' ? 'selected' : '' ?>>Ditolak</option>
+                                </select>
+                                <button type="submit">Perbarui Status</button>
+                            </form>
+                        </div>
                     </div>
                     <?php endwhile; ?>
                 <?php endif; ?>
@@ -178,7 +192,7 @@ if (!empty($categoryFilter)) {
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

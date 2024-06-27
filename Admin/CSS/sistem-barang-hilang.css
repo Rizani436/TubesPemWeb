@@ -41,7 +41,9 @@ body {
     margin-left: 230px;
     text-transform: uppercase;
     color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-weight: bold;
     /* text-shadow: 3px 3px 5px white; */
 }
@@ -97,7 +99,9 @@ body {
     color: black;
     background-color: aqua;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     text-shadow: 0px 0px 1px white;
 }
 
@@ -117,7 +121,9 @@ body {
 .container .header .header-right p {
     font-size: 20px;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     text-shadow: 1px 1px 2px white;
 }
 
@@ -135,7 +141,9 @@ body {
 
 .header .header-left-menu .menu-bottom ul li a, .header .header-left-menu .menu-bottom ul li button {
     font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-weight: bold;
 }
 
@@ -257,6 +265,7 @@ body {
 .header .header-right .akun-profil .panah img {
     height: 15px;
     width: 15px;
+    margin-bottom: 10px;
 }
 
 .header .header-right .akun-profil .akun {
@@ -266,7 +275,7 @@ body {
 }
 
 .header .header-right .akun-profil .akun p{
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     line-height: 50px;
     margin-left: 10px;
@@ -293,7 +302,7 @@ body {
 
 .header .header-right .akun-profil .setting-akun a{
     text-decoration: none;
-    font-size: 18px;
+    font-size: 13px;
     height: 35px;
     /* width: 125%; */
     line-height: 35px;
@@ -351,7 +360,9 @@ body {
     padding: 5px 10px;
     border-radius: 5px;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 14px;
 }
 
@@ -365,6 +376,9 @@ body {
     border-radius: 3px;
     height: 20px;
     padding: 0 5px;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     width: 250px;
 }
 
@@ -430,7 +444,9 @@ table.table, td {
     border-radius: 4px;
     font-size: 14px;
     margin: 4px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     width: 70px;
 }
 
@@ -447,7 +463,9 @@ table.table, td {
     color: white;
     border-radius: 5px;
     margin-top: 5px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .table td:last-child p.selesai{background-color: #45a049;}
@@ -509,7 +527,9 @@ table.table, td {
     font-size: 30px;
     width: 30px;
     height: 30px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     position: absolute;
     right: -15px;
     top: -15px;

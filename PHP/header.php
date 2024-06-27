@@ -32,6 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../CSS/header.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <style>
         .profil, .akun img {
@@ -67,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <li><a href="daftar-laporan-barang-temuan.php">Penemuan Barang</a></li>
                     </ul>
                 </li>
-                <li class="menu-dropdown"><button>Histori Laporan</button>
+                <li class="menu-dropdown"><button>Riwayat Laporan</button>
                     <ul class="dropdown">
                         <li><a href="histori-barang-hilang.php">Kehilangan Barang</a></li>
                         <li><a href="histori-barang-temuan.php">Penemuan Barang</a></li>
@@ -100,8 +103,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ?>
                 </div>
                 <div class="setting-akun">
-                    <a href="edit-profil.php">Edit Profil</a>
-                    <a href="PHP/logoutSubmit.php">Log Out</a>
+                    <a href="edit-profil.php">Perbarui Profil</a>
+                    <a href="PHP/logoutSubmit.php">Keluar</a>
                 </div>
             </div>
         </div>

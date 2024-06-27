@@ -71,9 +71,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Perbarui Profil</title>
     <!-- <link rel="stylesheet" href="../CSS/dashboard.css"> -->
     <link rel="stylesheet" href="../CSS/edit-profil.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     <style>
         .profil, .akun img {
             width: 100px; /* Adjust size as needed */
@@ -131,8 +134,8 @@
                     ?>
                 </div>
                 <div class="setting-akun">
-                    <a href="edit-profil.php">Edit</a>
-                    <a href="logoutSubmit.php">Logo Out</a>
+                    <a href="edit-profil.php">Perbarui Profil</a>
+                    <a href="logoutSubmit.php">Keluar</a>
                 </div>
             </div>
             <!-- <p>Lost & Found Lombok</p> -->

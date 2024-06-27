@@ -36,7 +36,9 @@ body {
 
 .header .logo h1 {
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-top: -20px;
 }
 
@@ -188,7 +190,9 @@ table, tr, td {
     width: 100px;
     padding: 10px;
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     text-decoration: none;
     color: white;
     display: inline-block;
@@ -234,12 +238,16 @@ table, tr, td {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 24px;
 }
 
 .footer .footer-section h2 {
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 10px;
     font-size: 18px;
     margin-left: 100px;
@@ -248,7 +256,9 @@ table, tr, td {
 
 .footer .footer-section p {
     font-size: 16px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.8;
     padding-left: 15px;
 }
@@ -260,7 +270,9 @@ table, tr, td {
 
 .footer .contact span {
     display: block;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -294,7 +306,9 @@ table, tr, td {
     font-weight: bold;
     font-size: 20px;
     line-height: 50px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     border-top: 1px solid #444;
     box-shadow: 0 3px 7px rgba(0, 0, 0, 1);
 }

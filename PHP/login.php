@@ -37,6 +37,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log In</title>
     <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -47,15 +50,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <div class="menu-header">
                 <ul>
-                    <li><p>Create Account?</p></li>
-                    <li><a href="signup.php">Sign UP</a></li>
+                    <li><p>Buat Akun?</p></li>
+                    <li><a href="signup.php">Daftar</a></li>
                 </ul>
             </div>
         </div>
         <div class="content">
             <div class="judul-content">
                 <a href="beranda.php"><img src="../PHP/icon/left-arrow.png" alt="Left"></a>
-                <p>Login</p>
+                <p>Masuk</p>
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <img src="../PHP/icon/profile.png" alt="profile">
@@ -64,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password">
                 <a href="lupaPassword.php"><p>Lupa Password?</p></a>
-                <input type="submit" value="Log In">
+                <input type="submit" value="Masuk">
             </form>
         </div>
         <div class="footer">
@@ -83,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

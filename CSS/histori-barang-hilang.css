@@ -88,6 +88,9 @@
     border: none;
     height: 30px;
     border: 1px solid rgba(200, 190, 140, 1);
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .content .sidebar-left .cari-barang img{
@@ -132,7 +135,9 @@
     /* text-shadow: 0px 0px 3px white; */
     text-transform: uppercase;
     border-radius: 5px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .content .sidebar-left .filter button:hover{
@@ -168,7 +173,9 @@
 
 .content .sidebar-right p.judul{
     font-size: 40px;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     text-transform: uppercase;
     color: white;
     text-shadow: 1px 1px 3px black;
@@ -177,7 +184,9 @@
 .content .sidebar-right p.kategoriText, .content .sidebar-right p.lokasiText{
     font-size: 16px;
     color: black;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 
@@ -313,7 +322,9 @@ th, td {
     padding: 5px 30px;
     width: 220px;
     font-size: 16px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-weight: bold;
     border-radius: 5px;
     box-shadow: 0 0 1px black;
@@ -345,17 +356,55 @@ th, td {
 }
 
 .content .sidebar-right .isi-sidebar-right .item-barang .status {
-    background-color: orange;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: orange; */
     /* display: inline-block; */
     /* width: 110px; */
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 
     border-radius: 5px;
     color: black;
     /* text-transform: uppercase; */
-    text-align: center;
-    padding: 10px 10px;
+    /* padding: 10px 10px; */
 }
+
+.content .sidebar-right .isi-sidebar-right .item-barang .status p {
+    background-color: orange;
+    padding: 8px 8px;
+    width: 197px;
+    text-align: center;
+}
+
+.content .sidebar-right .isi-sidebar-right .item-barang .status button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+
+}
+
+.content .sidebar-right .isi-sidebar-right .item-barang .status button:hover { background-color: #9abfe7;}
+
+
+.content .sidebar-right .isi-sidebar-right .item-barang .status select {
+    border: 1px solid black;
+    padding: 8px 10px;
+
+}
+
+.content .sidebar-right .isi-sidebar-right .item-barang .status select,  .content .sidebar-right .isi-sidebar-right .item-barang .status button{
+    /* border: none; */
+    font-family: "Merienda", cursive;
+    cursor: pointer;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
 
 .content .sidebar-right .data-kosong {
     padding: 20px;
@@ -373,7 +422,9 @@ th, td {
 .data-kosong p {
     font-size: 18px;
     color: #000;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-weight: 400;
 }
 
@@ -417,12 +468,16 @@ th, td {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 24px;
 }
 
 .footer .footer-section h2 {
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 10px;
     font-size: 18px;
     margin-left: 100px;
@@ -431,7 +486,9 @@ th, td {
 
 .footer .footer-section p {
     font-size: 16px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     line-height: 1.8;
     /* margin-bottom: 20px; */
     padding-left: 15px;
@@ -443,7 +500,9 @@ th, td {
 }
 .footer .contact span {
     display: block;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -477,7 +536,9 @@ th, td {
     font-size: 20px;
     /* background-color: rgba(200, 190, 140, 1); */
     line-height: 50px;
-    font-family: 'Lobster', cursive;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     /* background-color: #34db4a; */
     border-top: 1px solid #444;
     box-shadow:  0 3px 7px rgba(0, 0, 0, 1);

@@ -49,6 +49,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="../CSS/signup.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -59,15 +62,15 @@
             </div>
             <div class="menu-header">
                 <ul>
-                    <li><p>Do You Have Account?</p></li>
-                    <li><a href="login.php">Login</a></li>
+                    <li><p>Apakah anda punya akun?</p></li>
+                    <li><a href="login.php">Masuk</a></li>
                 </ul>
             </div>
         </div>
         <div class="content">
             <div class="judul-content">
                 <a href="beranda.php"><img src="../PHP/icon/left-arrow.png" alt="Left"></a>
-                <p>Sign Up</p>
+                <p>Buat Akun</p>
             </div>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="input-data">
@@ -91,7 +94,7 @@
                     <input type="text" name="alamat" id="alamat" class="alamat">
                     <label for="noHP">Nomor Handphone</label>
                     <input type="text" name="noHP" id="noHP" class="noHP">
-                    <input type="submit" value="Sign Up">
+                    <input type="submit" value="Daftar">
                 </div>
                 <script src="../JS/signup.js"></script>
             </form>
@@ -112,7 +115,7 @@
                     </div>
                 </div>
                 <div class="footer-section social">
-                    <h2>Follow us</h2>
+                    <h2>Ikuti kami</h2>
                     <div class="social-icons">
                         <a href="#"><img src="icon/facebookIcon.png" alt="Facebook Icon"></a>
                         <a href="#"><img src="icon/instagram.png" alt="Instagram Icon"></a>

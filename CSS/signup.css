@@ -7,6 +7,9 @@
 
 body {
     background-color: rgba(200, 190, 140, 0.9);
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .header {
@@ -43,7 +46,6 @@ body {
 .header .logo h1{
     /* margin-left: 150px;  */
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     letter-spacing: 0px;
     /* margin-left: 10px; */
     margin-top: -20px;
@@ -117,7 +119,6 @@ body {
     text-transform: uppercase;
     line-height: 35px;
     font-weight: bold;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .input-data {
@@ -127,8 +128,16 @@ body {
     gap: 10px;
 }
 
+.input-data select {
+    cursor: pointer;
+}
+
 .input-data input, .input-data select{
     border: none;
+    /* cursor: pointer; */
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     background-color: rgba(248, 248, 248, 1);
     /* border-bottom: 1px solid rgba(200, 190, 140, 1); */
 }
@@ -151,10 +160,12 @@ body {
     text-transform: uppercase;
     border: none;
     color: white;
+    font-family: "Merienda", cursive;
+    font-optical-sizing: auto;
+    font-style: normal;
     margin-bottom: 15px;
     border-radius: 10px;
     font-size: 18px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
 }
 
@@ -194,12 +205,10 @@ body {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-family: 'Lobster', cursive;
     font-size: 24px;
 }
 
 .footer .footer-section h2 {
-    font-family: 'Lobster', cursive;
     margin-bottom: 10px;
     font-size: 18px;
     margin-left: 100px;
@@ -208,7 +217,6 @@ body {
 
 .footer .footer-section p {
     font-size: 16px;
-    font-family: 'Lobster', cursive;
     line-height: 1.8;
     /* margin-bottom: 20px; */
     padding-left: 15px;
@@ -220,7 +228,6 @@ body {
 }
 .footer .contact span {
     display: block;
-    font-family: 'Lobster', cursive;
     margin-bottom: 5px;
     font-size: 14px;
 }
@@ -254,7 +261,6 @@ body {
     font-size: 20px;
     /* background-color: rgba(200, 190, 140, 1); */
     line-height: 50px;
-    font-family: 'Lobster', cursive;
     /* background-color: #34db4a; */
     border-top: 1px solid #444;
     box-shadow:  0 3px 7px rgba(0, 0, 0, 1);
