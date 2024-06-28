@@ -95,7 +95,7 @@
         </div>
         <div class="menu-header">
             <ul>
-                <li><a href="home.php">Home</a></li>
+                <li><a href="home.php">Beranda</a></li>
                 <li class="menu-dropdown"><button>Daftar Laporan</button>
                     <ul class="dropdown">
                         <li><a href="daftar-laporan-barang-hilang.php">Kehilangan Barang</a></li>
